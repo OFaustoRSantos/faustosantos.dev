@@ -4,7 +4,7 @@ import { getContent, href, routePath, type Content, type Locale, type Project, t
 import { Header, Motion, PrintButton } from "./controls";
 import { BrandMark } from "./brand-mark";
 import { MotionToggle, Opening } from "./construction-motion";
-import { ConstructionSections } from "./construction-sections";
+import { BrickDivider, ConstructionSections } from "./construction-sections";
 
 function Reveal({ children, className = "", index = 0 }: { children: ReactNode; className?: string; index?: number }) {
   return <div data-reveal className={className} style={{ "--delay": `${Math.min(index * 90, 450)}ms` } as CSSProperties}>{children}</div>;
@@ -105,6 +105,15 @@ function Experience({ content, locale, expanded = false }: { content: Content; l
       </Reveal>)}</div>
     </div>
   </section>;
+}
+
+function ConstructionOrigin({ text }: { text: Content["construction"]["origin"] }) {
+  return <BrickDivider>
+    <section className="construction-origin" aria-labelledby="construction-origin-title">
+      <Reveal className="origin-intro"><Eyebrow>{text.eyebrow}</Eyebrow><h2 id="construction-origin-title" className="preserve-lines">{text.title}</h2><span className="origin-materials" aria-hidden="true">01 / 🧱 → 02 / {"</>"}</span></Reveal>
+      <Reveal className="origin-copy">{text.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}<p className="origin-bridge">{text.bridge}</p><a className="text-link" href="#work">{text.cta}<span aria-hidden="true">↓</span></a></Reveal>
+    </section>
+  </BrickDivider>;
 }
 
 function ProjectCard({ project, index, locale, text }: { project: Project; index: number; locale: Locale; text: Content["work"] }) {
@@ -262,7 +271,7 @@ export function Site({ locale, route }: { locale: Locale; route: Route }) {
     <Header locale={locale} path={routePath(route)} text={content.nav} />
     <div className="reading-course" aria-hidden="true" />
     <main id="main" tabIndex={-1}>
-      {route.page === "home" && <><Opening text={content.construction.intro} /><ConstructionSections><Hero text={content.hero} construction={content.construction} locale={locale} /><section className="stats-strip"><div className="container"><Metrics items={content.stats} /></div></section><StoryInvitation content={content} locale={locale} /><Experience content={content} locale={locale} /><Work content={content} locale={locale} /><Olympiads content={content} /><Recognition content={content} /><Contact content={content} /></ConstructionSections></>}
+      {route.page === "home" && <><Opening text={content.construction.intro} /><Hero text={content.hero} construction={content.construction} locale={locale} /><section className="stats-strip"><div className="container"><Metrics items={content.stats} /></div></section><StoryInvitation content={content} locale={locale} /><Experience content={content} locale={locale} /><ConstructionOrigin text={content.construction.origin} /><Work content={content} locale={locale} /><Olympiads content={content} /><Recognition content={content} /><Contact content={content} /></>}
       {route.page === "work" && <WorkPage content={content} locale={locale} />}
       {route.page === "story" && <StoryPage content={content} />}
       {route.page === "resume" && <ResumePage content={content} locale={locale} />}

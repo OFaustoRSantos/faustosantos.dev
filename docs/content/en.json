@@ -24,6 +24,17 @@
     "label": "A work in progress. In the best sense.",
     "drawing": "Fig. 01 / A few things I’m building",
     "foundation": "Built with purpose, not all at once.",
+    "origin": {
+      "eyebrow": "Why construction?",
+      "title": "Before building systems,\nI built my own room.",
+      "paragraphs": [
+        "As a teenager, I worked in construction to help my parents, both on outside jobs and in our own home. We partitioned our house to rent out space more than three times. Through almost every one of those changes, I built my own room.",
+        "For a long time, I lacked some of the foundations I needed to pursue my dreams. Maybe that is why I now love creating that kind of support — for myself and for others.",
+        "My parents worked with bricks, mortar and, sometimes, drywall. I wanted to take that experience into another kind of construction: organizations, tools and systems that open paths for more people."
+      ],
+      "bridge": "The materials changed. The desire to build a foundation did not.",
+      "cta": "See what I’m building"
+    },
     "sketch": "always\nbuilding.",
     "process": "IDEA → STRUCTURE → IMPACT",
     "intro": {
@@ -60,8 +71,8 @@
   },
   "hero": {
     "eyebrow": "IEO 2027 candidate · Business Strategy & Innovation Intern",
-    "title": ["Building AI for", "public education.", "Competing in economics."],
-    "description": "Founder of SOEL and Sistema San. Strategy and product intern at Tsugrowth. Based in Rio de Janeiro.",
+    "title": ["Growing as I build", "stronger foundations.", "For myself and for others."],
+    "description": "Today, my materials are technology, education and people. Founder of SOEL and Sistema San, strategy and product intern at Tsugrowth, and national OBECON finalist. Based in Rio de Janeiro.",
     "primary": "See my work",
     "secondary": "My story",
     "trajectory": "A trajectory in the making",
@@ -298,8 +309,8 @@
     "steps": ["Curiosity", "Autonomy", "Olympiads", "Organizations", "What comes next"],
     "portrait": { "src": "", "alt": "Portrait of Fausto Santos in Rio de Janeiro", "caption": "Rio de Janeiro, Brazil." },
     "chapters": [
-      { "date": "The beginning", "label": "Curiosity · perspective", "title": "Learn to ask how things work.", "text": "An interest in entrepreneurship and the work of building things gradually became an interest in processes: how teams organize, how systems work and who gets access to opportunity.", "note": "The personal beginning of this story will be expanded in my own words." },
-      { "date": "2020–23", "label": "Foundation · autonomy", "title": "Learn the tools. Build a foundation.", "text": "Studying programming, English and leadership gave me tools to move from observing problems to trying to solve them. Education became both a personal path and a problem I wanted to work on.", "note": "" },
+      { "date": "As a teenager", "label": "Construction · family", "title": "Before systems, there were walls.", "text": "I worked in construction to help my parents, both on outside jobs and in our home. We partitioned our house to rent out space more than three times. Through almost every one of those changes, I built my own room.", "note": "That is where the construction language of this site comes from. It is not just a visual metaphor." },
+      { "date": "Building a foundation", "label": "Autonomy · opportunity", "title": "The materials changed. The purpose stayed.", "text": "For a long time, I lacked some of the foundations I needed to pursue my dreams. Maybe that is why I love creating support for myself and for others. My parents built with bricks, mortar and sometimes drywall. Through programming, education and leadership, I found another way to build.", "note": "" },
       { "date": "Late 2023", "label": "Questions · organizations", "title": "Ask the people already building.", "text": "Conversations with founders at Rio Innovation Week helped shape the first sketches of SOEL: an organization focused on education and academic olympiads.", "note": "Conceived in late 2023; formally founded in January 2025." },
       { "date": "2024", "label": "High school · olympiads", "title": "Turn curiosity into a practice.", "text": "Academic olympiads became a way to study deeply and find new paths. Mathematics, astronomy and chemistry are part of that foundation; economics is now the focus.", "note": "" },
       { "date": "2025", "label": "Leadership · priorities", "title": "Build something that outlasts one person.", "text": "At SOEL, I organized leadership, documentation and processes while teaching and building the organization’s ERP. I also joined Fundação Estudar’s Prep Program.", "note": "" },

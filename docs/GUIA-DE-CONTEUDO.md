@@ -84,12 +84,15 @@ Salvar os arquivos em `public/images/`. Os caminhos usados nos JSONs começam co
 - A faixa convida para a história e pausa ao passar o mouse ou focar o link. O botão “Pausar movimento” pausa as animações; “Retomar movimento” as continua.
 - `prefers-reduced-motion` torna a leitura estática, sem loader nem faixa contínua, com todo o conteúdo disponível. Sem JavaScript, o HTML continua legível e a abertura permanece oculta.
 - A barra fina no topo acompanha a leitura. A linha da história mantém seu progresso local.
-- A impressão remove abertura, faixa, decoração e controles, preservando o currículo.
+- A impressão remove abertura, faixa, decoração e controles, preservando o currículo e o texto da origem pessoal na home.
 - O layout base está em [../src/app/globals.css](../src/app/globals.css) e a direção visual de construção em [../src/app/construction.css](../src/app/construction.css).
-- As seções da home, trabalho, história e cases são separadas por pequenas paredes com duas fiadas desencontradas, furos nos tijolos e uma régua de assentamento. São elementos decorativos (`aria-hidden`), sem duplicar títulos para leitores de tela.
+- Cada página editorial tem **uma única divisória** com duas fiadas desencontradas, furos nos tijolos e uma régua de assentamento. O currículo não tem divisória. As fiadas são decorativas (`aria-hidden`), mas o texto pessoal dentro da divisória da home é conteúdo semântico e acessível.
 - Cada parede se monta uma única vez ao entrar na tela, usando o mesmo mecanismo de reveal. Sem JavaScript ou com movimento reduzido, os tijolos aparecem completos. A pausa geral também interrompe sua montagem.
 - No celular, cada fiada usa oito tijolos para manter os detalhes legíveis, sem aumentar a largura da página. O currículo não recebe divisórias, e a impressão oculta todas essas decorações.
 - Números dos projetos aparecem como pequenas peças, e as introduções das experiências ganham um prumo gráfico discreto. A decoração não altera métricas nem conteúdo editorial.
+- Na home, `construction.origin` explica a relação pessoal com construção: trabalho na adolescência, ajuda aos pais e construção do próprio quarto. O texto fica dentro da composição de alvenaria antes dos projetos; não há datas ou detalhes novos presumidos. Os dois primeiros capítulos de `story.chapters` acompanham essa narrativa.
+- A abertura tem uma pessoa ilustrada em SVG carregando tijolos até a obra. É um desenho simbólico, não uma foto ou reconstrução factual de Fausto. A caminhada dura menos que a abertura e preserva o botão de pular e movimento reduzido. O botão fica separado do painel; em telas baixas, o painel compacta os espaços e permite rolagem sem sobrepor o controle.
+- `hero.title` contém a mensagem de crescimento e criação de estrutura para si e para os outros. O cartão social usa a mesma headline em inglês.
 
 ## Revisão factual antes de candidaturas
 
@@ -112,7 +115,7 @@ O site é uma implementação funcional; a revisão factual e as autorizações 
 | Imprensa | Menção sem URL inventada | Link público da matéria |
 | Origem pessoal | Versão editorial conservadora | Escrever em primeira pessoa e aprovar detalhes familiares/pessoais |
 
-A referência contém informações familiares e pessoais sensíveis e notas internas “a confirmar”. Elas não foram copiadas integralmente para a página pública. A narrativa atual preserva o arco sem expor esses detalhes; o primeiro capítulo é assumidamente um rascunho a ampliar. Nenhum dado pessoal foi salvo em memória do assistente.
+A referência contém informações familiares e pessoais sensíveis e notas internas “a confirmar”. Elas não foram copiadas integralmente para a página pública. Os detalhes de construção e moradia agora publicados foram fornecidos explicitamente por Fausto para compor a história, sem adicionar nomes, endereços, idades ou datas presumidas. Nenhum dado pessoal foi salvo em memória do assistente.
 
 ## Currículo
 

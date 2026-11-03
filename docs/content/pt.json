@@ -24,6 +24,17 @@
     "label": "Em construção. No melhor sentido.",
     "drawing": "Fig. 01 / Algumas coisas que estou construindo",
     "foundation": "Com propósito, um passo de cada vez.",
+    "origin": {
+      "eyebrow": "Por que construção?",
+      "title": "Antes de construir sistemas,\neu construí meu próprio quarto.",
+      "paragraphs": [
+        "Desde adolescente, trabalhei diretamente com construção para ajudar meus pais, tanto em trabalhos fora de casa quanto dentro dela. Dividimos nossa casa para alugar mais de três vezes. Em quase todas essas mudanças, construí meu próprio quarto.",
+        "Por muito tempo, vivi sem tanta estrutura para correr atrás de alguns sonhos. Talvez seja por isso que hoje eu goste tanto de criar estrutura — para mim e para os outros.",
+        "Meus pais trabalharam com tijolo, massa e, às vezes, drywall. Eu quis levar esse aprendizado para outro tipo de construção: organizações, ferramentas e sistemas que abrem caminhos para mais pessoas."
+      ],
+      "bridge": "Os materiais mudaram. A vontade de construir uma base, não.",
+      "cta": "Veja o que estou construindo"
+    },
     "sketch": "sempre\nconstruindo.",
     "process": "IDEIA → ESTRUTURA → IMPACTO",
     "intro": {
@@ -60,8 +71,8 @@
   },
   "hero": {
     "eyebrow": "Candidato à IEO 2027 · Estagiário de Estratégia e Inovação",
-    "title": ["Construindo IA para", "a educação pública.", "Competindo em economia."],
-    "description": "Fundador da SOEL e do Sistema San. Estagiário de estratégia e produto na Tsugrowth. Do Rio de Janeiro.",
+    "title": ["Crescendo enquanto", "construo estrutura.", "Para mim e para os outros."],
+    "description": "Hoje, meus materiais são tecnologia, educação e pessoas. Fundador da SOEL e do Sistema San, estagiário de estratégia e produto na Tsugrowth e finalista nacional da OBECON. Do Rio de Janeiro.",
     "primary": "Veja meu trabalho",
     "secondary": "Minha história",
     "trajectory": "Uma trajetória em construção",
@@ -298,8 +309,8 @@
     "steps": ["Curiosidade", "Autonomia", "Olimpíadas", "Organizações", "O próximo passo"],
     "portrait": { "src": "", "alt": "Retrato de Fausto Santos no Rio de Janeiro", "caption": "Rio de Janeiro, Brasil." },
     "chapters": [
-      { "date": "O começo", "label": "Curiosidade · perspectiva", "title": "Aprender a perguntar como as coisas funcionam.", "text": "O interesse por empreendedorismo e pelo trabalho de construir foi se transformando em interesse por processos: como equipes se organizam, como sistemas funcionam e quem tem acesso às oportunidades.", "note": "O início pessoal desta história será ampliado com minhas próprias palavras." },
-      { "date": "2020–23", "label": "Base · autonomia", "title": "Aprender as ferramentas. Construir uma base.", "text": "Estudar programação, inglês e liderança me deu ferramentas para sair da observação de problemas e começar a tentar resolvê-los. Educação se tornou um caminho pessoal e um problema no qual queria trabalhar.", "note": "" },
+      { "date": "Na adolescência", "label": "Construção · família", "title": "Antes dos sistemas, vieram as paredes.", "text": "Trabalhei com construção para ajudar meus pais, tanto em trabalhos externos quanto na nossa casa. Dividimos nossa casa para alugar mais de três vezes. Em quase todas essas mudanças, construí meu próprio quarto.", "note": "É daí que vem o modelo de construção deste site. Não é só uma metáfora visual." },
+      { "date": "Construindo uma base", "label": "Autonomia · oportunidade", "title": "Os materiais mudaram. O propósito continuou.", "text": "Por muito tempo, vivi sem tanta estrutura para correr atrás de alguns sonhos. Talvez seja por isso que eu goste de criar estrutura para mim e para os outros. Meus pais construíram com tijolo, massa e, às vezes, drywall. Na programação, na educação e na liderança, encontrei outra forma de construir.", "note": "" },
       { "date": "Fim de 2023", "label": "Perguntas · organizações", "title": "Perguntar a quem já estava construindo.", "text": "Conversas com fundadores no Rio Innovation Week ajudaram a dar forma aos primeiros desenhos da SOEL: uma organização voltada à educação e às olimpíadas.", "note": "Concepção no fim de 2023; fundação formal em janeiro de 2025." },
       { "date": "2024", "label": "Ensino médio · olimpíadas", "title": "Transformar curiosidade em prática.", "text": "As olimpíadas se tornaram uma forma de estudar a fundo e encontrar novos caminhos. Matemática, astronomia e química fazem parte dessa base; economia é o foco de hoje.", "note": "" },
       { "date": "2025", "label": "Liderança · prioridades", "title": "Construir algo que dure além de uma pessoa.", "text": "Na SOEL, organizei lideranças, documentação e processos enquanto ensinava e construía o ERP da organização. Também entrei no Prep Program da Fundação Estudar.", "note": "" },

@@ -12,6 +12,20 @@
 .divider-brick > i { display: block; width: 14px; height: 5px; border: 1px solid #84664c55; border-radius: 2px; background: #f7ead52b; }
 .divider-brick::after { content: ""; position: absolute; bottom: 4px; right: 5px; width: 5px; height: 1px; background: #91725555; transform: rotate(-35deg); }
 .divider-foundation { display: block; height: 8px; margin-top: 8px; border-top: 1px solid #c0c2ae; border-bottom: 1px solid #d5d4c6; background: repeating-linear-gradient(90deg, transparent 0 11px, #b4b79c 11px 12px, transparent 12px 24px); opacity: .7; }
+.brick-divider-story { padding-top: 30px; padding-bottom: 35px; background: #eae6d9; }
+.construction-origin { display: grid; grid-template-columns: .9fr 1.1fr; gap: 65px; padding: 55px 35px 48px; user-select: text; }
+.origin-intro h2 { font-size: 41px; line-height: 1.15; letter-spacing: -1.6px; }
+.origin-materials { display: block; margin-top: 32px; font: 16px/1.5 Consolas, monospace; color: var(--blue); letter-spacing: 3px; }
+.origin-copy > p { font-size: 15px; line-height: 1.9; margin-bottom: 20px; }
+.origin-copy > .origin-bridge { color: var(--ink); font-weight: 550; border-left: 2px solid #c29576; padding-left: 18px; margin-top: 26px; }
+.material-carrier { width: 100%; height: auto; margin: -20px 0 20px; }
+.carrier-person { animation: material-delivery 2.2s ease-in-out both; }
+.carrier-stride { transform-box: fill-box; transform-origin: 50% 0; animation: carrier-step .4s ease-in-out 5 alternate; }
+.carrier-leg-back { animation-delay: -.2s; }
+.carrier-upper { animation: carrier-bob .4s ease-in-out 5 alternate; }
+@keyframes material-delivery { from { transform: translateX(-105px); } to { transform: translateX(100px); } }
+@keyframes carrier-step { from { transform: rotate(-13deg); } to { transform: rotate(13deg); } }
+@keyframes carrier-bob { from { transform: translateY(0); } to { transform: translateY(-2px); } }
 html[data-motion] .divider-wall:not([data-pending]) .divider-brick { animation: mortar-settle .65s cubic-bezier(.2,.8,.2,1) var(--brick-delay) backwards; }
 .brick-divider + .section { padding-top: 78px; }
 .brick-divider + .contact-section { padding-top: 65px; }
@@ -190,10 +204,10 @@ html[data-motion] .chapter:not([data-reached]) .timeline-marker { background: #c
 .photo-sketch .micro { font-size: 7px; margin-top: 15px; }
 .field-photo figcaption { font-family: Consolas, monospace; color: #5a5e4d; font-size: 9px; letter-spacing: -.2px; text-transform: uppercase; margin-top: 14px; text-align: center; }
 .photo-editorial-note { text-align: right; font-size: 9px; color: #656650; margin-top: 40px; }
-.opening { position: fixed; inset: 0; z-index: 80; display: grid; place-items: center; padding: 24px; background: #efede4f7; cursor: pointer; animation: opening-exit .35s ease-in 2.2s forwards; }
-.opening-skip { position: absolute; bottom: 30px; right: 30px; border: 1px solid var(--line); background: #f9f6ee; color: var(--ink); padding: 12px 18px; font: 11px/1.5 Consolas, monospace; min-height: 44px; }
+.opening { position: fixed; inset: 0; z-index: 80; display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: 18px; place-items: center; padding: 24px; background: #efede4f7; cursor: pointer; animation: opening-exit .35s ease-in 2.2s forwards; }
+.opening-skip { justify-self: end; border: 1px solid var(--line); background: #f9f6ee; color: var(--ink); padding: 12px 18px; font: 11px/1.5 Consolas, monospace; min-height: 44px; }
 .opening-skip:hover { border-color: var(--ink); background: #e8e4d7; }
-.opening-sheet { width: min(590px, 100%); background: #f9f6ee; border: 1px solid #bfc0ad; box-shadow: 9px 9px 0 #d9ddcb; padding: 30px; position: relative; overflow: hidden; }
+.opening-sheet { width: min(590px, 100%); max-height: 100%; background: #f9f6ee; border: 1px solid #bfc0ad; box-shadow: 9px 9px 0 #d9ddcb; padding: 30px; position: relative; overflow: hidden auto; }
 .opening-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 35px; }
 .opening-top .micro { color: #70765d; font-size: 9px; letter-spacing: 1.5px; }
 .opening-sheet > .eyebrow { margin-bottom: 25px; }
@@ -305,6 +319,13 @@ html[data-motion-paused] [data-reveal] { transition: none; }
   .photo-editorial-note { text-align: center; }
 }
 @media (max-width: 760px) {
+  .construction-origin { grid-template-columns: 1fr; gap: 28px; padding: 35px 4px 25px; }
+  .origin-intro h2 { font-size: 32px; letter-spacing: -1.1px; }
+  .origin-materials { margin-top: 20px; font-size: 13px; }
+  .origin-copy > p { font-size: 14px; line-height: 1.85; }
+  .material-carrier { margin: -15px 0 14px; }
+  .opening-sheet > .eyebrow { margin-bottom: 16px; }
+  .opening-top { margin-bottom: 20px; }
   .brick-divider { padding: 17px 0 12px; }
   .divider-survey { font-size: 7px; margin-bottom: 9px; }
   .divider-course { grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 4px; }
@@ -417,6 +438,14 @@ html[data-motion-paused] [data-reveal] { transition: none; }
   .photo-sketch { padding-inline: 6px; }
   .field-photo figcaption { font-size: 6px; }
 }
+@media (max-height: 700px) {
+  .opening-sheet { padding: 16px; }
+  .opening-top { margin-bottom: 12px; }
+  .opening-sheet > .eyebrow { margin-bottom: 12px; }
+  .material-carrier { max-height: 95px; margin: -10px 0 8px; }
+  .opening-brick { padding-block: 9px; }
+  .opening-bottom { margin-top: 12px; padding-top: 12px; }
+}
 @media (prefers-reduced-motion: reduce) {
   .opening { display: none !important; }
   .reading-course { display: none; }
@@ -431,7 +460,9 @@ html[data-motion-paused] [data-reveal] { transition: none; }
   .brand:hover .brand-mark, .field-photo figure, .field-photo:hover figure, .field-photo:focus-within figure { transform: none; }
 }
 @media print {
-  .brick-divider, .section-intro::after { display: none !important; }
+  .construction-origin { display: block; }
+  .brick-divider:not(.brick-divider-story), .divider-survey, .divider-wall, .divider-foundation, .section-intro::after { display: none !important; }
+  .brick-divider-story { background: white; padding-block: 25px; }
   .opening, .story-invitation, .build-scene, .page-construction-mark, .motion-toggle, .reading-course { display: none !important; }
   .contact-card, .project-card, .recognition-card { box-shadow: none; }
   .page-hero { background: white; }

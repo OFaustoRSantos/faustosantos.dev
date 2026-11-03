@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import type { Content } from "../lib/content";
 import { BrandMark } from "./brand-mark";
+import { MaterialCarrier } from "./material-carrier";
 
 export function Opening({ text }: { text: Content["construction"]["intro"] }) {
   const panel = useRef<HTMLDivElement>(null);
@@ -57,6 +58,7 @@ export function Opening({ text }: { text: Content["construction"]["intro"] }) {
       <div className="opening-sheet" aria-hidden="true">
         <div className="opening-top"><BrandMark /><span className="micro">FAUSTO SANTOS / 001</span></div>
         <p className="eyebrow">{text.label}</p>
+        <MaterialCarrier />
         <div className="opening-courses">
           {text.stages.map((stage, index) => <div className="opening-brick" key={stage.name} style={{ "--course": index } as CSSProperties}>
             <span className="micro">0{index + 1}</span><strong>{stage.name}</strong><span>{stage.detail}</span><span className="opening-check">↗</span>

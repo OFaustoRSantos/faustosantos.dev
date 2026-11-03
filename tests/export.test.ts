@@ -59,23 +59,35 @@ test("construction home includes nonblocking opening, story invitation and origi
   }
 });
 
-test("masonry dividers separate every editorial section without cluttering the resume", { skip: !exported }, () => {
+test("masonry appears once per editorial page and never on the resume", { skip: !exported }, () => {
   const expected = [
-    { path: "", count: 7 },
-    { path: "work", count: 3 },
-    { path: "story", count: 2 },
-    { path: "projects/sistema-san", count: 7 },
-    { path: "projects/soel", count: 7 },
-    { path: "projects/tsugrowth", count: 7 },
-    { path: "projects/research", count: 7 },
+    { path: "", count: 1 },
+    { path: "work", count: 1 },
+    { path: "story", count: 1 },
+    { path: "projects/sistema-san", count: 1 },
+    { path: "projects/soel", count: 1 },
+    { path: "projects/tsugrowth", count: 1 },
+    { path: "projects/research", count: 1 },
     { path: "resume", count: 0 },
   ];
   for (const locale of ["en", "pt"] as const) {
     for (const { path, count } of expected) {
       const html = htmlFor(href(locale, path));
-      assert.equal((html.match(/class="brick-divider" aria-hidden="true"/g) ?? []).length, count, `${locale}/${path}`);
+      assert.equal((html.match(/class="brick-divider(?: brick-divider-story)?"/g) ?? []).length, count, `${locale}/${path}`);
       assert.equal((html.match(/class="divider-course"/g) ?? []).length, count * 2);
       assert.equal((html.match(/class="divider-brick"/g) ?? []).length, count * 24);
     }
+  }
+});
+
+test("the home connects the construction story to projects and includes the material carrier", { skip: !exported }, () => {
+  for (const locale of ["en", "pt"] as const) {
+    const html = htmlFor(href(locale));
+    assert.match(html, /class="material-carrier"/);
+    assert.match(html, /class="carrier-load"/);
+    assert.match(html, /aria-labelledby="construction-origin-title"/);
+    assert.match(html, /id="construction-origin-title"/);
+    assert.ok(html.indexOf('id="construction-origin-title"') < html.indexOf('id="work"'));
+    assert.doesNotMatch(html, /class="brick-divider-story"[^>]*aria-hidden/);
   }
 });
