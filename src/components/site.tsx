@@ -4,6 +4,7 @@ import { getContent, href, routePath, type Content, type Locale, type Project, t
 import { Header, Motion, PrintButton } from "./controls";
 import { BrandMark } from "./brand-mark";
 import { MotionToggle, Opening } from "./construction-motion";
+import { ConstructionSections } from "./construction-sections";
 
 function Reveal({ children, className = "", index = 0 }: { children: ReactNode; className?: string; index?: number }) {
   return <div data-reveal className={className} style={{ "--delay": `${Math.min(index * 90, 450)}ms` } as CSSProperties}>{children}</div>;
@@ -173,7 +174,7 @@ function PageHero({ eyebrow, title, description, steps, children }: { eyebrow: s
 }
 
 function WorkPage({ content, locale }: { content: Content; locale: Locale }) {
-  return <>
+  return <ConstructionSections>
     <PageHero eyebrow={content.work.pageEyebrow} title={content.work.pageTitle} description={content.work.pageDescription} steps={content.work.steps} />
     <Experience content={content} locale={locale} expanded />
     <section className="section project-index"><div className="container">
@@ -185,12 +186,12 @@ function WorkPage({ content, locale }: { content: Content; locale: Locale }) {
       </Reveal>)}
     </div></section>
     <Contact content={content} />
-  </>;
+  </ConstructionSections>;
 }
 
 function StoryPage({ content }: { content: Content }) {
   const { story } = content;
-  return <>
+  return <ConstructionSections>
     <PageHero eyebrow={story.eyebrow} title={story.title} description={story.description} steps={story.steps} />
     <section className="section story-section"><div className="container">
       {story.portrait.src && <figure className="story-portrait"><Image src={story.portrait.src} alt={story.portrait.alt} width={1200} height={800} /><figcaption>{story.portrait.caption}</figcaption></figure>}
@@ -202,7 +203,7 @@ function StoryPage({ content }: { content: Content }) {
       </div>
     </div></section>
     <Contact content={content} />
-  </>;
+  </ConstructionSections>;
 }
 
 function ProjectMedia({ project, text }: { project: Project; text: Content["work"] }) {
@@ -220,7 +221,7 @@ function ProjectPage({ project, content, locale }: { project: Project; content: 
   const { work } = content;
   const index = content.projects.findIndex((p) => p.slug === project.slug);
   const next = content.projects[(index + 1) % content.projects.length];
-  return <>
+  return <ConstructionSections>
     <section className="page-hero project-hero dark"><div className="container">
       <div className="page-construction-mark" aria-hidden="true"><BrandMark /></div>
       <div className="case-top"><a href={href(locale, "work")} className="back-link">← {work.back}</a><span className="micro">CASE {String(index + 1).padStart(2, "0")} / 04</span></div>
@@ -240,7 +241,7 @@ function ProjectPage({ project, content, locale }: { project: Project; content: 
       <div className="evolution-list">{project.timeline.map((item, i) => <Reveal className="evolution-item" key={item.title} index={i}><p className="micro blue">{item.date}</p><h3>{item.title}</h3><p>{item.text}</p></Reveal>)}</div>
     </div></section>
     <section className="next-project dark"><div className="container"><Eyebrow>{work.next}</Eyebrow><a href={href(locale, `projects/${next.slug}`)}><span>{next.name}</span><span aria-hidden="true">↗</span></a><p>{next.subtitle}</p></div></section>
-  </>;
+  </ConstructionSections>;
 }
 
 function ResumePage({ content, locale }: { content: Content; locale: Locale }) {
@@ -261,7 +262,7 @@ export function Site({ locale, route }: { locale: Locale; route: Route }) {
     <Header locale={locale} path={routePath(route)} text={content.nav} />
     <div className="reading-course" aria-hidden="true" />
     <main id="main" tabIndex={-1}>
-      {route.page === "home" && <><Opening text={content.construction.intro} /><Hero text={content.hero} construction={content.construction} locale={locale} /><section className="stats-strip"><div className="container"><Metrics items={content.stats} /></div></section><StoryInvitation content={content} locale={locale} /><Experience content={content} locale={locale} /><Work content={content} locale={locale} /><Olympiads content={content} /><Recognition content={content} /><Contact content={content} /></>}
+      {route.page === "home" && <><Opening text={content.construction.intro} /><ConstructionSections><Hero text={content.hero} construction={content.construction} locale={locale} /><section className="stats-strip"><div className="container"><Metrics items={content.stats} /></div></section><StoryInvitation content={content} locale={locale} /><Experience content={content} locale={locale} /><Work content={content} locale={locale} /><Olympiads content={content} /><Recognition content={content} /><Contact content={content} /></ConstructionSections></>}
       {route.page === "work" && <WorkPage content={content} locale={locale} />}
       {route.page === "story" && <StoryPage content={content} />}
       {route.page === "resume" && <ResumePage content={content} locale={locale} />}

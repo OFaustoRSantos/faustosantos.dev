@@ -58,3 +58,24 @@ test("construction home includes nonblocking opening, story invitation and origi
     assert.doesNotMatch(readFileSync(join(process.cwd(), "public", "favicon.svg"), "utf8"), />FS</);
   }
 });
+
+test("masonry dividers separate every editorial section without cluttering the resume", { skip: !exported }, () => {
+  const expected = [
+    { path: "", count: 7 },
+    { path: "work", count: 3 },
+    { path: "story", count: 2 },
+    { path: "projects/sistema-san", count: 7 },
+    { path: "projects/soel", count: 7 },
+    { path: "projects/tsugrowth", count: 7 },
+    { path: "projects/research", count: 7 },
+    { path: "resume", count: 0 },
+  ];
+  for (const locale of ["en", "pt"] as const) {
+    for (const { path, count } of expected) {
+      const html = htmlFor(href(locale, path));
+      assert.equal((html.match(/class="brick-divider" aria-hidden="true"/g) ?? []).length, count, `${locale}/${path}`);
+      assert.equal((html.match(/class="divider-course"/g) ?? []).length, count * 2);
+      assert.equal((html.match(/class="divider-brick"/g) ?? []).length, count * 24);
+    }
+  }
+});

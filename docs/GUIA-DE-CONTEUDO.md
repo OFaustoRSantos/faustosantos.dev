@@ -86,6 +86,10 @@ Salvar os arquivos em `public/images/`. Os caminhos usados nos JSONs começam co
 - A barra fina no topo acompanha a leitura. A linha da história mantém seu progresso local.
 - A impressão remove abertura, faixa, decoração e controles, preservando o currículo.
 - O layout base está em [../src/app/globals.css](../src/app/globals.css) e a direção visual de construção em [../src/app/construction.css](../src/app/construction.css).
+- As seções da home, trabalho, história e cases são separadas por pequenas paredes com duas fiadas desencontradas, furos nos tijolos e uma régua de assentamento. São elementos decorativos (`aria-hidden`), sem duplicar títulos para leitores de tela.
+- Cada parede se monta uma única vez ao entrar na tela, usando o mesmo mecanismo de reveal. Sem JavaScript ou com movimento reduzido, os tijolos aparecem completos. A pausa geral também interrompe sua montagem.
+- No celular, cada fiada usa oito tijolos para manter os detalhes legíveis, sem aumentar a largura da página. O currículo não recebe divisórias, e a impressão oculta todas essas decorações.
+- Números dos projetos aparecem como pequenas peças, e as introduções das experiências ganham um prumo gráfico discreto. A decoração não altera métricas nem conteúdo editorial.
 
 ## Revisão factual antes de candidaturas
 
