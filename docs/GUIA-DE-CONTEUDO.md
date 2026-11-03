@@ -1,0 +1,122 @@
+# Textos do site: edição e revisão
+
+## Onde estão todos os textos
+
+| Documento | Idioma | URL |
+| --- | --- | --- |
+| [content/en.json](content/en.json) | Inglês, padrão | `/` |
+| [content/pt.json](content/pt.json) | Português | `/pt/` |
+
+Esses documentos alimentam o site diretamente. Não é preciso alterar componentes para trocar títulos, parágrafos, métricas, datas, tecnologias, legendas ou os capítulos da história. Não há tradução automática: revisar as duas versões.
+
+### Mapa dos documentos
+
+| Chave | Conteúdo |
+| --- | --- |
+| `meta` | Títulos de busca e descrição |
+| `nav` | Navegação e seletor de idioma |
+| `construction` | Abertura SOEL → Sistema San → OBECON, blocos do hero, legendas do desenho e controle de movimento |
+| `storyInvite` | Convite para a história, frases da faixa contínua e três fotos editoriais da home |
+| `hero` | Headline, introdução, botões e cinco marcos da trajetória |
+| `stats` | Quatro destaques da home |
+| `experience` | Introdução e cinco experiências, compartilhadas com trabalho e currículo |
+| `work` | Introduções e rótulos dos estudos de caso |
+| `projects` | Quatro projetos completos: resumo, métricas, problema, contribuição, mídia, stack e evolução |
+| `olympiads` | Cinco olimpíadas e distinção entre meta e conquista |
+| `recognition` | Bolsas, programas e imprensa |
+| `story` | Introdução, retrato opcional e capítulos da história |
+| `contact` | CTA, email e LinkedIn |
+| `footer` | Créditos e direção acadêmica |
+| `resume` | Introdução do currículo, botão de impressão e habilidades |
+| `notFound` | Textos reservados para a experiência de página inexistente |
+
+Os números de capítulo dos cases, “CASE”, o monograma vetorial “F / Fausto Santos” e símbolos de navegação são elementos fixos de interface. As URLs dos projetos (`slug`) precisam permanecer iguais nos dois idiomas. O novo F é uma arte SVG própria: um bloco com profundidade e juntas de tijolo; não é uma cópia da marca enviada como referência.
+
+## Como editar
+
+1. Abrir o JSON do idioma desejado.
+2. Alterar somente os textos entre aspas, sem apagar vírgulas, chaves ou colchetes.
+3. Usar `\n` dentro de um texto para uma quebra editorial de linha. Nunca inserir HTML.
+4. Atualizar o documento do outro idioma e manter a mesma estrutura.
+5. Executar `npm test`, `npm run typecheck` e `npm run build`.
+6. Publicar novamente. Não existe painel administrativo ou gravação de conteúdo no navegador.
+
+Exemplo:
+
+```json
+{
+  "title": "Building AI for public education.",
+  "description": "Seu novo texto em inglês."
+}
+```
+
+Listas podem crescer, mas devem manter a paridade entre idiomas. A composição atual foi desenhada para cinco marcos do hero, quatro projetos e três métricas por projeto. Para mudar essas quantidades, revisar também os testes e o layout.
+
+## Fotos e capturas
+
+Salvar os arquivos em `public/images/`. Os caminhos usados nos JSONs começam com `/images/`, sem `public`.
+
+```json
+{
+  "media": {
+    "src": "/images/sistema-san-planejamento.webp",
+    "alt": "Descrição objetiva da interface, sem dados pessoais.",
+    "caption": "Legenda com contexto e data."
+  }
+}
+```
+
+- Cases: `projects[n].media`.
+- Retrato: `story.portrait`.
+- Fotos da home: `storyInvite.photos[0..2]`. São três quadros de caderno de campo: pessoa, propósito e processo. Usar imagens verticais 4:5, pois a moldura recorta nessa proporção.
+- `src` vazio mantém a área pendente dos cases e não renderiza um retrato fictício.
+- Usar nomes minúsculos sem espaços/acentos e formatos WebP, AVIF, JPEG ou PNG.
+- Configurar o mesmo arquivo nos dois idiomas, com `alt` e `caption` traduzidos.
+- A área de imagem do case admite uma imagem principal; montagens devem usar somente capturas reais e aprovadas. Não simular resultados.
+
+## Construção e movimento
+
+- A identidade atual usa papel quente, terracota, verde-oliva, traços de planta e blocos em perspectiva. O azul/navy da primeira versão foi substituído por pedido de Fausto.
+- A abertura apresenta três blocos em 2,6 segundos no máximo. É uma introdução gráfica, **não um indicador de carregamento de dados** e não usa porcentagens fictícias.
+- A abertura ocorre na primeira entrada da home por sessão de aba. A chave `fausto:opening-seen` no `sessionStorage` evita repetição ao navegar. Não há cookie nem rastreamento.
+- O botão “Pular abertura”, qualquer toque/clique ou tecla dispensa a abertura; ela não prende foco nem bloqueia scroll. O primeiro clique na sobreposição a dispensa, sem ativar links que estavam atrás dela. Links diretos com âncora e movimento reduzido pulam a abertura.
+- O hero começa sua montagem depois da abertura. Os blocos do hero são links reais para os cases e a seção de olimpíadas.
+- A faixa convida para a história e pausa ao passar o mouse ou focar o link. O botão “Pausar movimento” pausa as animações; “Retomar movimento” as continua.
+- `prefers-reduced-motion` torna a leitura estática, sem loader nem faixa contínua, com todo o conteúdo disponível. Sem JavaScript, o HTML continua legível e a abertura permanece oculta.
+- A barra fina no topo acompanha a leitura. A linha da história mantém seu progresso local.
+- A impressão remove abertura, faixa, decoração e controles, preservando o currículo.
+- O layout base está em [../src/app/globals.css](../src/app/globals.css) e a direção visual de construção em [../src/app/construction.css](../src/app/construction.css).
+
+## Revisão factual antes de candidaturas
+
+O site é uma implementação funcional; a revisão factual e as autorizações não podem ser substituídas pelo desenvolvimento.
+
+| Tema | Tratamento atual | Confirmação necessária |
+| --- | --- | --- |
+| SOEL: 15K+ ensinados | Segue a home e o overview; não virou “45K+ ensinados” | Definição de aluno, duplicidades, período e evidências; remover/reformular se for alcance |
+| SOEL: 35 voluntários | Segue o overview; não usa pico de 50 como equipe atual | Contagem atual, pico e data |
+| 30+ medalhas / 5 ouros | Segue o overview | Relação oficial; reconciliar com as medalhas descritas |
+| San: 15+ professores | Identificado como piloto, não escala ou ganho de aprendizagem | Data, uso ativo, quantidade de escolas e autorização para citar a rede |
+| San / SAM | Mantido “Sistema San” como na referência | Nome oficial do produto |
+| Pesquisa: cronologia | Sem datas conflitantes publicadas | Artigo, certificado e período correto |
+| Pesquisa: “2 de 8” | Não publicado como ranking | Significado da expressão e categoria oficial |
+| Tsugrowth: ~R$30M | Sempre estimativa de pipeline, nunca receita | Aprovação da empresa para publicar esse valor e os artefatos |
+| EVER: 20 usuários | Piloto previsto, não concluído | Status real depois de novembro de 2026 |
+| IEO 2027 | Candidatura/meta, nunca seleção concluída | Atualizar somente após resultado oficial |
+| Bolsas LaunchX / TKS | Ofertas de bolsas, sem afirmar frequência | Diferenciar oferta, aceite e conclusão |
+| Pensi / Prep | Evitadas datas e rankings divergentes | Período escolar, tamanho e seletividade da turma |
+| Imprensa | Menção sem URL inventada | Link público da matéria |
+| Origem pessoal | Versão editorial conservadora | Escrever em primeira pessoa e aprovar detalhes familiares/pessoais |
+
+A referência contém informações familiares e pessoais sensíveis e notas internas “a confirmar”. Elas não foram copiadas integralmente para a página pública. A narrativa atual preserva o arco sem expor esses detalhes; o primeiro capítulo é assumidamente um rascunho a ampliar. Nenhum dado pessoal foi salvo em memória do assistente.
+
+## Currículo
+
+A página `/resume/` ou `/pt/resume/` gera um perfil a partir das experiências, reconhecimentos e habilidades desses documentos. O botão abre a impressão do navegador, que permite salvar PDF. Um CV oficial de candidatura não foi fornecido nesta pasta; não há botão que finja baixar um arquivo inexistente.
+
+## Idiomas e publicação
+
+- Inglês é a URL inicial e `x-default`; português é uma escolha explícita.
+- O seletor mantém a página equivalente, inclusive nos cases.
+- Para mudar o domínio, alterar `siteUrl` em [../src/lib/content.ts](../src/lib/content.ts) e reconstruir. Canonical, sitemap e dados estruturados compartilham essa configuração.
+- Antes do envio: verificar fatos, fotos, CV oficial, URLs reais dos projetos, domínio e comportamento no celular.
