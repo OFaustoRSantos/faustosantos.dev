@@ -82,8 +82,9 @@ Salvar os arquivos em `public/images/`. Os caminhos usados nos JSONs começam co
 - Cada case começa com “What I built / My role / Status / Evidence / Links” (traduzido em `/pt/`), seguido pela descrição e material visual. Os cases do Sistema San e EVER estão explicitamente marcados como em desenvolvimento; piloto não significa resultado de aprendizagem comprovado.
 - Três projetos aparecem como trabalho selecionado. A pesquisa em IA está disponível como case complementar, não como quarto destaque.
 - URL base e canônica são `https://faustosantos.dev`. O domínio `faustosantos.vercel.app`, quando usado como endereço de deploy, não deve ser usado em links editoriais; a raiz `/` é inglês e `/pt/` é português.
-- `links.demo` e `links.github` ficam vazios até Fausto fornecer URLs aprovadas. Nunca publicar credenciais, histórico Git não revisado, dados de estudantes/escolas/clientes ou código/confidenciais de empregadores.
-- Recomendações iniciais: criar repositório-vitrine com dados sintéticos e arquitetura para SOEL e Sistema San; pedir acesso somente leitura a material do EVER, sujeito à autorização da empresa; publicar a pesquisa somente após revisão da fonte dos dados e direitos do pôster. Não tornar um repositório existente público sem varrer segredos no histórico completo.
+- Os repositórios não serão liberados: não há campos, botões ou convites para acesso ao código. `links.demo` aceita apenas apresentações públicas aprovadas. Nunca publicar credenciais, dados de estudantes/escolas/clientes ou código/confidenciais de empregadores.
+- O Sistema San usa a apresentação pública autorizada em `https://www.sistemasan.com.br/a16z-academy`. A imagem local é o painel real do diretor **com dados demonstrativos**, não evidência de resultados do piloto. O link “Abrir imagem completa” preserva a leitura dos detalhes.
+- A SOEL não tem mais as capturas antigas do ERP. O case menciona o **Cometa Olímpico**, livro de astronomia criado em equipe, sem inventar capa, arquivo ou link de download. Quando houver um exemplar autorizado, ele poderá ser adicionado.
 
 ## Construção e movimento
 

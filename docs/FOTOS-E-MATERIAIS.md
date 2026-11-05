@@ -1,5 +1,25 @@
 # Fotos e materiais: pedido de envio
 
+## Seleção aplicada em novembro de 2026
+
+Fausto delegou a seleção editorial das fotos enviadas. Foram escolhidas:
+
+| Uso | Original enviado | Arquivo otimizado |
+| --- | --- | --- |
+| Home · A pessoa | `18.48.00.jpeg`, retrato diante do mapa verde | `public/images/fausto-retrato.webp` |
+| Home · O processo | `18.48.01.jpeg`, escrevendo durante atividade | `public/images/fausto-processo.webp` |
+| Home · Novos horizontes | `18.48.31.jpeg`, bandeira na Mendeleev 2026 | `public/images/fausto-mendeleev.webp` |
+| Minha história | `18.48.14.jpeg`, retrato de casaco escuro | `public/images/fausto-historia.webp` |
+| Case Sistema San | `/academy/director-overview.png` da apresentação pública autorizada | `public/images/sistema-san-diretor.webp` |
+
+Fotos pessoais não foram apresentadas como aula, equipe SOEL ou execução de um projeto sem esse contexto. Os recortes selecionados preservam a pessoa e a atividade. WebP entre 40 e 125 KB, metadados EXIF removidos e textos alternativos traduzidos. Os originais permanecem inalterados e fora do commit.
+
+A captura do San é uma interface real **com dados demonstrativos**, conforme identificado na imagem e na página pública `https://www.sistemasan.com.br/a16z-academy`. Foi convertida sem perdas, sem cortes, com acesso à imagem completa.
+
+As capturas antigas da SOEL não estão disponíveis. O case usa uma nota textual sobre o **Cometa Olímpico**, livro de astronomia criado em equipe; não há capa ou arquivo inventado. Não é necessário reenviar capturas inexistentes. Materiais de empresa continuam privados, e não há links ou convites para repositórios no site.
+
+O pedido abaixo fica como referência de enquadramento para futuros envios, não como requisito para publicar as imagens já selecionadas.
+
 Envie os originais das opções abaixo. Não é necessário enviar todo o acervo: comece com 2–3 alternativas por prioridade. A seleção deve mostrar **você fazendo o trabalho**, não apenas participando de eventos.
 
 ## Primeiro envio — prioridade alta
@@ -65,10 +85,8 @@ Se você tiver uma foto real trabalhando em obra, montando algo ou construindo u
 
 Colocar em `public/images/`, usar `/images/nome.webp` nos dois documentos de conteúdo e traduzir as legendas. Otimizar antes de publicar: retrato/captura principal preferencialmente abaixo de 350 KB, sem sacrificar a legibilidade. Se uma captura exigir mais resolução, priorizar a leitura e verificar o peso real.
 
-## O que falta você fornecer
+## Materiais opcionais para próximos envios
 
-1. O primeiro lote de fotos e as capturas reais aprovadas.
-2. Seu retrato preferido e indicação de imagens que você **não** quer publicar.
-3. Links reais dos produtos, artigo/pôster, matéria de imprensa e CV oficial.
-4. Confirmação dos números e das datas listados no [guia de conteúdo](GUIA-DE-CONTEUDO.md).
-5. Sua versão pessoal do começo da história e da transição de química para economia.
+1. Capa ou exemplar publicável do Cometa Olímpico, se disponível.
+2. Materiais autorizados da pesquisa ou links públicos de imprensa e CV, se desejar.
+3. Confirmação dos números e datas listados no [guia de conteúdo](GUIA-DE-CONTEUDO.md).

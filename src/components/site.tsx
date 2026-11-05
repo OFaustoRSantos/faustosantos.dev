@@ -211,7 +211,7 @@ function StoryPage({ content }: { content: Content }) {
   return <ConstructionSections>
     <PageHero eyebrow={story.eyebrow} title={story.title} description={story.description} steps={story.steps} />
     <section className="section story-section"><div className="container">
-      {story.portrait.src && <figure className="story-portrait"><Image src={story.portrait.src} alt={story.portrait.alt} width={1200} height={800} /><figcaption>{story.portrait.caption}</figcaption></figure>}
+      {story.portrait.src && <figure className="story-portrait"><Image src={story.portrait.src} alt={story.portrait.alt} width={768} height={1151} /><figcaption>{story.portrait.caption}</figcaption></figure>}
       <div className="story-timeline" data-story-line>
         {story.chapters.map((chapter, index) => <article className="chapter" key={chapter.date}>
           <div className="chapter-date"><span className="micro">{chapter.date}</span><span className="timeline-marker" aria-hidden="true" /></div>
@@ -226,8 +226,8 @@ function StoryPage({ content }: { content: Content }) {
 function ProjectMedia({ project, text }: { project: Project; text: Content["work"] }) {
   return <figure className={project.media.src ? "project-media" : "project-media media-pending"}>
       {project.media.src
-        ? <Image src={project.media.src} alt={project.media.alt} width={1600} height={1000} sizes="(max-width: 760px) 90vw, 1200px" />
-        : <div className="media-placeholder"><span className="viewfinder" aria-hidden="true">⌜⌝<br />⌞⌟</span><Eyebrow>{text.mediaLabel}</Eyebrow><h3>{text.mediaPending}</h3><p>{text.mediaNote}</p></div>}
+        ? <a href={project.media.src} target="_blank" rel="noopener noreferrer"><Image src={project.media.src} alt={project.media.alt} width={1600} height={1070} sizes="(max-width: 760px) 90vw, 540px" /><span className="media-open">{text.mediaOpen}<span aria-hidden="true"> ↗</span></span></a>
+        : <div className="media-placeholder"><Eyebrow>{text.mediaLabel}</Eyebrow><h3>{project.media.alt}</h3></div>}
       <figcaption>{project.media.caption}</figcaption>
   </figure>;
 }
@@ -250,8 +250,7 @@ function ProjectPage({ project, content, locale }: { project: Project; content: 
             {[{ label: work.role, value: project.role, status: false }, { label: work.status, value: project.status, status: true }, { label: work.evidence, value: project.evidence, status: false }].map((fact) => <div key={fact.label}><dt className="micro">{fact.label}</dt><dd>{fact.status ? <span className={`case-status${project.status.toLowerCase().includes("work in progress") || project.status.toLowerCase().includes("em desenvolvimento") ? " is-progress" : ""}`}>{fact.value}</span> : fact.value}</dd></div>)}
             <div><dt className="micro">{work.links}</dt><dd className="case-links">
               {project.links.demo && <a href={project.links.demo} target="_blank" rel="noopener noreferrer">{work.demo}<span aria-hidden="true"> ↗</span></a>}
-              {project.links.github && <a href={project.links.github} target="_blank" rel="noopener noreferrer">{work.github}<span aria-hidden="true"> ↗</span></a>}
-              {!project.links.demo && !project.links.github && <span>{work.linksPending}</span>}
+              {!project.links.demo && <span>{work.linksPending}</span>}
             </dd></div>
           </dl>
           <ProjectMedia project={project} text={work} />

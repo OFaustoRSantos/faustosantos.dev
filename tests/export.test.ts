@@ -26,6 +26,11 @@ test("production export contains every localized page, metadata and working inte
         const target = match[1];
         if (!target.startsWith("/") && !target.startsWith("#")) continue;
         const [targetPath, fragment] = target.split("#");
+        if (targetPath.startsWith("/images/")) {
+          assert.ok(existsSync(join(process.cwd(), "out", targetPath)), `${url}: missing image ${targetPath}`);
+          assert.equal(fragment, undefined);
+          continue;
+        }
         const targetHtml = targetPath ? htmlFor(targetPath) : html;
         if (fragment) assert.ok(targetHtml.includes(`id="${fragment}"`), `${url}: missing target ${target}`);
       }
@@ -119,5 +124,22 @@ test("every case opens with a build summary, role, status, evidence and links", 
       if (project === "sistema-san" || project === "tsugrowth") assert.match(html, /class="case-status is-progress"/);
       else assert.doesNotMatch(html, /class="case-status is-progress"/);
     }
+  }
+});
+
+test("export publishes real photos and no repository navigation or unavailable SOEL screenshot promises", { skip: !exported }, () => {
+  for (const locale of ["en", "pt"] as const) {
+    const home = htmlFor(href(locale));
+    assert.doesNotMatch(home, /class="photo-sketch"/);
+    assert.equal((home.match(/src="\/images\/fausto-/g) ?? []).length, 3);
+    for (const { segments } of staticRoutes()) {
+      const html = htmlFor(href(locale, segments.join("/")));
+      assert.doesNotMatch(html, /href="[^"]*(?:github\.com|gitlab\.com|bitbucket\.org)/i);
+      assert.doesNotMatch(html, /repository|repositório|GitHub/);
+    }
+    const san = htmlFor(href(locale, "projects/sistema-san"));
+    assert.ok(san.includes('href="https://www.sistemasan.com.br/a16z-academy"'));
+    assert.ok(san.includes('src="/images/sistema-san-diretor.webp"'));
+    assert.ok(htmlFor(href(locale, "projects/soel")).includes("Cometa Olímpico"));
   }
 });

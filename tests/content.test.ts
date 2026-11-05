@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { existsSync } from "node:fs";
+import { existsSync, statSync } from "node:fs";
 import { join } from "node:path";
 import test from "node:test";
 import en from "../docs/content/en.json";
@@ -130,5 +130,25 @@ test("the selected portfolio prioritizes three builds and flags unfinished produ
     assert.ok(content.projects.find((project) => project.slug === "sistema-san")!.status.toLowerCase().includes(locale === "en" ? "work in progress" : "em desenvolvimento"));
     assert.ok(content.projects.find((project) => project.slug === "tsugrowth")!.status.toLowerCase().includes(locale === "en" ? "work in progress" : "em desenvolvimento"));
     assert.match(content.projects.find((project) => project.slug === "tsugrowth")!.caveat, /R\$30M|R\$ 30M/);
+  }
+});
+
+test("selected photography and public San evidence replace placeholders without repository links", () => {
+  for (const locale of ["en", "pt"] as const) {
+    const content = getContent(locale);
+    for (const photo of [...content.storyInvite.photos, content.story.portrait]) {
+      assert.ok(photo.src, `${locale}: every selected photo is available`);
+      assert.ok(photo.alt);
+      assert.ok(statSync(join(process.cwd(), "public", photo.src)).size < 350_000);
+    }
+    for (const project of content.projects) {
+      assert.deepEqual(Object.keys(project.links), ["demo"]);
+      assert.doesNotMatch(JSON.stringify(project.links), /github|gitlab|bitbucket/i);
+    }
+    assert.equal(content.projects[0].links.demo, "https://www.sistemasan.com.br/a16z-academy");
+    assert.equal(content.projects[0].media.src, "/images/sistema-san-diretor.webp");
+    assert.match(content.projects[0].media.caption, /demonstration data|dados demonstrativos/);
+    assert.match(content.projects[1].evidence, /Cometa Olímpico/);
+    assert.equal(content.projects[1].media.src, "");
   }
 });

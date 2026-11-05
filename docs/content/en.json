@@ -63,9 +63,9 @@
     "cta": "Meet the person behind the work",
     "marquee": ["One brick at a time", "A story still being built", "Come see where it started"],
     "photos": [
-      { "src": "", "alt": "Fausto Santos at work in Rio de Janeiro", "caption": "01 / The person", "prompt": "A portrait, in your own setting." },
-      { "src": "", "alt": "Fausto teaching with the SOEL team", "caption": "02 / The purpose", "prompt": "Teaching. Building with people." },
-      { "src": "", "alt": "Fausto presenting a project or discussing an economics case", "caption": "03 / The process", "prompt": "The work, beyond the screen." }
+      { "src": "/images/fausto-retrato.webp", "alt": "Fausto smiling in front of a green world map", "caption": "01 / The person", "prompt": "A portrait, in your own setting." },
+      { "src": "/images/fausto-processo.webp", "alt": "Fausto writing notes at a table during a group activity", "caption": "02 / The process", "prompt": "Thinking on paper." },
+      { "src": "/images/fausto-mendeleev.webp", "alt": "Fausto holding the Brazilian flag outside the 2026 Mendeleev Chemistry Olympiad venue", "caption": "03 / New horizons", "prompt": "Learning beyond familiar places." }
     ],
     "photoNote": "An open sketchbook — original photos are the next layer."
   },
@@ -121,8 +121,7 @@
     "evidence": "Evidence",
     "links": "Links",
     "demo": "Live project",
-    "github": "GitHub",
-    "linksPending": "No public demo or repository link has been shared yet.",
+    "linksPending": "No public demonstration available.",
     "supportingResearch": "Supporting research · AI in Education",
     "problem": "01 — The problem",
     "contribution": "02 — My contribution",
@@ -133,6 +132,7 @@
     "evolutionTitle": "What happened. What comes next.",
     "next": "Next project",
     "mediaLabel": "Project archive",
+    "mediaOpen": "Open full-size image",
     "mediaPending": "Real documentation, not a mockup.",
     "mediaNote": "Original screenshots will be added after privacy review and publication approval."
   },
@@ -145,8 +145,8 @@
       "period": "Apr 2026 — now",
       "status": "Work in Progress · pilot in one municipal network",
       "built": "An AI planning platform that turns education data into class-level lesson plans, mock exams and student reports.",
-      "evidence": "Anonymized, approved screenshots pending.",
-      "links": { "demo": "", "github": "" },
+      "evidence": "Real director dashboard with demonstration data. Public product walkthrough linked below.",
+      "links": { "demo": "https://www.sistemasan.com.br/a16z-academy" },
       "summary": "An AI platform that automates pedagogical planning for public schools. From government education data, it generates class-level lesson plans, mock exams and individual student reports.",
       "subtitle": "From government data to planning for every public-school classroom.",
       "steps": ["Government data", "AI planning", "Classes & students", "School management"],
@@ -165,7 +165,7 @@
         { "title": "Individual follow-up", "text": "Brought individual student reports into the planning workflow. Public examples require anonymization and approval." },
         { "title": "Role-based management", "text": "Designed the REST API, PostgreSQL persistence and distinct permissions for teachers, coordinators and principals." }
       ],
-      "media": { "src": "", "alt": "Anonymized Sistema San planning interface", "caption": "Planning, class-level lesson plans and individual reports." },
+      "media": { "src": "/images/sistema-san-diretor.webp", "alt": "Sistema San director dashboard showing assessment coverage, subject results and lesson execution with demonstration data", "caption": "Real San interface with demonstration data, from the public a16z Academy walkthrough. These figures are not measured pilot outcomes." },
       "stack": [
         { "title": "Python + LLM APIs", "text": "AI-assisted preparation of pedagogical materials." },
         { "title": "PostgreSQL + REST API", "text": "Data persistence and integration across the platform." },
@@ -186,8 +186,8 @@
       "period": "Jan 2025 — now",
       "status": "Operating nonprofit · ERP built",
       "built": "An education nonprofit’s operating system: volunteer and process ERP, internal tools, documented workflows and original teaching materials.",
-      "evidence": "Approved ERP screens and teaching artifacts pending.",
-      "links": { "demo": "", "github": "" },
+      "evidence": "Teaching material: Cometa Olímpico, an astronomy book we created. Former ERP screenshots are no longer available.",
+      "links": { "demo": "" },
       "summary": "An education nonprofit that helps public-school students reach national olympiads. I run the team, teach the classes, and built the ERP the organization runs on.",
       "subtitle": "Sociedade Olímpica de Estudos e Liderança. Building access to education — and the organization that makes it possible.",
       "steps": ["People", "Documented processes", "Custom ERP", "Classes & olympiads"],
@@ -204,9 +204,9 @@
       "contributions": [
         { "title": "Leadership & processes", "text": "Organized leadership, documentation and routines across 9 teams, with more than 30 documented processes." },
         { "title": "ERP built from scratch", "text": "Built volunteer and process management, OKRs, a marketing calendar, internal courses and the organization’s website." },
-        { "title": "Teaching & original materials", "text": "Taught classes and helped create olympiad preparation materials: 40+ hours of classes, 16 Canguru/OBA lessons, 4+ mock exams and an original book." }
+        { "title": "Teaching & original materials", "text": "Taught classes and helped create olympiad preparation materials: 40+ hours of classes, 16 Canguru/OBA lessons, 4+ mock exams and Cometa Olímpico, an astronomy book we created." }
       ],
-      "media": { "src": "", "alt": "SOEL volunteer and process management interface", "caption": "The ERP, documented processes and teaching materials." },
+      "media": { "src": "", "alt": "Cometa Olímpico", "caption": "An astronomy book we created as teaching material. The book file is not published here; former SOEL system screenshots are no longer available." },
       "stack": [
         { "title": "Node.js + React", "text": "The organization’s ERP and web experience." },
         { "title": "Python + FastAPI", "text": "Services supporting the organization’s internal workflows." },
@@ -227,8 +227,8 @@
       "period": "Aug 2026 — now",
       "status": "Work in Progress · sponsorship workflow built; EVER in development",
       "built": "An AI-agent workflow for sponsorship research and proposals; now leading EVER’s product specification and development.",
-      "evidence": "Employer-approved, redacted artifacts pending.",
-      "links": { "demo": "", "github": "" },
+      "evidence": "Internal product and client materials remain private; this case describes my work without publishing them.",
+      "links": { "demo": "" },
       "summary": "Built a team of AI agents that runs a sponsorship pipeline for cruise brand activations, and now lead the development of EVER, a retail-execution platform with an offline-first Android app.",
       "subtitle": "Two workstreams, one role: turning research and strategy into executable systems.",
       "steps": ["Field research", "Strategy", "Specification", "Product development"],
@@ -247,7 +247,7 @@
         { "title": "EVER product specification", "text": "Translated field research into 102 business rules and 7 state machines, informed by 56 help articles." },
         { "title": "Operation & architecture", "text": "Lead development around offline-first Android, a web portal and a real-time rules engine. The architecture specifies multi-tenancy and row-level security." }
       ],
-      "media": { "src": "", "alt": "Approved EVER Android and web portal screenshots", "caption": "EVER Android, the web portal and redacted product specifications." },
+      "media": { "src": "", "alt": "Company work · private materials", "caption": "EVER is in development. Internal interfaces and client materials are not published here." },
       "stack": [
         { "title": "AI-agent pipeline", "text": "Automation of sponsorship research and proposal workflows." },
         { "title": "Offline-first Android + web", "text": "Retail field execution and management, with a real-time rules engine in scope." },
@@ -268,8 +268,8 @@
       "period": "Research preceding Sistema San",
       "status": "Research and prototype completed · informed Sistema San",
       "built": "A Python method for analyzing school performance by class and region, plus an early prototype for public-school teachers.",
-      "evidence": "Approved research poster and anonymized prototype pending.",
-      "links": { "demo": "", "github": "" },
+      "evidence": "Methodology and prototype described below; the original poster is not published here.",
+      "links": { "demo": "" },
       "summary": "A Python methodology to analyze performance by class and region, plus a prototype for public-school teachers. This work led directly to Sistema San.",
       "subtitle": "Investigate school performance. Turn the analysis into a tool for teachers.",
       "steps": ["Class & regional data", "Python methodology", "Teacher prototype", "Sistema San"],
@@ -288,7 +288,7 @@
         { "title": "Prototype for teachers", "text": "Built a prototype for public-school teachers. Public examples require anonymized data and original research materials." },
         { "title": "Presentation & transfer", "text": "Presented at the 1st ABRIC Symposium, with recognition as Best Project in Sociolinguistics. The research and prototype gave rise to Sistema San." }
       ],
-      "media": { "src": "", "alt": "Original ABRIC research poster and anonymized prototype", "caption": "The original poster or paper, sourced research charts and teacher prototype." },
+      "media": { "src": "", "alt": "Research archive", "caption": "The research poster and prototype are not publicly available here. The work informed Sistema San." },
       "stack": [
         { "title": "Python", "text": "Analysis methodology and prototype development." },
         { "title": "Pandas", "text": "Data preparation and organization." },
@@ -327,7 +327,7 @@
     "title": "Before building products,\nI had to build\nmy own foundation.",
     "description": "A path through learning, choices and systems — toward public education and the opportunities that should reach more students.",
     "steps": ["Curiosity", "Autonomy", "Olympiads", "Organizations", "What comes next"],
-    "portrait": { "src": "", "alt": "Portrait of Fausto Santos in Rio de Janeiro", "caption": "Rio de Janeiro, Brazil." },
+    "portrait": { "src": "/images/fausto-historia.webp", "alt": "Fausto smiling outdoors in a dark jacket with a red backpack and event badge", "caption": "A moment from the journey — beyond the projects." },
     "chapters": [
       { "date": "As a teenager", "label": "Construction · family", "title": "Before systems, there were walls.", "text": "I worked in construction to help my parents, both on outside jobs and in our home. We partitioned our house to rent out space more than three times. Through almost every one of those changes, I built my own room.", "note": "That is where the construction language of this site comes from. It is not just a visual metaphor." },
       { "date": "Building a foundation", "label": "Autonomy · opportunity", "title": "The materials changed. The purpose stayed.", "text": "For a long time, I lacked some of the foundations I needed to pursue my dreams. Maybe that is why I love creating support for myself and for others. My parents built with bricks, mortar and sometimes drywall. Through programming, education and leadership, I found another way to build.", "note": "" },

@@ -63,9 +63,9 @@
     "cta": "Conheça a pessoa por trás do trabalho",
     "marquee": ["Um tijolo de cada vez", "Uma história em construção", "Vem ver onde tudo começou"],
     "photos": [
-      { "src": "", "alt": "Fausto Santos trabalhando no Rio de Janeiro", "caption": "01 / A pessoa", "prompt": "Um retrato, no seu ambiente." },
-      { "src": "", "alt": "Fausto ensinando com a equipe da SOEL", "caption": "02 / O propósito", "prompt": "Ensinando. Construindo com pessoas." },
-      { "src": "", "alt": "Fausto apresentando um projeto ou discutindo um case de economia", "caption": "03 / O processo", "prompt": "O trabalho, para além da tela." }
+      { "src": "/images/fausto-retrato.webp", "alt": "Fausto sorrindo diante de um mapa-múndi verde", "caption": "01 / A pessoa", "prompt": "Um retrato, no seu ambiente." },
+      { "src": "/images/fausto-processo.webp", "alt": "Fausto escrevendo anotações à mesa durante uma atividade em grupo", "caption": "02 / O processo", "prompt": "Pensando no papel." },
+      { "src": "/images/fausto-mendeleev.webp", "alt": "Fausto segurando a bandeira do Brasil diante do local da Olimpíada Mendeleev de Química de 2026", "caption": "03 / Novos horizontes", "prompt": "Aprendendo além dos lugares conhecidos." }
     ],
     "photoNote": "Um caderno aberto — suas fotos originais são a próxima camada."
   },
@@ -121,8 +121,7 @@
     "evidence": "Evidências",
     "links": "Links",
     "demo": "Projeto ao vivo",
-    "github": "GitHub",
-    "linksPending": "Nenhum link público de demonstração ou repositório foi compartilhado ainda.",
+    "linksPending": "Sem demonstração pública disponível.",
     "supportingResearch": "Pesquisa de apoio · IA na Educação",
     "problem": "01 — O problema",
     "contribution": "02 — Minha contribuição",
@@ -133,6 +132,7 @@
     "evolutionTitle": "O que aconteceu. O que vem depois.",
     "next": "Próximo projeto",
     "mediaLabel": "Arquivo do projeto",
+    "mediaOpen": "Abrir imagem completa",
     "mediaPending": "Documentação real, não um mockup.",
     "mediaNote": "As capturas originais serão incluídas após revisão de privacidade e autorização de publicação."
   },
@@ -145,8 +145,8 @@
       "period": "Abr 2026 — hoje",
       "status": "Em desenvolvimento · piloto em uma rede municipal",
       "built": "Uma plataforma de planejamento com IA que transforma dados educacionais em planos por turma, simulados e relatórios de estudantes.",
-      "evidence": "Capturas anonimizadas e autorizadas pendentes.",
-      "links": { "demo": "", "github": "" },
+      "evidence": "Painel real do diretor com dados demonstrativos. Apresentação pública do produto no link abaixo.",
+      "links": { "demo": "https://www.sistemasan.com.br/a16z-academy" },
       "summary": "Plataforma de IA que automatiza o planejamento pedagógico da escola pública. A partir de dados governamentais, gera planos por turma, simulados e relatórios individuais.",
       "subtitle": "Do dado governamental ao planejamento de cada turma da escola pública.",
       "steps": ["Dados governamentais", "Planejamento com IA", "Turmas e estudantes", "Gestão pedagógica"],
@@ -165,7 +165,7 @@
         { "title": "Acompanhamento individual", "text": "Integrei relatórios individuais ao planejamento pedagógico. Exemplos públicos dependem de anonimização e autorização." },
         { "title": "Gestão por papel", "text": "Estruturei a API REST, persistência em PostgreSQL e permissões distintas para professores, coordenadores e diretores." }
       ],
-      "media": { "src": "", "alt": "Interface anonimizada de planejamento do Sistema San", "caption": "Planejamento, planos por turma e relatórios individuais." },
+      "media": { "src": "/images/sistema-san-diretor.webp", "alt": "Painel do diretor do Sistema San com cobertura de avaliações, resultados por disciplina e execução de aulas usando dados demonstrativos", "caption": "Interface real do San com dados demonstrativos, da apresentação pública para a a16z Academy. Estes números não são resultados medidos do piloto." },
       "stack": [
         { "title": "Python + LLM APIs", "text": "Preparação de materiais pedagógicos com apoio de IA." },
         { "title": "PostgreSQL + API REST", "text": "Persistência de dados e integração dos recursos da plataforma." },
@@ -186,8 +186,8 @@
       "period": "Jan 2025 — hoje",
       "status": "ONG em operação · ERP construído",
       "built": "O sistema operacional de uma ONG de educação: ERP de voluntários e processos, ferramentas internas, fluxos documentados e materiais de ensino.",
-      "evidence": "Capturas autorizadas do ERP e materiais de ensino pendentes.",
-      "links": { "demo": "", "github": "" },
+      "evidence": "Material didático: Cometa Olímpico, livro de astronomia que criamos. As capturas antigas do ERP não estão mais disponíveis.",
+      "links": { "demo": "" },
       "summary": "ONG de educação que ajuda estudantes da rede pública a chegar às olimpíadas nacionais. Lidero a equipe, ensino e construí o ERP que sustenta a organização.",
       "subtitle": "Sociedade Olímpica de Estudos e Liderança. Construir acesso à educação — e a organização que o torna possível.",
       "steps": ["Pessoas", "Processos documentados", "ERP próprio", "Aulas e olimpíadas"],
@@ -204,9 +204,9 @@
       "contributions": [
         { "title": "Liderança e processos", "text": "Organizei lideranças, documentos e rotinas em 9 times, com mais de 30 processos documentados." },
         { "title": "ERP construído do zero", "text": "Desenvolvi gestão de voluntários e processos, OKRs, calendário de marketing, cursos internos e o site da organização." },
-        { "title": "Ensino e materiais próprios", "text": "Ensinei e ajudei a criar materiais de preparação: 40+ horas de aulas, 16 aulas de Canguru/OBA, 4+ simulados e um livro próprio." }
+        { "title": "Ensino e materiais próprios", "text": "Ensinei e ajudei a criar materiais de preparação: 40+ horas de aulas, 16 aulas de Canguru/OBA, 4+ simulados e o Cometa Olímpico, livro de astronomia que criamos." }
       ],
-      "media": { "src": "", "alt": "Interface de gestão de voluntários e processos da SOEL", "caption": "O ERP, processos documentados e materiais de ensino." },
+      "media": { "src": "", "alt": "Cometa Olímpico", "caption": "Livro de astronomia que criamos como material de ensino. O arquivo do livro não está publicado aqui; as capturas antigas do sistema da SOEL não estão mais disponíveis." },
       "stack": [
         { "title": "Node.js + React", "text": "ERP e experiência web da organização." },
         { "title": "Python + FastAPI", "text": "Serviços de apoio aos fluxos internos." },
@@ -227,8 +227,8 @@
       "period": "Ago 2026 — hoje",
       "status": "Em desenvolvimento · fluxo de patrocínio construído; EVER em andamento",
       "built": "Um fluxo com agentes de IA para pesquisa e propostas de patrocínio; agora lidero a especificação e o desenvolvimento do EVER.",
-      "evidence": "Materiais autorizados pela empresa e com dados removidos pendentes.",
-      "links": { "demo": "", "github": "" },
+      "evidence": "Materiais internos do produto e de clientes permanecem privados; o case descreve minha atuação sem publicá-los.",
+      "links": { "demo": "" },
       "summary": "Construí uma equipe de agentes de IA para um pipeline de patrocínio de ativações em cruzeiros. Agora lidero o desenvolvimento do EVER, plataforma de execução de varejo com app Android offline-first.",
       "subtitle": "Duas frentes, um papel: transformar pesquisa e estratégia em sistemas executáveis.",
       "steps": ["Pesquisa de campo", "Estratégia", "Especificação", "Construção de produto"],
@@ -247,7 +247,7 @@
         { "title": "Especificação do EVER", "text": "Traduzi pesquisa de campo em 102 regras de negócio e 7 máquinas de estado, com base em 56 artigos de ajuda." },
         { "title": "Operação e arquitetura", "text": "Lidero o desenvolvimento com Android offline-first, portal web e motor de regras em tempo real. O desenho prevê multi-tenancy e row-level security." }
       ],
-      "media": { "src": "", "alt": "Capturas autorizadas do EVER Android e portal web", "caption": "EVER Android, portal web e especificações anonimizadas." },
+      "media": { "src": "", "alt": "Trabalho em empresa · materiais privados", "caption": "O EVER está em desenvolvimento. Interfaces internas e materiais de clientes não são publicados aqui." },
       "stack": [
         { "title": "Pipeline de agentes de IA", "text": "Automação de pesquisa e propostas de patrocínio." },
         { "title": "Android offline-first + web", "text": "Execução de varejo em campo e gestão, com motor de regras em tempo real no escopo." },
@@ -268,8 +268,8 @@
       "period": "Pesquisa anterior ao Sistema San",
       "status": "Pesquisa e protótipo concluídos · base do Sistema San",
       "built": "Um método em Python para analisar o desempenho escolar por turma e região, além de um protótipo para professores da rede pública.",
-      "evidence": "Pôster da pesquisa e protótipo anonimizado pendentes de autorização.",
-      "links": { "demo": "", "github": "" },
+      "evidence": "Metodologia e protótipo descritos abaixo; o pôster original não está publicado aqui.",
+      "links": { "demo": "" },
       "summary": "Metodologia em Python para analisar desempenho por turma e região, acompanhada de um protótipo para professores da rede pública. Este trabalho deu origem ao Sistema San.",
       "subtitle": "Investigar o desempenho escolar. Traduzir a análise em uma ferramenta para professores.",
       "steps": ["Dados por turma e região", "Metodologia Python", "Protótipo para docentes", "Sistema San"],
@@ -288,7 +288,7 @@
         { "title": "Protótipo para professores", "text": "Construí um protótipo para docentes da rede pública. Exemplos públicos dependem de dados anonimizados e materiais originais da pesquisa." },
         { "title": "Apresentação e transferência", "text": "Apresentei o trabalho no 1º Simpósio ABRIC, com reconhecimento de Melhor Projeto em Sociolinguística. A pesquisa e o protótipo deram origem ao Sistema San." }
       ],
-      "media": { "src": "", "alt": "Pôster original da pesquisa ABRIC e protótipo anonimizado", "caption": "Pôster ou artigo original, gráficos com fonte e protótipo para professores." },
+      "media": { "src": "", "alt": "Arquivo da pesquisa", "caption": "O pôster e o protótipo não estão disponíveis publicamente aqui. O trabalho deu origem ao Sistema San." },
       "stack": [
         { "title": "Python", "text": "Metodologia de análise e desenvolvimento do protótipo." },
         { "title": "Pandas", "text": "Preparação e organização dos dados." },
@@ -327,7 +327,7 @@
     "title": "Antes de construir produtos,\nprecisei construir\nminha própria base.",
     "description": "Uma trajetória de aprendizado, escolhas e sistemas — rumo à educação pública e às oportunidades que deveriam alcançar mais estudantes.",
     "steps": ["Curiosidade", "Autonomia", "Olimpíadas", "Organizações", "O próximo passo"],
-    "portrait": { "src": "", "alt": "Retrato de Fausto Santos no Rio de Janeiro", "caption": "Rio de Janeiro, Brasil." },
+    "portrait": { "src": "/images/fausto-historia.webp", "alt": "Fausto sorrindo ao ar livre, de casaco escuro, mochila vermelha e crachá de evento", "caption": "Um registro do caminho — para além dos projetos." },
     "chapters": [
       { "date": "Na adolescência", "label": "Construção · família", "title": "Antes dos sistemas, vieram as paredes.", "text": "Trabalhei com construção para ajudar meus pais, tanto em trabalhos externos quanto na nossa casa. Dividimos nossa casa para alugar mais de três vezes. Em quase todas essas mudanças, construí meu próprio quarto.", "note": "É daí que vem o modelo de construção deste site. Não é só uma metáfora visual." },
       { "date": "Construindo uma base", "label": "Autonomia · oportunidade", "title": "Os materiais mudaram. O propósito continuou.", "text": "Por muito tempo, vivi sem tanta estrutura para correr atrás de alguns sonhos. Talvez seja por isso que eu goste de criar estrutura para mim e para os outros. Meus pais construíram com tijolo, massa e, às vezes, drywall. Na programação, na educação e na liderança, encontrei outra forma de construir.", "note": "" },
