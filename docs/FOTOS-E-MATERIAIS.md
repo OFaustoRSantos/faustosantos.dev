@@ -11,14 +11,17 @@ Fausto delegou a seleção editorial das fotos enviadas. Foram escolhidas:
 | Home · Novos horizontes | `18.48.31.jpeg`, bandeira na Mendeleev 2026 | `public/images/fausto-mendeleev.webp` |
 | Minha história | `18.48.14.jpeg`, retrato de casaco escuro | `public/images/fausto-historia.webp` |
 | Case Sistema San | `/academy/director-overview.png` da apresentação pública autorizada | `public/images/sistema-san-diretor.webp` |
+| História · escola pública | Imagem da Escola Rui Carneiro da Cunha enviada na revisão | `public/images/escola-rui-carneiro.webp` |
 
 Fotos pessoais não foram apresentadas como aula, equipe SOEL ou execução de um projeto sem esse contexto. Os recortes selecionados preservam a pessoa e a atividade. WebP entre 40 e 125 KB, metadados EXIF removidos e textos alternativos traduzidos. Os originais permanecem inalterados e fora do commit.
 
 O segundo quadro foi reenquadrado para a direita no original (recorte `left: 410, top: 20, width: 660, height: 825`, saída 600×750), mantendo o rosto e as mãos dentro da moldura vertical. As outras três fotos foram preservadas.
 
+Na história, o retrato ocupa no máximo 260 px (220 px no celular) junto ao resumo, em vez de uma imagem grande isolada. A foto da escola tem somente 225×225 px no original e é exibida nesse tamanho, sem inventar resolução; foi convertida para WebP de 18,5 KB sem EXIF. A legenda identifica apenas a escola e o envio para a história, sem inferir autoria.
+
 A captura do San é uma interface real **com dados demonstrativos**, conforme identificado na imagem e na página pública `https://www.sistemasan.com.br/a16z-academy`. Foi convertida sem perdas, sem cortes, com acesso à imagem completa.
 
-As capturas antigas da SOEL não estão disponíveis. O case usa uma nota textual sobre o **Cometa Olímpico**, livro de astronomia criado em equipe; não há capa ou arquivo inventado. Não é necessário reenviar capturas inexistentes. Materiais de empresa continuam privados, e não há links ou convites para repositórios no site.
+As capturas antigas da SOEL não estão disponíveis. O case descreve o **Cometa Olímpico** e aponta para os canais oficiais, sem capa, arquivo inventado ou painel vazio. Não é necessário reenviar capturas inexistentes. Materiais de empresa continuam privados, e não há links ou convites para repositórios no site.
 
 O pedido abaixo fica como referência de enquadramento para futuros envios, não como requisito para publicar as imagens já selecionadas.
 

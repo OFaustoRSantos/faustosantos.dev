@@ -4,8 +4,9 @@ import { useEffect, useRef, useState, type CSSProperties } from "react";
 import type { Content } from "../lib/content";
 import { BrandMark } from "./brand-mark";
 import { MaterialCarrier } from "./material-carrier";
+import { Wheelbarrow } from "./wheelbarrow";
 
-export function Opening({ text }: { text: Content["construction"]["intro"] }) {
+export function Opening({ text, project }: { text: Content["construction"]["intro"]; project?: { slug: string; name: string; label: string } }) {
   const panel = useRef<HTMLDivElement>(null);
   const dismissOpening = useRef<() => void>(() => {});
 
@@ -15,7 +16,7 @@ export function Opening({ text }: { text: Content["construction"]["intro"] }) {
     if (!element || preference.matches || window.location.hash) return;
 
     try {
-      if (sessionStorage.getItem("fausto:opening-seen") === "1") return;
+      if (sessionStorage.getItem(project ? `fausto:opening:${project.slug}` : "fausto:opening-seen") === "1") return;
     } catch (error) {
       console.warn("Opening animation cannot remember this visit; session storage is unavailable.", error);
     }
@@ -30,7 +31,7 @@ export function Opening({ text }: { text: Content["construction"]["intro"] }) {
       element.hidden = true;
       root.removeAttribute("data-opening");
       try {
-        sessionStorage.setItem("fausto:opening-seen", "1");
+        sessionStorage.setItem(project ? `fausto:opening:${project.slug}` : "fausto:opening-seen", "1");
       } catch (error) {
         console.warn("Opening animation cannot remember its completion; session storage is unavailable.", error);
       }
@@ -51,20 +52,20 @@ export function Opening({ text }: { text: Content["construction"]["intro"] }) {
       root.removeAttribute("data-opening");
       dismissOpening.current = () => {};
     };
-  }, []);
+  }, [project]);
 
   return (
-    <div ref={panel} className="opening" hidden>
+    <div ref={panel} className={`opening${project ? " project-opening" : ""}`} hidden>
       <div className="opening-sheet" aria-hidden="true">
         <div className="opening-top"><BrandMark /><span className="micro">FAUSTO SANTOS / 001</span></div>
-        <p className="eyebrow">{text.label}</p>
-        <MaterialCarrier />
-        <div className="opening-courses">
+        <p className="eyebrow">{project ? project.label : text.label}</p>
+        {project ? <Wheelbarrow /> : <MaterialCarrier />}
+        {project ? <p className="opening-project-name">{project.name}</p> : <div className="opening-courses">
           {text.stages.map((stage, index) => <div className="opening-brick" key={stage.name} style={{ "--course": index } as CSSProperties}>
             <span className="micro">0{index + 1}</span><strong>{stage.name}</strong><span>{stage.detail}</span><span className="opening-check">↗</span>
           </div>)}
-        </div>
-        <div className="opening-bottom"><span>{text.complete}</span><span>{text.stages.map((stage) => stage.name).join(" / ")}</span></div>
+        </div>}
+        <div className="opening-bottom"><span>{text.complete}</span>{!project && <span>{text.stages.map((stage) => stage.name).join(" / ")}</span>}</div>
         <span className="opening-rule" />
       </div>
       <button className="opening-skip" type="button" onClick={() => dismissOpening.current()}>{text.skip}<span aria-hidden="true"> ↗</span></button>

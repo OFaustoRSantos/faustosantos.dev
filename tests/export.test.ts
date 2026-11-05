@@ -119,17 +119,24 @@ test("the English root and Portuguese /pt export the three featured projects", {
   }
 });
 
-test("every case opens with a build summary, role, status, evidence and links", { skip: !exported }, () => {
+test("every case opens with an executive summary, role and status, without empty archives or evidence labels", { skip: !exported }, () => {
   for (const locale of ["en", "pt"] as const) {
     for (const project of ["soel", "sistema-san", "tsugrowth", "research"]) {
       const html = htmlFor(href(locale, `projects/${project}`));
       const overview = html.indexOf('class="case-overview"');
       const problem = html.indexOf('class="section problem-section"');
       assert.ok(overview >= 0 && overview < problem, `${locale}/${project}: facts are at the top`);
-      for (const field of ["case-built", "project-facts", "case-proof", "case-links"]) {
+      for (const field of ["case-built", "project-facts", "case-proof"]) {
         assert.ok(html.includes(`class="${field}`), `${locale}/${project}: ${field}`);
       }
-      assert.match(html, /class="project-media(?: media-pending)?"/);
+      assert.match(html, /Executive summary|Resumo executivo/);
+      assert.match(html, /class="wheelbarrow-delivery"/);
+      assert.match(html, /class="opening project-opening" hidden=""/);
+      assert.doesNotMatch(html, />Evidence<|>Evidência<|Project archive|Project Archive|Arquivo do projeto|No public demonstration|Nenhuma demonstração pública|media-pending|media-placeholder/);
+      if (project === "sistema-san") assert.match(html, /class="project-media"/);
+      else assert.doesNotMatch(html, /class="project-media"/);
+      if (project === "tsugrowth") assert.doesNotMatch(html, /class="case-links"|app.notion.com/);
+      else assert.match(html, /class="case-links"/);
       if (project !== "research") assert.match(html, /class="case-status is-progress"/);
       else assert.doesNotMatch(html, /class="case-status is-progress"/);
       const sequence = ["tsugrowth", "sistema-san", "soel", "research"];
@@ -137,6 +144,23 @@ test("every case opens with a build summary, role, status, evidence and links", 
       const nextSection = html.slice(html.indexOf('class="next-project dark"'), html.indexOf("</main>"));
       assert.ok(nextSection.includes(`href="${href(locale, `projects/${next}`)}"`), `${locale}/${project}: next project follows relevance order`);
     }
+  }
+});
+
+test("story opens with a compact portrait and summary; navigation places the story next to work", { skip: !exported }, () => {
+  for (const locale of ["en", "pt"] as const) {
+    const story = htmlFor(href(locale, "story"));
+    assert.match(story, /class="story-overview"/);
+    assert.match(story, /class="story-summary"/);
+    assert.match(story, /src="\/images\/escola-rui-carneiro.webp"/);
+    assert.ok(story.indexOf('class="story-summary"') < story.indexOf('class="story-timeline"'));
+    const navigation = story.slice(story.indexOf('class="nav-links"'), story.indexOf('class="nav-actions"'));
+    const links = [...navigation.matchAll(/href="([^"]+)"/g)].map(match => match[1]);
+    assert.deepEqual(links.slice(0, 2), [href(locale, "work"), href(locale, "story")]);
+    assert.equal(new Set(links.slice(2)).size, 3, "Experience, Olympiads and Recognition retain distinct anchor targets");
+    assert.match(story, /class="sound-control" hidden=""/);
+    assert.match(story, /class="sound-toggle" aria-pressed="false"/);
+    assert.doesNotMatch(story, /<audio|autoplay/);
   }
 });
 

@@ -228,11 +228,16 @@ function StoryPage({ content }: { content: Content }) {
   return <ConstructionSections>
     <PageHero eyebrow={story.eyebrow} title={story.title} description={story.description} steps={story.steps} />
     <section className="section story-section"><div className="container">
-      {story.portrait.src && <figure className="story-portrait"><Image src={story.portrait.src} alt={story.portrait.alt} width={768} height={1151} /><figcaption>{story.portrait.caption}</figcaption></figure>}
+      <div className="story-overview">
+        {story.portrait.src && <figure className="story-portrait"><Image src={story.portrait.src} alt={story.portrait.alt} width={768} height={1151} sizes="(max-width: 760px) 220px, 260px" /><figcaption>{story.portrait.caption}</figcaption></figure>}
+        <div className="story-summary"><Eyebrow>{story.overview.eyebrow}</Eyebrow><h2>{story.overview.title}</h2>{story.overview.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}</div>
+      </div>
       <div className="story-timeline" data-story-line>
         {story.chapters.map((chapter, index) => <article className="chapter" key={chapter.date}>
           <div className="chapter-date"><span className="micro">{chapter.date}</span><span className="timeline-marker" aria-hidden="true" /></div>
-          <Reveal index={0} className="chapter-body"><Eyebrow>{chapter.label}</Eyebrow><h2>{chapter.title}</h2><p>{chapter.text}</p>{chapter.note && <p className={`chapter-note${index === 0 ? " editorial-note" : ""}`}>{chapter.note}</p>}</Reveal>
+          <Reveal index={0} className="chapter-body"><Eyebrow>{chapter.label}</Eyebrow><h2>{chapter.title}</h2><p>{chapter.text}</p>{chapter.note && <p className={`chapter-note${index === 0 ? " editorial-note" : ""}`}>{chapter.note}</p>}
+            {index === 2 && <figure className="story-school"><Image src={story.school.src} alt={story.school.alt} width={225} height={225} sizes="225px" /><figcaption>{story.school.caption}</figcaption></figure>}
+          </Reveal>
         </article>)}
       </div>
     </div></section>
@@ -241,10 +246,9 @@ function StoryPage({ content }: { content: Content }) {
 }
 
 function ProjectMedia({ project, text }: { project: Project; text: Content["work"] }) {
-  return <figure className={project.media.src ? "project-media" : "project-media media-pending"}>
-      {project.media.src
-        ? <a href={project.media.src} target="_blank" rel="noopener noreferrer"><Image src={project.media.src} alt={project.media.alt} width={1600} height={1070} sizes="(max-width: 760px) 90vw, 540px" /><span className="media-open">{text.mediaOpen}<span aria-hidden="true"> ↗</span></span></a>
-        : <div className="media-placeholder"><Eyebrow>{text.mediaLabel}</Eyebrow><h3>{project.media.alt}</h3></div>}
+  if (!project.media.src) return null;
+  return <figure className="project-media">
+      <a href={project.media.src} target="_blank" rel="noopener noreferrer"><Image src={project.media.src} alt={project.media.alt} width={1600} height={1070} sizes="(max-width: 760px) 90vw, 540px" /><span className="media-open">{text.mediaOpen}<span aria-hidden="true"> ↗</span></span></a>
       <figcaption>{project.media.caption}</figcaption>
   </figure>;
 }
@@ -255,22 +259,20 @@ function ProjectPage({ project, content, locale }: { project: Project; content: 
   const index = sequence.findIndex((item) => item.slug === project.slug);
   const next = sequence[(index + 1) % sequence.length];
   return <ConstructionSections>
+    <Opening text={content.construction.intro} project={{ slug: project.slug, name: project.name, label: content.construction.projectOpening }} />
     <section className="page-hero project-hero dark"><div className="container">
       <div className="page-construction-mark" aria-hidden="true"><BrandMark /></div>
       <div className="case-top"><a href={href(locale, "work")} className="back-link">← {work.back}</a><span className="micro">{work.caseLabel} {String(index + 1).padStart(2, "0")}</span></div>
       <div className="case-overview">
         <div className="case-build">
           <h1>{project.name}</h1><p className="page-description">{project.subtitle}</p>
-          <div className="case-built"><Eyebrow>{work.built}</Eyebrow><p>{project.built}</p></div>
+          <div className="case-built"><Eyebrow>{work.built}</Eyebrow><p className="executive-lead">{project.built}</p>{project.executive.map(paragraph => <p key={paragraph}>{paragraph}</p>)}</div>
         </div>
         <div className="case-proof">
           <dl className="project-facts">
-            {[{ label: work.role, value: project.role, status: false }, { label: work.status, value: project.status, status: true }, { label: work.evidence, value: project.evidence, status: false }].map((fact) => <div key={fact.label}><dt className="micro">{fact.label}</dt><dd>{fact.status ? <span className={`case-status${project.status.toLowerCase().includes("work in progress") || project.status.toLowerCase().includes("em desenvolvimento") ? " is-progress" : ""}`}>{fact.value}</span> : fact.value}</dd></div>)}
-            <div><dt className="micro">{work.links}</dt><dd className="case-links">
-              {project.links.demo && <a href={project.links.demo} target="_blank" rel="noopener noreferrer">{work.demo}<span aria-hidden="true"> ↗</span></a>}
-              {!project.links.demo && <span>{work.linksPending}</span>}
-            </dd></div>
+            {[{ label: work.role, value: project.role, status: false }, { label: work.status, value: project.status, status: true }].map((fact) => <div key={fact.label}><dt className="micro">{fact.label}</dt><dd>{fact.status ? <span className={`case-status${project.status.toLowerCase().includes("work in progress") || project.status.toLowerCase().includes("em desenvolvimento") ? " is-progress" : ""}`}>{fact.value}</span> : fact.value}</dd></div>)}
           </dl>
+          {project.links.length > 0 && <div className="case-links" aria-label={work.links}>{project.links.map(link => <a key={link.url} href={link.url} target="_blank" rel="noopener noreferrer">{link.label}<span aria-hidden="true"> ↗</span></a>)}</div>}
           <ProjectMedia project={project} text={work} />
         </div>
       </div>
@@ -305,7 +307,7 @@ function ResumePage({ content, locale }: { content: Content; locale: Locale }) {
 export function Site({ locale, route }: { locale: Locale; route: Route }) {
   const content = getContent(locale);
   return <>
-    <Header locale={locale} path={routePath(route)} text={content.nav} />
+    <Header locale={locale} path={routePath(route)} text={content.nav} sound={content.construction.sound} />
     <div className="reading-course" aria-hidden="true" />
     <main id="main" tabIndex={-1}>
       {route.page === "home" && <><Opening text={content.construction.intro} /><Hero text={content.hero} construction={content.construction} locale={locale} /><section className="stats-strip"><div className="container"><Metrics items={content.stats} /></div></section><StoryInvitation content={content} locale={locale} /><Experience content={content} locale={locale} expanded /><ConstructionOrigin text={content.construction.origin} /><Work content={content} locale={locale} /><Explorations content={content} /><Olympiads content={content} /><Recognition content={content} /><Contact content={content} /></>}

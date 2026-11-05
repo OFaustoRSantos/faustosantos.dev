@@ -57,17 +57,20 @@ test("project identities and metrics remain consistent across languages", () => 
     for (const project of content.projects) {
       assert.match(project.slug, /^[a-z0-9-]+$/);
       assert.equal(project.metrics.length, 3);
-      assert.equal(project.contributions.length, 3);
+      assert.equal(project.contributions.length, { "sistema-san": 5, soel: 5, tsugrowth: 6, research: 4 }[project.slug]);
       assert.ok(project.built.trim());
+      assert.equal(project.executive.length, 3);
       assert.ok(project.status.trim());
-      assert.ok(project.evidence.trim());
+      assert.equal("evidence" in project, false);
       assert.ok(project.links);
-      for (const link of Object.values(project.links)) {
-        assert.ok(!link || link.startsWith("https://"), `${locale}/${project.slug}: public links must use HTTPS`);
+      for (const link of project.links) {
+        assert.ok(link.label.trim());
+        assert.ok(link.url.startsWith("https://"), `${locale}/${project.slug}: public links must use HTTPS`);
       }
-      assert.ok(project.media.alt.trim());
       assert.ok(project.caveat.trim());
       if (project.media.src) {
+        assert.ok(project.media.alt.trim());
+        assert.ok(project.media.caption.trim());
         assert.match(project.media.src, /^\/images\/[a-z0-9._-]+\.(webp|png|jpg|jpeg|avif)$/);
         assert.ok(existsSync(join(process.cwd(), "public", project.media.src)));
       }
@@ -129,7 +132,7 @@ test("the selected portfolio prioritizes three builds and flags unfinished produ
     const content = getContent(locale);
     assert.equal(content.work.caseLabel.length > 0, true);
     assert.equal(content.work.built.length > 0, true);
-    assert.equal(content.work.evidence.length > 0, true);
+    assert.equal("evidence" in content.work, false);
     assert.equal(content.work.links.length > 0, true);
     assert.deepEqual(content.projects.filter((project) => project.slug !== "research").map((project) => project.slug).sort(), ["sistema-san", "soel", "tsugrowth"].sort());
     assert.ok(content.projects.find((project) => project.slug === "sistema-san")!.status.toLowerCase().includes(locale === "en" ? "work in progress" : "em desenvolvimento"));
@@ -142,7 +145,7 @@ test("the selected portfolio prioritizes three builds and flags unfinished produ
 test("latest corrections distinguish delivered work, reach, pipeline and future builds", () => {
   for (const content of [en, pt]) {
     assert.doesNotMatch(JSON.stringify(content), /15K|15\.000|Top 45|Python|FastAPI|nonprofit|sem fins lucrativos|O Globo|70%\+/);
-    assert.match(content.projects[1].built, /TypeScript/);
+    assert.match(JSON.stringify(content.projects[1].executive), /Node\.js\/TypeScript/);
     assert.match(content.projects[1].contributions[1].text, /50/);
     assert.match(content.recognition.items[2].description, /90%/);
     assert.match(content.experience.items[1].related.date, /2025/);
@@ -167,13 +170,21 @@ test("selected photography and public San evidence replace placeholders without 
       assert.ok(statSync(join(process.cwd(), "public", photo.src)).size < 350_000);
     }
     for (const project of content.projects) {
-      assert.deepEqual(Object.keys(project.links), ["demo"]);
       assert.doesNotMatch(JSON.stringify(project.links), /github|gitlab|bitbucket/i);
     }
-    assert.equal(content.projects[0].links.demo, "https://www.sistemasan.com.br/a16z-academy");
+    assert.equal(content.projects[0].links[0].url, "https://www.sistemasan.com.br/a16z-academy");
     assert.equal(content.projects[0].media.src, "/images/sistema-san-diretor.webp");
     assert.match(content.projects[0].media.caption, /demonstration data|dados demonstrativos/);
-    assert.match(content.projects[1].evidence, /Cometa Olímpico/);
+    assert.match(JSON.stringify(content.projects[1].contributions), /Cometa Olímpico/);
     assert.equal(content.projects[1].media.src, "");
+    assert.deepEqual(content.projects[1].links.map(link => link.url), ["https://instagram.com/projetosoel", "https://www.youtube.com/@projetosoel/featured"]);
+    assert.equal(content.projects[2].links.length, 0);
+    assert.match(content.projects[3].links[0].url, /^https:\/\/docs.google.com\/document\//);
+    assert.match(JSON.stringify(content.projects[1].executive), /241/);
+    assert.match(JSON.stringify(content.projects[1].contributions), /MCP.*Granola/);
+    assert.match(JSON.stringify(content.projects[2].executive), /27/);
+    assert.match(JSON.stringify(content.projects[2].contributions), /ManyChat/);
+    assert.ok(existsSync(join(process.cwd(), "public", content.story.school.src)));
+    assert.equal(content.story.overview.paragraphs.length, 3);
   }
 });

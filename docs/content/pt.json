@@ -74,7 +74,14 @@
         "label": "Negócios, IA e produto",
         "path": "projects/tsugrowth"
       }
-    ]
+    ],
+    "projectOpening": "Abrindo a bancada",
+    "sound": {
+      "enable": "Sons de construção: desligados",
+      "disable": "Sons de construção: ligados",
+      "error": "O som não está disponível neste navegador.",
+      "description": "Toques discretos de tijolo, opcionais. Desligados por padrão, sem música ou áudio contínuo."
+    }
   },
   "storyInvite": {
     "eyebrow": "Existe uma pessoa por trás dos projetos",
@@ -199,7 +206,7 @@
           "link": "research",
           "bullets": [
             "Revisei 20+ artigos e entrevistei oito profissionais da educação para investigar por que dados diagnósticos raramente viram ensino personalizado.",
-            "Desenvolvi a metodologia e o protótipo para professores; a pesquisa definiu o problema e os requisitos que deram origem ao San System.",
+            "Concebi um método de personalização apoiada por IA e construí um protótipo para professores; a pesquisa definiu o problema e os requisitos do San System.",
             "Apresentei o trabalho na ABRIC, recebendo Melhor Projeto em Sociolinguística; submeti-o à FEBRACE e ao Prêmio Jovem Cientista. Submissão não é premiação."
           ]
         }
@@ -212,7 +219,7 @@
         "bullets": [
           "Liderei 35 voluntários em nove times, passando da delegação de tarefas para resultados, responsabilidades semanais, onboarding e revisão cruzada.",
           "Criei cerca de 50 processos documentados, modelos de planilha de tarefas e documentação padronizada; organizei campanhas, materiais de ensino e quatro parcerias.",
-          "Ajudei a ensinar 4 mil estudantes e criar o Cometa Olímpico, livro de astronomia. A nova plataforma TypeScript da organização está em desenvolvimento, não é um ERP público pronto."
+          "Ajudei a ensinar 4 mil estudantes e criar o Cometa Olímpico. Construí o ERP Node.js/TypeScript usado internamente, com adoção variável por cargo; a próxima plataforma segue em preparação."
         ],
         "related": {
           "name": "",
@@ -260,14 +267,11 @@
     "listTitle": "Do problema à estrutura que o sustenta.",
     "back": "Trabalho / Projetos selecionados",
     "caseLabel": "PROJETO",
-    "built": "O que construí",
+    "built": "Resumo executivo",
     "role": "Meu papel",
     "period": "Período",
     "status": "Situação",
-    "evidence": "Evidências",
     "links": "Links",
-    "demo": "Evidência pública",
-    "linksPending": "Sem demonstração pública disponível.",
     "supportingResearch": "Pesquisa por trás do San System",
     "problem": "01 — O problema",
     "contribution": "02 — Minha contribuição",
@@ -277,10 +281,7 @@
     "evolution": "05 — Evolução do projeto",
     "evolutionTitle": "O que aconteceu. O que vem depois.",
     "next": "Próximo projeto",
-    "mediaLabel": "Arquivo do projeto",
     "mediaOpen": "Abrir imagem completa",
-    "mediaPending": "Documentação real, não um mockup.",
-    "mediaNote": "As capturas originais serão incluídas após revisão de privacidade e autorização de publicação.",
     "starLabels": [
       "Situação",
       "Tarefa",
@@ -298,11 +299,13 @@
       "role": "Fundador e Lead Developer",
       "period": "Abr 2026 — hoje",
       "status": "Em desenvolvimento · piloto em uma rede municipal",
-      "built": "Uma plataforma de planejamento com IA que transforma dados educacionais em planos por turma, simulados e relatórios de estudantes.",
-      "evidence": "Painel real do diretor com dados demonstrativos. Apresentação pública do produto no link abaixo.",
-      "links": {
-        "demo": "https://www.sistemasan.com.br/a16z-academy"
-      },
+      "built": "Criei o San System para conectar dados diagnósticos às decisões semanais dos professores. Construí a plataforma por papéis: importação de avaliações, visão por habilidade e estudante, organização curricular e de horários, fluxos de planejamento e materiais estruturados.",
+      "links": [
+        {
+          "label": "Explore o San System",
+          "url": "https://www.sistemasan.com.br/a16z-academy"
+        }
+      ],
       "summary": "Primeiro a pesquisa, depois o software. Investiguei como professores usam dados diagnósticos e construí uma plataforma de planejamento para um piloto na rede pública.",
       "subtitle": "Do dado governamental ao planejamento de cada turma da escola pública.",
       "steps": [
@@ -333,19 +336,27 @@
       "problemTitle": "Planejar para a turma.\nEnxergar cada estudante.",
       "problem": "O planejamento pedagógico precisa conectar informações da rede, necessidades de cada turma e acompanhamento individual. O Sistema San usa IA para automatizar essa preparação e reunir planos, simulados e relatórios em um sistema de gestão.",
       "caveat": "É um piloto, não uma evidência de ganho de aprendizagem ou de tempo economizado. O número de professores é o informado no overview fornecido.",
-      "contributionTitle": "O que construí.",
+      "contributionTitle": "O fluxo que construí, dos dados à sala de aula.",
       "contributions": [
         {
-          "title": "Planejamento com IA",
-          "text": "Construí a plataforma que parte de dados governamentais para gerar planos por turma e simulados."
+          "title": "Investigar a lacuna pedagógica",
+          "text": "Revisei pesquisa educacional e entrevistei profissionais antes de decidir o produto. A questão não era como adicionar IA, mas como dados diagnósticos poderiam mudar a próxima semana de ensino. Isso orientou requisitos e protótipo."
         },
         {
-          "title": "Acompanhamento individual",
-          "text": "Integrei relatórios individuais ao planejamento pedagógico. Exemplos públicos dependem de anonimização e autorização."
+          "title": "Importar avaliações e torná-las utilizáveis",
+          "text": "Construí importações e estados de processamento de arquivos de avaliação, com painéis por turma, habilidade e estudante. Separei resultados ausentes/não avaliados de dificuldades para não confundir falta de dado com desempenho baixo."
         },
         {
-          "title": "Gestão por papel",
-          "text": "Estruturei a API REST, persistência em PostgreSQL e permissões distintas para professores, coordenadores e diretores."
+          "title": "Conectar currículo, horários e planejamento",
+          "text": "Construí fluxos por papel, grade e uma jornada de seis etapas para o professor: contexto, tempos disponíveis, objetivos, tipos de sessão, outlines semanais e revisão. Validações evitam reservas sobrepostas; coordenação e direção têm responsabilidades próprias de revisão e acompanhamento."
+        },
+        {
+          "title": "Transformar livros em contexto estruturado",
+          "text": "Construí upload privado de PDFs, extração de texto, processamento por trechos, estados/checkpoints e validação de JSON pedagógico de unidades, questões e habilidades. Isso prepara contexto reutilizável para planejar; não afirma que todo PDF escaneado ou toda geração de IA funciona."
+        },
+        {
+          "title": "Fechar o ciclo de ensino com cuidado",
+          "text": "Construí superfícies de planejamento, aprovação e acompanhamento e desenhei o próximo ciclo: diagnosticar, alinhar currículo, apoiar ensino e revisitar resultados. Mantenho revisão do educador e separo fluxos implementados das integrações e medições de aprendizagem ainda por vir."
         }
       ],
       "media": {
@@ -355,16 +366,16 @@
       },
       "stack": [
         {
-          "title": "TypeScript + Vue + Node",
-          "text": "Aplicação, API e fluxos escolares."
+          "title": "TypeScript · Vue · Node.js",
+          "text": "Aplicação por papéis, API e fluxos operacionais da escola."
         },
         {
-          "title": "Dados + currículo + planejamento",
-          "text": "Conectar avaliações e contexto curricular à preparação e ao acompanhamento das aulas."
+          "title": "Avaliações + JSON pedagógico estruturado",
+          "text": "Importações determinísticas, visões de turma/estudante e contexto didático reutilizável."
         },
         {
-          "title": "Papéis escolares + decisão humana",
-          "text": "Responsabilidades distintas para professor, coordenador e direção; a IA apoia a decisão do educador."
+          "title": "Fila de processamento + revisão humana",
+          "text": "Estados e checkpoints, validação antes do reuso e controle do educador sobre o planejamento."
         }
       ],
       "timeline": [
@@ -394,22 +405,33 @@
         "Ajudar professores a transformar lacunas nas aulas da semana.",
         "Pesquisei o problema, entrevistei educadores e construí o San System.",
         "Piloto na rede pública; expansão e medição de impacto são próximos passos."
+      ],
+      "executive": [
+        "Professores já tinham resultados de avaliação e indicadores da rede, mas transformar esses dados no que ensinar em seguida era um trabalho fragmentado. Minha pesquisa começou em abril de 2025 com revisão e entrevistas; o San System transforma esse método em um fluxo escolar prático.",
+        "O professor consulta necessidades da turma e dos estudantes, seleciona tempos da grade, define objetivos e prepara um plano semanal para revisão. Coordenação e direção têm visões próprias para acompanhar, aprovar e organizar. O sistema combina processamento determinístico de avaliações com contexto curricular e materiais estruturados.",
+        "Construí a plataforma TypeScript/Vue/Node e a pipeline que organiza PDFs didáticos municipais em JSON pedagógico validado. A apresentação pública mostra telas reais com dados demonstrativos. O piloto com 15+ professores é escopo informado, não ganho de aprendizagem medido; o ciclo completo de personalização segue em desenvolvimento e validação."
       ]
     },
     {
       "slug": "soel",
       "name": "SOEL",
-      "badge": "Em desenvolvimento · nova plataforma",
+      "badge": "Iniciativa ativa · próxima plataforma em preparo",
       "role": "Fundador · liderança e tecnologia",
       "period": "Jan 2025 — hoje",
-      "status": "Em desenvolvimento · organização ativa; nova plataforma em preparação",
-      "built": "A estrutura de operação da SOEL: onboarding, campanhas, modelos de tarefas, cerca de 50 processos documentados e materiais de ensino. A nova plataforma TypeScript está em preparação.",
-      "evidence": "Material didático: Cometa Olímpico, livro de astronomia que criamos. As capturas antigas do ERP não estão mais disponíveis.",
-      "links": {
-        "demo": ""
-      },
-      "summary": "Construí a estrutura de gestão voluntária de uma iniciativa educacional: pessoas, processos, parcerias e materiais de ensino. A próxima plataforma está em desenvolvimento.",
-      "subtitle": "Sociedade Olímpica de Estudos e Liderança. Construir a estrutura que ajuda voluntários a ensinar.",
+      "status": "Em desenvolvimento · iniciativa ativa; ERP interno em uso; próxima plataforma em preparação",
+      "built": "Fundei a SOEL para transformar oportunidades acadêmicas em um caminho que estudantes realmente consigam percorrer. Lidero pessoas, programas de aprendizagem e sistemas internos: 35 voluntários, nove times, cerca de 50 processos documentados e quatro parcerias.",
+      "links": [
+        {
+          "label": "Instagram",
+          "url": "https://instagram.com/projetosoel"
+        },
+        {
+          "label": "YouTube",
+          "url": "https://www.youtube.com/@projetosoel/featured"
+        }
+      ],
+      "summary": "Construí uma comunidade educacional e sua operação: onboarding, mentorias, clubes, campanhas e ERP em Node.js/TypeScript. A próxima plataforma está em preparação.",
+      "subtitle": "Pessoas primeiro. Sistemas para ensinar, liderar e encontrar a próxima oportunidade.",
       "steps": [
         "Pessoas",
         "Processos documentados",
@@ -437,39 +459,47 @@
       ],
       "problemTitle": "Acesso não se sustenta\nsó com uma boa aula.",
       "problem": "A SOEL apoia estudantes da escola pública no caminho até as olimpíadas. Sustentar uma organização voluntária de ensino também exige lideranças, responsabilidades claras, documentação e rotinas.",
-      "caveat": "Os 4 mil correspondem a estudantes ensinados, não alcance. A organização está ativa; a próxima plataforma está em preparação e não tem demo pública. Quatro parcerias, nove times e cerca de 50 processos são o escopo atual informado.",
-      "contributionTitle": "Construir a estrutura de operação da equipe.",
+      "caveat": "4 mil estudantes ensinados não são o mesmo que os 241 membros das comunidades ou alcance online. O ERP interno existe e tem adoção desigual; a próxima plataforma segue em desenvolvimento.",
+      "contributionTitle": "O trabalho por trás da comunidade.",
       "contributions": [
         {
-          "title": "Onboarding e responsabilidades",
-          "text": "Desenhei onboarding, responsabilidades semanais, delegação por resultado e revisão cruzada para voluntários contribuírem mesmo com tempo limitado."
+          "title": "Liderança, onboarding e desenvolvimento",
+          "text": "Desenhei uma jornada estruturada de onboarding, defini responsabilidades e troquei tarefas isoladas por resultados combinados. Trabalho com líderes em metas semanais, feedback e desenvolvimento profissional para voluntários aprenderem enquanto entregam."
         },
         {
-          "title": "Campanhas e documentação",
-          "text": "Criei modelos de planilha de tarefas e um formato comum de processos; organizei campanhas e cerca de 50 processos documentados em nove times."
+          "title": "Campanhas e modelo comum de operação",
+          "text": "Criei cerca de 50 documentos de processo, planilhas de tarefas e rotinas de produção e revisão cruzada em nove times. Organizo campanhas e quatro parcerias para a entrega educacional não depender de alguém lembrar sozinho de cada etapa."
         },
         {
-          "title": "Ensino e próxima plataforma",
-          "text": "Ajudei a ensinar 4 mil estudantes, estabelecer quatro parcerias e criar o Cometa Olímpico. A próxima plataforma TypeScript está em preparo, não é apresentada como concluída."
+          "title": "Comunidades, clubes e mentorias",
+          "text": "Construí quatro comunidades com 241 estudantes, um sistema de clubes e quatro programas de mentoria. A mentoria para a Olimpíada de Neurociência conectou 20 participantes a uma pós-graduanda em neurociência. Ajudei a criar o Cometa Olímpico, livro de astronomia, entre os materiais de ensino."
+        },
+        {
+          "title": "Treinamento em IA para lideranças",
+          "text": "Ensino líderes a usar Claude, skills reutilizáveis e integrações MCP, além de transformar notas de reunião em informação utilizável com Granola. O objetivo é automatizar preparação e documentação repetitivas, mantendo a responsabilidade humana."
+        },
+        {
+          "title": "Site, ERP interno e próxima plataforma",
+          "text": "Construí o site e um ERP em Node.js/TypeScript para a organização interna. A adoção varia por cargo: alguns usam com frequência, outros pontualmente. Essas lições orientam a próxima plataforma, sem apresentar uma ferramenta interna como produto público concluído."
         }
       ],
       "media": {
         "src": "",
-        "alt": "Cometa Olímpico",
-        "caption": "Livro de astronomia que criamos como material de ensino. O arquivo do livro não está publicado aqui; as capturas antigas do sistema da SOEL não estão mais disponíveis."
+        "alt": "",
+        "caption": ""
       },
       "stack": [
         {
-          "title": "TypeScript",
-          "text": "Direção tecnológica da próxima plataforma, atualmente em preparação."
+          "title": "Node.js + TypeScript",
+          "text": "Site e ERP interno, com a próxima plataforma em preparação."
         },
         {
-          "title": "Templates + padrões de processo",
-          "text": "Planilhas de tarefas, guias de onboarding, etapas de revisão e documentação compartilhada."
+          "title": "Claude + skills + MCP",
+          "text": "Formação de líderes e trabalho assistido por IA reutilizável, com revisão humana."
         },
         {
-          "title": "Gestão de voluntários",
-          "text": "Nove times, responsabilidades semanais e campanhas orientadas a resultados."
+          "title": "Granola + fluxos documentados",
+          "text": "Informação de reuniões, templates de tarefas, onboarding e revisão cruzada."
         }
       ],
       "timeline": [
@@ -486,7 +516,7 @@
         {
           "date": "2025",
           "title": "Construir a estrutura",
-          "text": "Desenvolvimento de rotinas de liderança, documentação padronizada e ferramentas internas."
+          "text": "Construção de rotinas, materiais de ensino, site e ERP interno; aprendizado de que adoção exige liderança, não só software."
         },
         {
           "date": "Hoje",
@@ -499,22 +529,24 @@
         "Tornar onboarding, campanhas e entregas semanais repetíveis.",
         "Padronizei cerca de 50 processos em nove times e criei materiais de ensino.",
         "4 mil ensinados e quatro parcerias; próxima plataforma em preparo."
+      ],
+      "executive": [
+        "A SOEL conecta estudantes a olimpíadas, pesquisa, estágios e summer programs. Quatro comunidades reúnem 241 estudantes, com clubes e quatro programas de mentoria. O trabalho mais amplo de ensino soma 4 mil estudantes ensinados — medida diferente de membros das comunidades ou alcance em redes.",
+        "Meu trabalho inclui recrutar e integrar voluntários, formar líderes, desenhar campanhas, padronizar documentação e construir o site e o ERP em Node.js/TypeScript. Alguns cargos usam o ERP com frequência; outros, pontualmente. Preparo a próxima plataforma enquanto desenvolvo a própria organização.",
+        "Uma lição central: software sozinho não resolve engajamento voluntário. Passei a trabalhar com resultados claros, responsabilidades semanais e desenvolvimento de lideranças, incluindo treinamento em IA para reduzir trabalho repetitivo."
       ]
     },
     {
       "slug": "tsugrowth",
       "name": "Tsugrowth / EVER",
-      "badge": "Em desenvolvimento · EVER",
+      "badge": "Em desenvolvimento · EVER em construção",
       "role": "Estagiário de Estratégia e Inovação",
       "period": "Ago 2026 — hoje",
-      "status": "Em desenvolvimento · fluxo de patrocínio construído; EVER em andamento",
-      "built": "Um fluxo de patrocínio de seis etapas, quatro ferramentas e nove skills reutilizáveis: 56 marcas pesquisadas, 261 ideias, 12 decks e apoio a três parcerias fechadas. O EVER segue em desenvolvimento.",
-      "evidence": "Descrição pública do fluxo no link abaixo; materiais internos de clientes e do produto permanecem privados.",
-      "links": {
-        "demo": "https://app.notion.com/p/a16z-Cruise-Proposal-System-at-Tsu-Growth-40ea8e325cad814aaed0d91505c3b279"
-      },
+      "status": "Em desenvolvimento · fluxo de patrocínio em uso; EVER em desenvolvimento; ferramenta de mensagens em construção",
+      "built": "Na Tsugrowth, transformo problemas de negócio pouco definidos em pesquisa, regras de operação e ferramentas. Construí um fluxo de IA com revisão humana para propostas de patrocínio em cruzeiros, lidero o produto EVER e desenvolvo uma ferramenta interna de mensagens e automação para influenciadores e agentes sociais dos navios.",
+      "links": [],
       "summary": "Transformei um processo manual de patrocínio em um fluxo de IA com revisão humana e levei a mesma disciplina de produto à operação de campo do EVER.",
-      "subtitle": "Duas frentes, um papel: transformar pesquisa e estratégia em sistemas executáveis.",
+      "subtitle": "Da pesquisa comercial às propostas, à operação de campo e às ferramentas internas.",
       "steps": [
         "Pesquisa de campo",
         "Estratégia",
@@ -543,38 +575,50 @@
       "problemTitle": "Da oportunidade comercial\nà execução em campo.",
       "problem": "Na Tsugrowth, atuo em duas frentes distintas. A primeira é um pipeline de patrocínio para ativações de marcas em cruzeiros. A segunda é o EVER: uma plataforma de execução de varejo com app Android offline-first e portal web.",
       "caveat": "Os ~R$30M são uma estimativa de valor potencial do pipeline de patrocínio, nunca receita fechada ou receita do EVER. O piloto de 20 usuários estava previsto para novembro de 2026, não foi informado como concluído.",
-      "contributionTitle": "Estratégia vira especificação. Especificação orienta produto.",
+      "contributionTitle": "Três frentes. Minha responsabilidade em cada uma.",
       "contributions": [
         {
-          "title": "Pesquisa → ativação → deck",
-          "text": "Desenhei seis etapas, quatro ferramentas e nove skills. A pesquisa alimenta um documento intermediário, restrições do navio e exclusividade filtram ideias, e a revisão humana vem antes do deck final."
+          "title": "Pesquisar e desenhar o fluxo de patrocínio",
+          "text": "Substituí pesquisa dispersa, planilhas e decks manuais por um caminho repetível da marca candidata à proposta. Estruturei briefing, aderência de público e ideias de ativação; incorporei restrições do navio e exclusividade de categoria, mantendo decisão humana antes da apresentação final."
         },
         {
-          "title": "Execução comercial",
-          "text": "Pesquisei 56 marcas, estruturei 261 ideias e produzi 12 decks apoiando três parcerias fechadas. A CEO decide preço e negociação; o gerente nacional valida propostas. Entrega pós-venda e renovação não são resultados comprovados."
+          "title": "Construir ferramentas, revisão e conhecimento reutilizável",
+          "text": "Construí quatro ferramentas interativas de IA e nove skills em um fluxo de seis etapas, incluindo uma via rápida. Criei um documento intermediário para pesquisa, ideias, comentários e restrições sobreviverem entre etapas em vez de ficarem em conversas pessoais."
         },
         {
-          "title": "EVER · operação em campo",
-          "text": "Lidero o produto Android offline-first e portal web: transformar rotinas de campo em coleta de dados utilizável, trabalho por papéis e regras operacionais. O escopo prevê 14 mil colaboradores, não uma implantação concluída."
+          "title": "Operar o fluxo comercial",
+          "text": "Pesquiso marcas, seleciono e refino ativações e produzo decks no dia a dia. O fluxo apoiou 56 marcas, 261 ideias, 12 decks e três parcerias. Não atribuo a mim as decisões de fechamento nem trato pipeline como receita; ativação pós-venda e renovação são trabalhos separados."
+        },
+        {
+          "title": "EVER · entender o campo antes do código",
+          "text": "Mapeio como promotores, supervisores e equipes centrais trabalham nas lojas. Defino visitas, agendas, pesquisas, fotos, permissões e exceções como fluxos, regras documentadas e máquinas de estado, não apenas uma coleção de telas."
+        },
+        {
+          "title": "EVER · Android, portal e gestão por exceção",
+          "text": "Lidero o desenvolvimento de um app Android com operação offline para promotores e supervisores, junto a um portal por cargo. O protótipo prevê cadastros/importações, agenda, check-in/out por proximidade, pesquisas/fotos e regras SE/ENTÃO que criam ocorrências com prazo e escalonamento. Sincronização offline e validação em campo são marcos de desenvolvimento, não resultados comprovados em produção."
+        },
+        {
+          "title": "Mensagens e operação social nos cruzeiros",
+          "text": "Desenvolvo uma plataforma interna de mensagens e automação, semelhante em propósito ao ManyChat, para influenciadores e agentes sociais dos cruzeiros. É uma frente solicitada separada, não um lançamento público nem a afirmação de que os recursos do ManyChat já estão implementados."
         }
       ],
       "media": {
         "src": "",
-        "alt": "Trabalho em empresa · materiais privados",
-        "caption": "O EVER está em desenvolvimento. Interfaces internas e materiais de clientes não são publicados aqui."
+        "alt": "",
+        "caption": ""
       },
       "stack": [
         {
-          "title": "Pipeline de agentes de IA",
-          "text": "Automação de pesquisa e propostas de patrocínio."
+          "title": "Fluxo de IA + aprovação humana",
+          "text": "Quatro ferramentas, nove skills, briefings estruturados e revisão antes de propostas saírem da equipe."
         },
         {
-          "title": "Android offline-first + web",
-          "text": "Execução de varejo em campo e gestão, com motor de regras em tempo real no escopo."
+          "title": "TypeScript · Android + web",
+          "text": "App de campo somente Android e portal por cargo são a direção de desenvolvimento. Escolhas propostas de infraestrutura não são apresentadas como entregues."
         },
         {
-          "title": "Multi-tenant + row-level security",
-          "text": "Isolamento por organização e controle de acesso na arquitetura do produto."
+          "title": "Offline + regras + escalonamento",
+          "text": "A arquitetura conecta coleta em campo a exceções SE/ENTÃO, prazos e ação do supervisor. Offline real e comportamento em campo seguem como marcos de validação."
         }
       ],
       "timeline": [
@@ -594,9 +638,9 @@
           "text": "Liderança de produto a partir das regras e máquinas de estado documentadas."
         },
         {
-          "date": "Nov 2026 · previsto",
-          "title": "Piloto com 20 usuários",
-          "text": "Piloto planejado; não são afirmados conclusão ou resultados."
+          "date": "27 nov 2026 · previsto",
+          "title": "Piloto com até 20 usuários",
+          "text": "Validar o fluxo Android em campo antes de expandir; não informado como concluído."
         }
       ],
       "star": [
@@ -604,6 +648,11 @@
         "Criar um fluxo comercial repetível e atento às restrições.",
         "Construí ferramentas e skills com revisão humana e liderei o produto EVER.",
         "12 decks e apoio a três parcerias; EVER em desenvolvimento."
+      ],
+      "executive": [
+        "O trabalho de patrocínio começa antes do deck: pesquisar uma marca, entender seu público, desenvolver uma ativação viável no navio, verificar restrições e exclusividade de categoria e preparar a proposta para aprovação humana. Desenhei um fluxo de seis etapas, quatro ferramentas, nove skills e uma Express Lane para propostas rápidas.",
+        "O fluxo apoiou 56 marcas pesquisadas, 261 ideias estruturadas, 12 decks e três parcerias fechadas. Cerca de US$5 mi (~R$30M) são estimativa de pipeline de propostas, não receita. Desenho e opero o sistema; a CEO responde por preço e negociação, e o gerente nacional valida as propostas.",
+        "O EVER é outro produto, em desenvolvimento: app Android e portal web para execução no varejo. Lidero descoberta, escopo e tradução das rotinas de campo em software. O escopo prevê 14 mil colaboradores; um piloto com até 20 usuários está planejado para 27 de novembro de 2026, não é uma implantação concluída."
       ]
     },
     {
@@ -613,12 +662,14 @@
       "role": "Pesquisador e autor",
       "period": "Abr 2025 — origem da pesquisa",
       "status": "Pesquisa e protótipo concluídos · base do Sistema San",
-      "built": "Revisão bibliográfica, entrevistas com profissionais escolares, metodologia para diagnosticar lacunas de aprendizagem e protótipo para professores que deram origem ao San System.",
-      "evidence": "Documento original da pesquisa no link abaixo. Submissão à FEBRACE e ao Prêmio Jovem Cientista; reconhecimento na ABRIC é separado.",
-      "links": {
-        "demo": "https://docs.google.com/document/d/1US0CUUABJybrBuTdktma0X5bFz81u7NNRLZ3p7aEKKA/edit"
-      },
-      "summary": "Revisão bibliográfica, entrevistas com profissionais escolares, metodologia para diagnosticar lacunas de aprendizagem e protótipo para professores que deram origem ao San System.",
+      "built": "Desenvolvi um método de personalização da educação com IA: conectar diagnóstico de aprendizagem, objetivos curriculares e contexto didático a um plano que o educador possa revisar e adaptar. O trabalho inclui revisão bibliográfica, entrevistas e protótipo para professores; deu origem ao San System.",
+      "links": [
+        {
+          "label": "Ler a pesquisa",
+          "url": "https://docs.google.com/document/d/1US0CUUABJybrBuTdktma0X5bFz81u7NNRLZ3p7aEKKA/edit"
+        }
+      ],
+      "summary": "Concebi um método de personalização apoiada por IA, fundamentado em literatura e entrevistas. Construí um protótipo para professores e desenvolvi a ideia no San System.",
       "subtitle": "Investigar o desempenho escolar. Traduzir a análise em uma ferramenta para professores.",
       "steps": [
         "Revisão bibliográfica",
@@ -646,27 +697,31 @@
         "Pesquisa → San System"
       ],
       "problemTitle": "A análise precisa chegar\na quem ensina.",
-      "problem": "Revisão bibliográfica, entrevistas com profissionais escolares, metodologia para diagnosticar lacunas de aprendizagem e protótipo para professores que deram origem ao San System.",
+      "problem": "O ponto de partida era pedagógico, não um algoritmo: existem dados de avaliação, mas o professor ainda precisa decidir o que retomar, quais habilidades priorizar e como ensinar uma turma com necessidades diferentes. Investiguei como a IA poderia apoiar esse raciocínio sem substituir o professor.",
       "caveat": "Submissões a prêmios não são vitórias. A pesquisa é a base do San System, não uma afirmação separada de impacto de aprendizagem medido.",
       "contributionTitle": "Da metodologia ao primeiro protótipo.",
       "contributions": [
         {
-          "title": "Investigar",
-          "text": "Revisei 20+ artigos e entrevistei oito profissionais da educação para investigar por que dados diagnósticos raramente viram ensino personalizado."
+          "title": "Definir o problema educacional",
+          "text": "Usei literatura e entrevistas para ligar limites no uso de dados às restrições reais de planejamento. Revisei 20+ artigos e conversei com oito profissionais da educação."
         },
         {
-          "title": "Prototipar",
-          "text": "Desenvolvi a metodologia e o protótipo para professores; a pesquisa definiu o problema e os requisitos que deram origem ao San System."
+          "title": "Conceber o método de personalização",
+          "text": "Desenhei a relação entre lacunas diagnósticas, currículo e contexto de ensino, com revisão e adaptação pelo educador. O método — não só o protótipo — é a contribuição central da pesquisa."
         },
         {
-          "title": "Apresentar e submeter",
-          "text": "Apresentei o trabalho na ABRIC, recebendo Melhor Projeto em Sociolinguística; submeti-o à FEBRACE e ao Prêmio Jovem Cientista. Submissão não é premiação."
+          "title": "Prototipar o fluxo do professor",
+          "text": "Construí um protótipo para tornar o método concreto e orientar requisitos. Ele deu origem ao San System, sem se tornar uma alegação separada de implantação em escala."
+        },
+        {
+          "title": "Apresentar, submeter e desenvolver no San",
+          "text": "Apresentei na ABRIC, recebi Melhor Projeto em Sociolinguística e submeti à FEBRACE e ao Prêmio Jovem Cientista. Levei a pesquisa aos fluxos práticos de planejamento, dados e papéis escolares do San System."
         }
       ],
       "media": {
         "src": "",
-        "alt": "Arquivo da pesquisa",
-        "caption": "O pôster e o protótipo não estão disponíveis publicamente aqui. O trabalho deu origem ao Sistema San."
+        "alt": "",
+        "caption": ""
       },
       "stack": [
         {
@@ -704,7 +759,12 @@
           "text": "Transformar a direção de pesquisa em um produto de planejamento pedagógico."
         }
       ],
-      "star": []
+      "star": [],
+      "executive": [
+        "O ponto de partida era pedagógico, não um algoritmo: existem dados de avaliação, mas o professor ainda precisa decidir o que retomar, quais habilidades priorizar e como ensinar uma turma com necessidades diferentes. Investiguei como a IA poderia apoiar esse raciocínio sem substituir o professor.",
+        "Revisei 20+ artigos, entrevistei oito profissionais e concebi um método que conecta diagnóstico, currículo e contexto de ensino. O protótipo tornou o método concreto para professores; o San System virou o produto para desenvolvê-lo em um fluxo escolar.",
+        "Apresentei a pesquisa na ABRIC, recebendo Melhor Projeto em Sociolinguística, e a submeti à FEBRACE e ao Prêmio Jovem Cientista. Essas submissões são diferentes de premiações. A pesquisa não estabelece ganho causal de aprendizagem nem implantação nacional concluída."
+      ]
     }
   ],
   "olympiads": {
@@ -791,55 +851,69 @@
     },
     "chapters": [
       {
-        "date": "Na adolescência",
-        "label": "Construção · família",
-        "title": "Antes dos sistemas, vieram as paredes.",
-        "text": "Desde adolescente, trabalhei em construção para ajudar meus pais: carregando piso, virando massa e construindo espaços, em trabalhos externos e na nossa casa. Dividimos nossa casa para alugar mais de três vezes. Em quase todas essas mudanças, construí meu próprio quarto.",
-        "note": "É daí que vem o modelo de construção deste site. Não é só uma metáfora visual."
+        "date": "Infância",
+        "label": "Curiosidade · construção",
+        "title": "Outro tipo de construtor.",
+        "text": "Aos dez anos, eu não sabia nomear a profissão que queria. Sabia que queria construir algo novo, explicar e ver crescer. Trabalhar com meu pai tornou a construção concreta: carregar materiais, virar massa, assentar pisos e construir meu próprio quarto conforme nossa casa mudava. Código, vídeos e gestão viraram outro conjunto de ferramentas.",
+        "note": "A linguagem de construção deste site vem de trabalho real, não apenas de uma metáfora."
       },
       {
-        "date": "Construindo uma base",
-        "label": "Autonomia · oportunidade",
-        "title": "Os materiais mudaram. O propósito continuou.",
-        "text": "Por muito tempo, vivi sem tanta estrutura para correr atrás de alguns sonhos. Talvez seja por isso que eu goste de criar estrutura para mim e para os outros. Meus pais construíram com tijolo, massa e, às vezes, drywall. Na programação, na educação e na liderança, encontrei outra forma de construir.",
+        "date": "Aprender a ser ouvido",
+        "label": "Prática · comunicação",
+        "title": "Uma voz construída na prática.",
+        "text": "Falar com confiança não veio naturalmente. Estudei discursos em português e inglês, pratiquei ritmo, participei de Model UN, fiz apresentações e ensinei programação. Nenhum momento mudou tudo. Guardei as abordagens que ajudavam e construí caminhos em volta da dificuldade.",
         "note": ""
       },
       {
-        "date": "Fim de 2023",
-        "label": "Perguntas · organizações",
-        "title": "Perguntar a quem já estava construindo.",
-        "text": "Conversas com fundadores no Rio Innovation Week ajudaram a dar forma aos primeiros desenhos da SOEL: uma organização voltada à educação e às olimpíadas.",
-        "note": "Concepção no fim de 2023; fundação formal em janeiro de 2025."
+        "date": "Escola pública",
+        "label": "Acesso · iniciativa",
+        "title": "Talento não era o material que faltava.",
+        "text": "Viver no ambiente de uma escola pública mostrou quanto a oportunidade depende de saber que um caminho existe — e ter onde trabalhar por ele. Encontrei tempo de estudo na secretaria, estudei química e programação, comecei a ensinar e investigar como escolas poderiam usar melhor os dados.",
+        "note": "A experiência orientou a SOEL e as perguntas por trás do San System."
       },
       {
-        "date": "2024",
-        "label": "Ensino médio · olimpíadas",
-        "title": "Transformar curiosidade em prática.",
-        "text": "As olimpíadas se tornaram uma forma de estudar a fundo e encontrar novos caminhos. Matemática, astronomia e química fazem parte dessa base; economia é o foco de hoje.",
-        "note": ""
+        "date": "Preparação olímpica",
+        "label": "Química · iniciativa",
+        "title": "Encontrar o laboratório. Construir a rota.",
+        "text": "Preparar olimpíadas internacionais de química exigiu procurar além dos recursos próximos. Contatei universidades, institutos e escolas para encontrar prática de laboratório. Não era só estudar uma matéria: era aprender a pedir acesso e aproveitar a oportunidade.",
+        "note": "Depois, uma bolsa e o alojamento estudantil trouxeram mais estrutura e uma comunidade de pessoas com ambições diferentes."
       },
       {
         "date": "2025",
-        "label": "Liderança · prioridades",
-        "title": "Construir algo que dure além de uma pessoa.",
-        "text": "Na SOEL, organizei onboarding, lideranças, campanhas e cerca de 50 processos documentados enquanto ensinava e construía ferramentas internas. Também entrei no Prep Program da Fundação Estudar.",
+        "label": "SOEL · liderança",
+        "title": "Software não era a resposta inteira.",
+        "text": "Fundei a SOEL para aproximar estudantes de oportunidades e aprendi que divulgar informação não bastava. Liderar voluntários com poucas horas semanais exigia cultura, onboarding, mentoria e resultados claros. Construí um ERP, mas a adoção variou: uma ferramenta não substituía liderança nem um modelo de organização que funcionasse.",
+        "note": "A pergunta passou de “o que consigo construir?” para “do que essa equipe realmente precisa?”"
+      },
+      {
+        "date": "2025–26",
+        "label": "Pesquisa · San System",
+        "title": "De uma pergunta a um fluxo escolar.",
+        "text": "Investiguei como a IA poderia ajudar professores a transformar dados diagnósticos em ensino, concebi um método de personalização e um protótipo e construí o San System. O produto conecta dados, currículo e planejamento, mantendo o educador no controle. Continua em desenvolvimento e validação.",
         "note": ""
       },
       {
-        "date": "2026",
-        "label": "Pesquisa · produto · estratégia",
-        "title": "Da pesquisa à escola. Da escola a novos sistemas.",
-        "text": "A pesquisa em educação virou o San System. Conquistei prata e Top 20 nacional na OBECON e entrei na Tsugrowth para atuar em estratégia e produto. Educação pública, IA e sistemas úteis conectam o trabalho.",
-        "note": "A equipe brasileira na Mendeleev faz parte da trajetória, não do foco profissional atual."
-      },
-      {
-        "date": "2027",
-        "label": "Horizonte · objetivos",
-        "title": "O próximo trecho ainda está em construção.",
-        "text": "Buscar a IEO 2027 e ampliar o piloto do Sistema San são objetivos. Estudar Business e Computer Science é a próxima direção que quero explorar.",
-        "note": "Objetivos não são apresentados como conquistas concluídas."
+        "date": "Hoje",
+        "label": "Negócios · próximos passos",
+        "title": "Continuar construindo. Perguntar melhor.",
+        "text": "Na Tsugrowth, trabalho com propostas apoiadas por IA, EVER e ferramentas internas. Quero aprender a testar decisões antes que custem tempo ou confiança da equipe: entender o problema, construir, medir e ajustar. Os materiais mudaram, mas continuo querendo criar a estrutura para as pessoas avançarem.",
+        "note": "IEO e IOAI seguem como objetivos. O próximo capítulo não é uma conquista concluída."
       }
-    ]
+    ],
+    "overview": {
+      "eyebrow": "A história, em resumo",
+      "title": "Construir uma voz. Depois, coisas úteis.",
+      "paragraphs": [
+        "Aprendi a construir com o que estava disponível: ajudando em obras, criando espaço para estudar e aprendendo a transformar ideias em algo útil. Durante anos, também trabalhei minha confiança para falar — com prática, apresentações, ensino e conversa.",
+        "Viver no ambiente de uma escola pública tornou concreta a distância entre talento e acesso. Olimpíadas abriram um caminho, mas encontrar mentores, estrutura de estudo e prática de laboratório exigiu iniciativa. Comecei a SOEL para outros estudantes não precisarem descobrir cada etapa sozinhos.",
+        "Hoje, a mesma pergunta conecta meu trabalho: que estrutura está faltando? A pesquisa virou San System; a liderança voluntária mostrou que software nem sempre é a resposta; na Tsugrowth, aplico esses aprendizados a fluxos de negócio e produtos."
+      ]
+    },
+    "school": {
+      "src": "/images/escola-rui-carneiro.webp",
+      "alt": "Fachada azul da Escola Rui Carneiro da Cunha, com mural de crianças lendo junto à rua",
+      "caption": "Escola Rui Carneiro da Cunha · foto fornecida para esta história."
+    }
   },
   "contact": {
     "eyebrow": "05 — Contato",
