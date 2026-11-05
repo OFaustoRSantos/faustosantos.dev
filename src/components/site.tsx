@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type { CSSProperties, ReactNode } from "react";
 import { getContent, href, routePath, type Content, type Locale, type Project, type Route } from "../lib/content";
-import { Header, Motion, PrintButton } from "./controls";
+import { ExperienceRail, Header, Motion, PrintButton } from "./controls";
 import { BrandMark } from "./brand-mark";
 import { MotionToggle, Opening } from "./construction-motion";
 import { BrickDivider, ConstructionSections } from "./construction-sections";
@@ -91,18 +91,27 @@ function StoryInvitation({ content, locale }: { content: Content; locale: Locale
 }
 
 function Experience({ content, locale, expanded = false }: { content: Content; locale: Locale; expanded?: boolean }) {
+  const cards = content.experience.items.flatMap((item) => [<article className="experience-card" key={item.name}>
+    <p className="micro experience-date">{item.date}</p>
+    <h3>{item.slug ? <a href={href(locale, `projects/${item.slug}`)}>{item.name}<span aria-hidden="true"> ↗</span></a> : item.name}</h3>
+    <p className="role">{item.role}</p>
+    <ul className="experience-bullets">{item.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>
+    {item.related.name && <a className="research-bridge" href={href(locale, `projects/${item.related.link}`)}>{content.work.researchStage}<span aria-hidden="true"> ↗</span></a>}
+  </article>, ...(item.related.name ? [<article className="experience-card research-foundation" key={item.related.name}>
+    <p className="micro">{item.related.date}</p><h3><a href={href(locale, `projects/${item.related.link}`)}>{item.related.name}<span aria-hidden="true"> ↗</span></a></h3>
+    <p className="role">{content.work.researchStage}</p>
+    <ul className="experience-bullets">{item.related.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>
+    <a className="research-bridge" href={href(locale, "projects/sistema-san")}>San System<span aria-hidden="true"> ↗</span></a>
+  </article>] : [])]);
   return <section id="experience" className="section experience-section">
-    <div className="container split-layout">
+    <div className="container">
       <Reveal className="section-intro">
         <Eyebrow>{content.experience.eyebrow}</Eyebrow>
         <h2>{content.experience.title}</h2>
         <p>{content.experience.description}</p>
         {expanded && <a className="text-link intro-link" href={href(locale, "story")}>{content.nav.story}<span aria-hidden="true">→</span></a>}
       </Reveal>
-      <div className="experience-list">{content.experience.items.map((item, index) => <Reveal className="experience-item" key={item.name} index={index}>
-        <p className="micro experience-date">{item.date}</p>
-        <div><h3>{item.name}</h3><p className="role">{item.role}</p><p>{item.description}</p></div>
-      </Reveal>)}</div>
+      {expanded ? <ExperienceRail text={content.experience}>{cards}</ExperienceRail> : <div className="experience-grid">{cards}</div>}
     </div>
   </section>;
 }
@@ -118,19 +127,30 @@ function ConstructionOrigin({ text }: { text: Content["construction"]["origin"] 
 
 function ProjectCard({ project, index, locale, text }: { project: Project; index: number; locale: Locale; text: Content["work"] }) {
   return <Reveal index={index} className="project-card">
-    <div className="card-top"><span className="micro">{String(index + 1).padStart(2, "0")}</span><span className="badge">{project.badge}</span></div>
+    <div className="card-top"><span className="badge">{project.badge}</span></div>
     <h3><a href={href(locale, `projects/${project.slug}`)}>{project.name}<span className="card-arrow" aria-hidden="true">↗</span></a></h3>
     <p className="card-summary">{project.summary}</p>
+    <dl className="project-star">{project.star.map((step, i) => <div key={step}><dt>{text.starLabels[i]}</dt><dd>{step}</dd></div>)}</dl>
+    {project.slug === "sistema-san" && <a className="research-bridge" href={href(locale, "projects/research")}><span className="micro">{text.researchStage}</span>{text.researchLink}<span aria-hidden="true"> ↗</span></a>}
     <Metrics items={project.metrics} />
     <ul className="tags" aria-label={locale === "en" ? "Technologies & methods" : "Tecnologias e métodos"}>{project.tags.map((tag) => <li key={tag}>{tag}</li>)}</ul>
     <a className="card-case-link" href={href(locale, `projects/${project.slug}`)}>{text.case}<span aria-hidden="true"> →</span><span className="sr-only"> — {project.name}</span></a>
   </Reveal>;
 }
 
-const featuredProjectSlugs = ["soel", "sistema-san", "tsugrowth"];
+const featuredProjectSlugs = ["tsugrowth", "sistema-san", "soel"];
 
 function featuredProjects(content: Content) {
   return featuredProjectSlugs.map((slug) => content.projects.find((project) => project.slug === slug)!);
+}
+
+function Explorations({ content }: { content: Content }) {
+  return <section className="section explorations-section"><div className="container">
+    <Eyebrow>{content.explorations.eyebrow}</Eyebrow><h2>{content.explorations.title}</h2>
+    <div className="exploration-grid">{content.explorations.items.map((item) => <article className="exploration-card" key={item.name}>
+      <p className="badge">{item.status}</p><h3>{item.name}</h3><p className="role">{item.role}</p><p>{item.text}</p>
+    </article>)}</div>
+  </div></section>;
 }
 
 function Work({ content, locale }: { content: Content; locale: Locale }) {
@@ -195,13 +215,10 @@ function WorkPage({ content, locale }: { content: Content; locale: Locale }) {
     <Experience content={content} locale={locale} expanded />
     <section className="section project-index"><div className="container">
       <Reveal><Eyebrow>{content.work.eyebrow}</Eyebrow><h2>{content.work.listTitle}</h2></Reveal>
-      {featuredProjects(content).map((project, index) => <Reveal className="project-index-item" key={project.slug} index={index}>
-        <span className="project-number">{String(index + 1).padStart(2, "0")}</span>
-        <div><p className="micro">{project.role}</p><h3><a href={href(locale, `projects/${project.slug}`)}>{project.name}</a></h3><p className="role">{project.period}</p></div>
-        <div><p>{project.summary}</p><a className="text-link" href={href(locale, `projects/${project.slug}`)}>{content.work.case}<span aria-hidden="true">→</span></a></div>
-      </Reveal>)}
+      <div className="project-grid">{featuredProjects(content).map((project, index) => <ProjectCard key={project.slug} project={project} index={index} locale={locale} text={content.work} />)}</div>
       <a className="supporting-project-link" href={href(locale, "projects/research")}>{content.work.supportingResearch}<span aria-hidden="true"> ↗</span></a>
     </div></section>
+    <Explorations content={content} />
     <Contact content={content} />
   </ConstructionSections>;
 }
@@ -234,8 +251,9 @@ function ProjectMedia({ project, text }: { project: Project; text: Content["work
 
 function ProjectPage({ project, content, locale }: { project: Project; content: Content; locale: Locale }) {
   const { work } = content;
-  const index = content.projects.findIndex((p) => p.slug === project.slug);
-  const next = content.projects[(index + 1) % content.projects.length];
+  const sequence = [...featuredProjects(content), ...content.projects.filter((item) => !featuredProjectSlugs.includes(item.slug))];
+  const index = sequence.findIndex((item) => item.slug === project.slug);
+  const next = sequence[(index + 1) % sequence.length];
   return <ConstructionSections>
     <section className="page-hero project-hero dark"><div className="container">
       <div className="page-construction-mark" aria-hidden="true"><BrandMark /></div>
@@ -290,7 +308,7 @@ export function Site({ locale, route }: { locale: Locale; route: Route }) {
     <Header locale={locale} path={routePath(route)} text={content.nav} />
     <div className="reading-course" aria-hidden="true" />
     <main id="main" tabIndex={-1}>
-      {route.page === "home" && <><Opening text={content.construction.intro} /><Hero text={content.hero} construction={content.construction} locale={locale} /><section className="stats-strip"><div className="container"><Metrics items={content.stats} /></div></section><StoryInvitation content={content} locale={locale} /><Experience content={content} locale={locale} /><ConstructionOrigin text={content.construction.origin} /><Work content={content} locale={locale} /><Olympiads content={content} /><Recognition content={content} /><Contact content={content} /></>}
+      {route.page === "home" && <><Opening text={content.construction.intro} /><Hero text={content.hero} construction={content.construction} locale={locale} /><section className="stats-strip"><div className="container"><Metrics items={content.stats} /></div></section><StoryInvitation content={content} locale={locale} /><Experience content={content} locale={locale} expanded /><ConstructionOrigin text={content.construction.origin} /><Work content={content} locale={locale} /><Explorations content={content} /><Olympiads content={content} /><Recognition content={content} /><Contact content={content} /></>}
       {route.page === "work" && <WorkPage content={content} locale={locale} />}
       {route.page === "story" && <StoryPage content={content} />}
       {route.page === "resume" && <ResumePage content={content} locale={locale} />}

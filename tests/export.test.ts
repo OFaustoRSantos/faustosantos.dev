@@ -106,8 +106,17 @@ test("the English root and Portuguese /pt export the three featured projects", {
   assert.match(portuguese, /<html lang="pt-BR"/);
   assert.equal((english.match(/class="project-card"/g) ?? []).length, 3);
   assert.equal((portuguese.match(/class="project-card"/g) ?? []).length, 3);
-  assert.ok(english.includes("Supporting research"));
-  assert.ok(portuguese.includes("Pesquisa de apoio"));
+  assert.ok(english.includes("Research behind San System"));
+  assert.ok(portuguese.includes("Pesquisa por trás do San System"));
+  for (const html of [english, portuguese]) {
+    const cards = html.match(/<h3><a href="[^"]*projects\/([^/]+)\//g) ?? [];
+    assert.deepEqual(cards.slice(-3).map((card) => card.match(/projects\/([^/]+)/)![1]), ["tsugrowth", "sistema-san", "soel"]);
+    assert.match(html, /class="experience-track" role="region"/);
+    assert.equal((html.match(/class="experience-card(?: research-foundation)?"/g) ?? []).length, 5);
+    assert.equal((html.match(/class="experience-bullets"/g) ?? []).length, 5);
+    assert.equal((html.match(/class="exploration-card"/g) ?? []).length, 2);
+    assert.doesNotMatch(html, /autoplay|Top 45|15K\+|nonprofit|Python/);
+  }
 });
 
 test("every case opens with a build summary, role, status, evidence and links", { skip: !exported }, () => {
@@ -121,8 +130,12 @@ test("every case opens with a build summary, role, status, evidence and links", 
         assert.ok(html.includes(`class="${field}`), `${locale}/${project}: ${field}`);
       }
       assert.match(html, /class="project-media(?: media-pending)?"/);
-      if (project === "sistema-san" || project === "tsugrowth") assert.match(html, /class="case-status is-progress"/);
+      if (project !== "research") assert.match(html, /class="case-status is-progress"/);
       else assert.doesNotMatch(html, /class="case-status is-progress"/);
+      const sequence = ["tsugrowth", "sistema-san", "soel", "research"];
+      const next = sequence[(sequence.indexOf(project) + 1) % sequence.length];
+      const nextSection = html.slice(html.indexOf('class="next-project dark"'), html.indexOf("</main>"));
+      assert.ok(nextSection.includes(`href="${href(locale, `projects/${next}`)}"`), `${locale}/${project}: next project follows relevance order`);
     }
   }
 });

@@ -43,12 +43,17 @@ test("unknown and malformed routes do not resolve to a success page", () => {
 
 test("project identities and metrics remain consistent across languages", () => {
   assert.deepEqual(pt.projects.map((project) => project.slug), en.projects.map((project) => project.slug));
-  assert.deepEqual(pt.stats.map((stat) => stat.value), en.stats.map((stat) => stat.value));
+  assert.deepEqual(pt.stats.map((stat) => stat.value), ["US$5 mi", "14 mil", "4 mil", "Top 20"]);
+  assert.deepEqual(en.stats.map((stat) => stat.value), ["US$5M", "14K", "4K", "Top 20"]);
   assert.equal(new Set(en.projects.map((p) => p.slug)).size, 4);
   for (const locale of ["en", "pt"] as const) {
     const content = getContent(locale);
     assert.equal(content.hero.milestones.length, 5);
-    assert.equal(content.experience.items.length, 5);
+    assert.equal(content.experience.items.length, 4);
+    assert.deepEqual(content.experience.items.map((item) => item.slug), ["tsugrowth", "sistema-san", "soel", ""]);
+    for (const item of content.experience.items) assert.equal(item.bullets.length, 3);
+    assert.equal(content.experience.items[1].related.bullets.length, 3);
+    assert.equal(content.experience.items[1].related.link, "research");
     for (const project of content.projects) {
       assert.match(project.slug, /^[a-z0-9-]+$/);
       assert.equal(project.metrics.length, 3);
@@ -94,7 +99,7 @@ test("contact details are actionable and consistent in both languages", () => {
 test("construction copy, story photos and opening sequence are complete in both languages", () => {
   for (const locale of ["en", "pt"] as const) {
     const content = getContent(locale);
-    assert.deepEqual(content.construction.intro.stages.map((stage) => stage.name), ["SOEL", "Sistema San", "OBECON"]);
+    assert.deepEqual(content.construction.intro.stages.map((stage) => stage.name), ["SOEL", "Sistema San", "Tsugrowth"]);
     assert.equal(content.construction.blocks.length, 3);
     for (const block of content.construction.blocks) {
       if (block.path.startsWith("#")) {
@@ -129,7 +134,27 @@ test("the selected portfolio prioritizes three builds and flags unfinished produ
     assert.deepEqual(content.projects.filter((project) => project.slug !== "research").map((project) => project.slug).sort(), ["sistema-san", "soel", "tsugrowth"].sort());
     assert.ok(content.projects.find((project) => project.slug === "sistema-san")!.status.toLowerCase().includes(locale === "en" ? "work in progress" : "em desenvolvimento"));
     assert.ok(content.projects.find((project) => project.slug === "tsugrowth")!.status.toLowerCase().includes(locale === "en" ? "work in progress" : "em desenvolvimento"));
+    assert.ok(content.projects.find((project) => project.slug === "soel")!.status.toLowerCase().includes(locale === "en" ? "work in progress" : "em desenvolvimento"));
     assert.match(content.projects.find((project) => project.slug === "tsugrowth")!.caveat, /R\$30M|R\$ 30M/);
+  }
+});
+
+test("latest corrections distinguish delivered work, reach, pipeline and future builds", () => {
+  for (const content of [en, pt]) {
+    assert.doesNotMatch(JSON.stringify(content), /15K|15\.000|Top 45|Python|FastAPI|nonprofit|sem fins lucrativos|O Globo|70%\+/);
+    assert.match(content.projects[1].built, /TypeScript/);
+    assert.match(content.projects[1].contributions[1].text, /50/);
+    assert.match(content.recognition.items[2].description, /90%/);
+    assert.match(content.experience.items[1].related.date, /2025/);
+    assert.match(content.experience.items[1].related.bullets[2], /FEBRACE.*Prêmio Jovem Cientista/);
+    assert.equal(content.explorations.items.length, 2);
+    assert.match(content.explorations.items[0].role, /Co-founder|Cofundador/);
+    for (const item of content.explorations.items) assert.match(item.status, /Work in Progress|Em desenvolvimento/);
+    for (const project of content.projects.filter((project) => project.slug !== "research")) assert.equal(project.star.length, 4);
+    assert.match(content.projects[2].metrics[1].label, /not active users|não usuários ativos/);
+    assert.match(content.experience.items[0].bullets[1], /56.*261.*12/);
+    assert.match(content.experience.items[3].bullets[1], /24.*000|24 mil/);
+    assert.match(content.experience.items[3].bullets[2], /45.*20/);
   }
 });
 

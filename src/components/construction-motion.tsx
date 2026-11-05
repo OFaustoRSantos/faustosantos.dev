@@ -64,7 +64,7 @@ export function Opening({ text }: { text: Content["construction"]["intro"] }) {
             <span className="micro">0{index + 1}</span><strong>{stage.name}</strong><span>{stage.detail}</span><span className="opening-check">↗</span>
           </div>)}
         </div>
-        <div className="opening-bottom"><span>{text.complete}</span><span>SOEL / SAN / OBECON</span></div>
+        <div className="opening-bottom"><span>{text.complete}</span><span>{text.stages.map((stage) => stage.name).join(" / ")}</span></div>
         <span className="opening-rule" />
       </div>
       <button className="opening-skip" type="button" onClick={() => dismissOpening.current()}>{text.skip}<span aria-hidden="true"> ↗</span></button>

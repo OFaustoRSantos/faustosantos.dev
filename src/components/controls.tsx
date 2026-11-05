@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState, type ReactNode } from "react";
 import type { Content, Locale } from "../lib/content";
 import { href } from "../lib/content";
 import { BrandMark } from "./brand-mark";
@@ -40,7 +40,7 @@ export function Header({ locale, path, text }: { locale: Locale; path: string; t
 
   return (
     <header className="site-header" id="top">
-      <noscript><style>{"@media(max-width:1050px){.header-inner{flex-wrap:wrap;padding-top:20px}.menu-toggle{display:none}.navigation{display:block;position:static;padding:15px 0 25px;border:0;box-shadow:none;flex-basis:100%}}"}</style></noscript>
+      <noscript><style>{"@media(max-width:1300px){.header-inner{flex-wrap:wrap;padding-top:20px}.menu-toggle{display:none}.navigation{display:block;position:static;padding:15px 0 25px;border:0;box-shadow:none;flex-basis:100%}}"}</style></noscript>
       <a className="skip-link" href="#main">{text.skip}</a>
       <div className="container header-inner">
         <a className="brand" href={home} aria-label={locale === "en" ? "Fausto Santos — Home" : "Fausto Santos — Início"}>
@@ -68,6 +68,43 @@ export function Header({ locale, path, text }: { locale: Locale; path: string; t
 
 export function PrintButton({ label }: { label: string }) {
   return <button className="button button-blue print-button" type="button" onClick={() => window.print()}>{label}<span aria-hidden="true">↗</span></button>;
+}
+
+export function ExperienceRail({ children, text }: { children: ReactNode; text: Pick<Content["experience"], "browse" | "previous" | "next"> }) {
+  const track = useRef<HTMLDivElement>(null);
+  const id = useId();
+  const [ready, setReady] = useState(false);
+  const [position, setPosition] = useState({ start: true, end: false });
+
+  useEffect(() => {
+    const element = track.current;
+    if (!element) return;
+    const update = () => setPosition({
+      start: element.scrollLeft < 2,
+      end: element.scrollLeft + element.clientWidth >= element.scrollWidth - 2,
+    });
+    update();
+    setReady(true);
+    element.addEventListener("scroll", update, { passive: true });
+    const observer = new ResizeObserver(update);
+    observer.observe(element);
+    return () => { element.removeEventListener("scroll", update); observer.disconnect(); };
+  }, []);
+
+  const move = (direction: number) => {
+    const element = track.current;
+    if (!element) return;
+    const distance = element.firstElementChild?.getBoundingClientRect().width ?? element.clientWidth;
+    element.scrollBy({ left: direction * (distance + 24), behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
+  };
+
+  return <div className="experience-carousel">
+    <div className="rail-toolbar"><p id={`${id}-label`}>{text.browse}</p><div hidden={!ready} className="rail-controls">
+      <button type="button" aria-label={text.previous} aria-controls={id} disabled={position.start} onClick={() => move(-1)}>←</button>
+      <button type="button" aria-label={text.next} aria-controls={id} disabled={position.end} onClick={() => move(1)}>→</button>
+    </div></div>
+    <div ref={track} id={id} className="experience-track" role="region" aria-labelledby={`${id}-label`} tabIndex={0}>{children}</div>
+  </div>;
 }
 
 export function Motion() {

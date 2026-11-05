@@ -1,7 +1,7 @@
 {
   "meta": {
-    "home": "Fausto Santos — Fundador, builder e finalista de olimpíada de economia",
-    "description": "Fundador da SOEL e do Sistema San. Construindo IA para a educação pública, competindo em economia e transformando estratégia em produtos. Rio de Janeiro.",
+    "home": "Fausto Santos — Construindo em educação, IA e negócios",
+    "description": "Construindo o San System, fluxos de IA na Tsugrowth e o próximo capítulo da SOEL. Educação, produto e operação, do Rio de Janeiro.",
     "work": "Trabalhos selecionados",
     "story": "Minha história",
     "resume": "Currículo"
@@ -28,8 +28,8 @@
       "eyebrow": "Por que construção?",
       "title": "Antes de construir sistemas,\neu construí meu próprio quarto.",
       "paragraphs": [
-        "Desde adolescente, trabalhei diretamente com construção para ajudar meus pais, tanto em trabalhos fora de casa quanto dentro dela. Dividimos nossa casa para alugar mais de três vezes. Em quase todas essas mudanças, construí meu próprio quarto.",
-        "Por muito tempo, vivi sem tanta estrutura para correr atrás de alguns sonhos. Talvez seja por isso que hoje eu goste tanto de criar estrutura — para mim e para os outros.",
+        "Desde adolescente, trabalhei em construção para ajudar meus pais: carregando piso, virando massa e construindo espaços, em trabalhos externos e na nossa casa. Dividimos nossa casa para alugar mais de três vezes. Em quase todas essas mudanças, construí meu próprio quarto.",
+        "Por muito tempo, faltou parte da estrutura para correr atrás de sonhos — preparar uma olimpíada internacional de química ou encontrar um jeito de participar de um evento. Talvez seja por isso que eu goste tanto de criar estrutura para mim e para os outros.",
         "Meus pais trabalharam com tijolo, massa e, às vezes, drywall. Eu quis levar esse aprendizado para outro tipo de construção: organizações, ferramentas e sistemas que abrem caminhos para mais pessoas."
       ],
       "bridge": "Os materiais mudaram. A vontade de construir uma base, não.",
@@ -42,17 +42,38 @@
       "skip": "Pular abertura",
       "complete": "Vamos construir o próximo capítulo.",
       "stages": [
-        { "name": "SOEL", "detail": "Tornar oportunidades acessíveis." },
-        { "name": "Sistema San", "detail": "Transformar pesquisa em ferramenta." },
-        { "name": "OBECON", "detail": "Aprender a pensar em sistemas." }
+        {
+          "name": "SOEL",
+          "detail": "Tornar oportunidades acessíveis."
+        },
+        {
+          "name": "Sistema San",
+          "detail": "Transformar pesquisa em ferramenta."
+        },
+        {
+          "name": "Tsugrowth",
+          "detail": "Transformar estratégia em sistemas."
+        }
       ]
     },
     "pause": "Pausar movimento",
     "play": "Retomar movimento",
     "blocks": [
-      { "name": "SOEL", "label": "Educação e comunidade", "path": "projects/soel" },
-      { "name": "Sistema San", "label": "IA para a escola pública", "path": "projects/sistema-san" },
-      { "name": "OBECON", "label": "Economia · Top 45", "path": "#olympiads" }
+      {
+        "name": "SOEL",
+        "label": "Educação e comunidade",
+        "path": "projects/soel"
+      },
+      {
+        "name": "Sistema San",
+        "label": "IA para a escola pública",
+        "path": "projects/sistema-san"
+      },
+      {
+        "name": "Tsugrowth",
+        "label": "Negócios, IA e produto",
+        "path": "projects/tsugrowth"
+      }
     ]
   },
   "storyInvite": {
@@ -61,56 +82,181 @@
     "title": "Nada se constrói\nsem uma base.",
     "description": "Os projetos são uma parte da história. As escolhas, perguntas e aprendizados que vieram antes são a outra.",
     "cta": "Conheça a pessoa por trás do trabalho",
-    "marquee": ["Um tijolo de cada vez", "Uma história em construção", "Vem ver onde tudo começou"],
+    "marquee": [
+      "Um tijolo de cada vez",
+      "Uma história em construção",
+      "Vem ver onde tudo começou"
+    ],
     "photos": [
-      { "src": "/images/fausto-retrato.webp", "alt": "Fausto sorrindo diante de um mapa-múndi verde", "caption": "01 / A pessoa", "prompt": "Um retrato, no seu ambiente." },
-      { "src": "/images/fausto-processo.webp", "alt": "Fausto escrevendo anotações à mesa durante uma atividade em grupo", "caption": "02 / O processo", "prompt": "Pensando no papel." },
-      { "src": "/images/fausto-mendeleev.webp", "alt": "Fausto segurando a bandeira do Brasil diante do local da Olimpíada Mendeleev de Química de 2026", "caption": "03 / Novos horizontes", "prompt": "Aprendendo além dos lugares conhecidos." }
+      {
+        "src": "/images/fausto-retrato.webp",
+        "alt": "Fausto sorrindo diante de um mapa-múndi verde",
+        "caption": "01 / A pessoa",
+        "prompt": "Um retrato, no seu ambiente."
+      },
+      {
+        "src": "/images/fausto-processo.webp",
+        "alt": "Fausto escrevendo anotações à mesa durante uma atividade em grupo",
+        "caption": "02 / O processo",
+        "prompt": "Pensando no papel."
+      },
+      {
+        "src": "/images/fausto-mendeleev.webp",
+        "alt": "Fausto segurando a bandeira do Brasil diante do local da Olimpíada Mendeleev de Química de 2026",
+        "caption": "03 / Novos horizontes",
+        "prompt": "Aprendendo além dos lugares conhecidos."
+      }
     ],
     "photoNote": "Um caderno aberto — suas fotos originais são a próxima camada."
   },
   "hero": {
     "eyebrow": "Candidato à IEO 2027 · Estagiário de Estratégia e Inovação",
-    "title": ["Crescendo enquanto", "construo estrutura.", "Para mim e para os outros."],
-    "description": "Hoje, meus materiais são tecnologia, educação e pessoas. Fundador da SOEL e do Sistema San, estagiário de estratégia e produto na Tsugrowth e finalista nacional da OBECON. Do Rio de Janeiro.",
+    "title": [
+      "Crescendo enquanto",
+      "construo estrutura.",
+      "Para mim e para os outros."
+    ],
+    "description": "Hoje, meus materiais são tecnologia, educação e pessoas. Construo o San System para escolas públicas, fluxos de IA e o EVER na Tsugrowth, e o próximo capítulo da SOEL.",
     "primary": "Veja meu trabalho",
     "secondary": "Minha história",
     "trajectory": "Uma trajetória em construção",
     "milestones": [
-      { "date": "2025", "title": "Fundação da SOEL" },
-      { "date": "Abr 2026", "title": "Piloto Sistema San" },
-      { "date": "2026", "title": "OBECON Top 45" },
-      { "date": "Ago 2026", "title": "Tsugrowth" },
-      { "date": "2027", "title": "Candidato à IEO" }
+      {
+        "date": "2025",
+        "title": "Fundação da SOEL"
+      },
+      {
+        "date": "Abr 2026",
+        "title": "Piloto Sistema San"
+      },
+      {
+        "date": "Ago 2026",
+        "title": "Tsugrowth"
+      },
+      {
+        "date": "2026",
+        "title": "OBECON · prata / Top 20"
+      },
+      {
+        "date": "2027",
+        "title": "Candidato à IEO"
+      }
     ]
   },
   "stats": [
-    { "value": "Top 45", "label": "finalista nacional da Olimpíada Brasileira de Economia (OBECON)" },
-    { "value": "15K+", "label": "alunos ensinados online pela SOEL, ONG que fundei" },
-    { "value": "35", "label": "voluntários liderados em 9 times, com 30+ processos documentados" },
-    { "value": "30+", "label": "medalhas em olimpíadas científicas, incluindo 5 de ouro" }
+    {
+      "value": "US$5 mi",
+      "label": "estimativa de pipeline de propostas (~R$30M), não receita"
+    },
+    {
+      "value": "14 mil",
+      "label": "colaboradores no escopo previsto do EVER; produto em desenvolvimento"
+    },
+    {
+      "value": "4 mil",
+      "label": "estudantes ensinados pela SOEL; diferente de alcance em redes"
+    },
+    {
+      "value": "Top 20",
+      "label": "Brasil · medalhista de prata na OBECON"
+    }
   ],
   "experience": {
-    "eyebrow": "01 — Experiência",
-    "title": "O que construí, em ordem.",
-    "description": "De uma organização estudantil a uma plataforma de IA na escola pública, e agora à construção de produtos em empresas.",
+    "eyebrow": "Experiência",
+    "title": "O que construo.",
+    "description": "Fluxos de negócio, software para escolas e os sistemas que ajudam pessoas a trabalhar juntas.",
     "items": [
-      { "date": "Ago 2026 — hoje", "name": "Tsugrowth", "role": "Estagiário de Estratégia e Inovação", "description": "Construí um fluxo com agentes de IA para pesquisa e propostas de patrocínio; agora lidero o desenvolvimento do EVER, traduzindo pesquisa de campo em 102 regras de negócio e 7 máquinas de estado." },
-      { "date": "Abr 2026 — hoje", "name": "Sistema San", "role": "Fundador e Lead Developer", "description": "Construí uma plataforma de IA para o planejamento da escola pública e a levei a um piloto com 15+ professores, três papéis escolares e uma rede municipal." },
-      { "date": "Dez 2025 — hoje", "name": "Prep Program · Fundação Estudar", "role": "Bolsista, colunista e embaixador", "description": "Conquistei uma vaga em uma turma nacional de preparação para universidades; contribuo como colunista do Estudar Fora e embaixador institucional." },
-      { "date": "Pesquisa → produto", "name": "Pesquisa em IA na Educação", "role": "Pesquisador e autor", "description": "Desenvolvi um método de análise em Python e um protótipo para professores; recebi o prêmio de Melhor Projeto em Sociolinguística no Simpósio ABRIC." },
-      { "date": "Jan 2025 — hoje", "name": "SOEL", "role": "Fundador, CEO e CTO", "description": "Construí o ERP da SOEL e 30+ processos documentados em 9 times, liderando 35 voluntários; a ONG ensinou 15K+ estudantes online." }
-    ]
+      {
+        "name": "Tsugrowth",
+        "role": "Estagiário de Estratégia e Inovação",
+        "date": "Ago 2026 — hoje",
+        "slug": "tsugrowth",
+        "bullets": [
+          "Transformei um processo manual de patrocínio em um fluxo de IA com seis etapas, quatro ferramentas interativas, nove skills reutilizáveis e uma via rápida de propostas, com aprovação humana antes do envio.",
+          "Pesquisei 56 marcas, estruturei 261 ideias de ativação e produzi 12 decks; o trabalho apoiou três parcerias fechadas. A CEO responde por preço e negociação; o gerente nacional valida as propostas.",
+          "Lidero o produto EVER: traduzo pesquisa de campo em um fluxo Android offline-first, portal web e regras operacionais para execução de varejo. Escopo previsto: 14 mil colaboradores; implantação e adoção não são resultados concluídos."
+        ],
+        "related": {
+          "name": "",
+          "date": "",
+          "bullets": [],
+          "link": ""
+        }
+      },
+      {
+        "name": "San System — Sistema San",
+        "role": "Fundador e Lead Developer",
+        "date": "Abr 2026 — hoje",
+        "slug": "sistema-san",
+        "bullets": [
+          "Transformei um problema escolar em produto: professores tinham dados diagnósticos, mas faltava um caminho prático das lacunas de aprendizagem para as aulas da semana.",
+          "Construí a plataforma TypeScript/Vue/Node que conecta avaliações, currículo, planejamento, papéis escolares e acompanhamento, desenvolvendo com feedback de profissionais da educação.",
+          "Levei o produto a um piloto na rede pública com 15+ professores. A apresentação pública usa dados demonstrativos; não comprova ganho de aprendizagem ou tempo economizado."
+        ],
+        "related": {
+          "name": "Pesquisa em IA na Educação",
+          "date": "Abr 2025 — origem da pesquisa",
+          "link": "research",
+          "bullets": [
+            "Revisei 20+ artigos e entrevistei oito profissionais da educação para investigar por que dados diagnósticos raramente viram ensino personalizado.",
+            "Desenvolvi a metodologia e o protótipo para professores; a pesquisa definiu o problema e os requisitos que deram origem ao San System.",
+            "Apresentei o trabalho na ABRIC, recebendo Melhor Projeto em Sociolinguística; submeti-o à FEBRACE e ao Prêmio Jovem Cientista. Submissão não é premiação."
+          ]
+        }
+      },
+      {
+        "name": "SOEL",
+        "role": "Fundador · liderança e tecnologia",
+        "date": "Jan 2025 — hoje",
+        "slug": "soel",
+        "bullets": [
+          "Liderei 35 voluntários em nove times, passando da delegação de tarefas para resultados, responsabilidades semanais, onboarding e revisão cruzada.",
+          "Criei cerca de 50 processos documentados, modelos de planilha de tarefas e documentação padronizada; organizei campanhas, materiais de ensino e quatro parcerias.",
+          "Ajudei a ensinar 4 mil estudantes e criar o Cometa Olímpico, livro de astronomia. A nova plataforma TypeScript da organização está em desenvolvimento, não é um ERP público pronto."
+        ],
+        "related": {
+          "name": "",
+          "date": "",
+          "bullets": [],
+          "link": ""
+        }
+      },
+      {
+        "name": "Prep Program · Fundação Estudar",
+        "role": "Bolsista, colunista, embaixador e creator",
+        "date": "Dez 2025 — hoje",
+        "slug": "",
+        "bullets": [
+          "Escrevi para o Estudar Fora, incluindo a cobertura do principal evento da fundação, e apresentei minha pesquisa em educação no evento.",
+          "Arrecadei R$24 mil com uma dupla (aproximadamente US$5 mil à época); é um resultado compartilhado de fundraising, não uma conquista individual.",
+          "Produzi vídeos do Prep Creators com 45 mil+ visualizações em uma semana e indiquei 20+ candidatos como embaixador."
+        ],
+        "related": {
+          "name": "",
+          "date": "",
+          "bullets": [],
+          "link": ""
+        }
+      }
+    ],
+    "previous": "Experiência anterior",
+    "next": "Próxima experiência",
+    "browse": "Explore a experiência — deslize ou use as setas"
   },
   "work": {
-    "eyebrow": "02 — Projetos selecionados",
-    "title": "Sistemas que projetei, construí e coloquei nas mãos de usuários reais.",
+    "eyebrow": "Projetos selecionados",
+    "title": "De um problema real a algo útil.",
     "all": "Todos os projetos",
     "case": "Leia o estudo de caso",
     "pageEyebrow": "Trabalho / Experiência + projetos selecionados",
     "pageTitle": "Construir a organização.\nConstruir o sistema.",
     "pageDescription": "Educação pública, IA e estratégia de produto. O que fiz, qual foi meu papel e o que cada projeto já permite afirmar.",
-    "steps": ["Organizar", "Pesquisar", "Desenvolver", "Colocar em uso"],
+    "steps": [
+      "Entender",
+      "Construir",
+      "Testar",
+      "Melhorar"
+    ],
     "listTitle": "Do problema à estrutura que o sustenta.",
     "back": "Trabalho / Projetos selecionados",
     "caseLabel": "PROJETO",
@@ -120,9 +266,9 @@
     "status": "Situação",
     "evidence": "Evidências",
     "links": "Links",
-    "demo": "Projeto ao vivo",
+    "demo": "Evidência pública",
     "linksPending": "Sem demonstração pública disponível.",
-    "supportingResearch": "Pesquisa de apoio · IA na Educação",
+    "supportingResearch": "Pesquisa por trás do San System",
     "problem": "01 — O problema",
     "contribution": "02 — Minha contribuição",
     "numbers": "03 — Números em contexto",
@@ -134,89 +280,225 @@
     "mediaLabel": "Arquivo do projeto",
     "mediaOpen": "Abrir imagem completa",
     "mediaPending": "Documentação real, não um mockup.",
-    "mediaNote": "As capturas originais serão incluídas após revisão de privacidade e autorização de publicação."
+    "mediaNote": "As capturas originais serão incluídas após revisão de privacidade e autorização de publicação.",
+    "starLabels": [
+      "Situação",
+      "Tarefa",
+      "Ação",
+      "Resultado / próximo passo"
+    ],
+    "researchStage": "Pesquisa → produto",
+    "researchLink": "Conheça a pesquisa de origem"
   },
   "projects": [
     {
       "slug": "sistema-san",
-      "name": "Sistema San",
+      "name": "San System — Sistema San",
       "badge": "Em desenvolvimento · piloto na rede pública",
       "role": "Fundador e Lead Developer",
       "period": "Abr 2026 — hoje",
       "status": "Em desenvolvimento · piloto em uma rede municipal",
       "built": "Uma plataforma de planejamento com IA que transforma dados educacionais em planos por turma, simulados e relatórios de estudantes.",
       "evidence": "Painel real do diretor com dados demonstrativos. Apresentação pública do produto no link abaixo.",
-      "links": { "demo": "https://www.sistemasan.com.br/a16z-academy" },
-      "summary": "Plataforma de IA que automatiza o planejamento pedagógico da escola pública. A partir de dados governamentais, gera planos por turma, simulados e relatórios individuais.",
+      "links": {
+        "demo": "https://www.sistemasan.com.br/a16z-academy"
+      },
+      "summary": "Primeiro a pesquisa, depois o software. Investiguei como professores usam dados diagnósticos e construí uma plataforma de planejamento para um piloto na rede pública.",
       "subtitle": "Do dado governamental ao planejamento de cada turma da escola pública.",
-      "steps": ["Dados governamentais", "Planejamento com IA", "Turmas e estudantes", "Gestão pedagógica"],
-      "metrics": [
-        { "value": "15+", "label": "professores usando o piloto" },
-        { "value": "3", "label": "papéis: diretores, coordenadores e professores" },
-        { "value": "1", "label": "rede municipal no piloto" }
+      "steps": [
+        "Dados governamentais",
+        "Planejamento com IA",
+        "Turmas e estudantes",
+        "Gestão pedagógica"
       ],
-      "tags": ["Python", "PostgreSQL", "REST API", "LLM APIs"],
+      "metrics": [
+        {
+          "value": "15+",
+          "label": "professores usando o piloto"
+        },
+        {
+          "value": "3",
+          "label": "papéis: diretores, coordenadores e professores"
+        },
+        {
+          "value": "1",
+          "label": "rede municipal no piloto"
+        }
+      ],
+      "tags": [
+        "TypeScript · Vue · Node",
+        "Fluxos pedagógicos",
+        "Integração de dados escolares"
+      ],
       "problemTitle": "Planejar para a turma.\nEnxergar cada estudante.",
       "problem": "O planejamento pedagógico precisa conectar informações da rede, necessidades de cada turma e acompanhamento individual. O Sistema San usa IA para automatizar essa preparação e reunir planos, simulados e relatórios em um sistema de gestão.",
       "caveat": "É um piloto, não uma evidência de ganho de aprendizagem ou de tempo economizado. O número de professores é o informado no overview fornecido.",
       "contributionTitle": "O que construí.",
       "contributions": [
-        { "title": "Planejamento com IA", "text": "Construí a plataforma que parte de dados governamentais para gerar planos por turma e simulados." },
-        { "title": "Acompanhamento individual", "text": "Integrei relatórios individuais ao planejamento pedagógico. Exemplos públicos dependem de anonimização e autorização." },
-        { "title": "Gestão por papel", "text": "Estruturei a API REST, persistência em PostgreSQL e permissões distintas para professores, coordenadores e diretores." }
+        {
+          "title": "Planejamento com IA",
+          "text": "Construí a plataforma que parte de dados governamentais para gerar planos por turma e simulados."
+        },
+        {
+          "title": "Acompanhamento individual",
+          "text": "Integrei relatórios individuais ao planejamento pedagógico. Exemplos públicos dependem de anonimização e autorização."
+        },
+        {
+          "title": "Gestão por papel",
+          "text": "Estruturei a API REST, persistência em PostgreSQL e permissões distintas para professores, coordenadores e diretores."
+        }
       ],
-      "media": { "src": "/images/sistema-san-diretor.webp", "alt": "Painel do diretor do Sistema San com cobertura de avaliações, resultados por disciplina e execução de aulas usando dados demonstrativos", "caption": "Interface real do San com dados demonstrativos, da apresentação pública para a a16z Academy. Estes números não são resultados medidos do piloto." },
+      "media": {
+        "src": "/images/sistema-san-diretor.webp",
+        "alt": "Painel do diretor do Sistema San com cobertura de avaliações, resultados por disciplina e execução de aulas usando dados demonstrativos",
+        "caption": "Interface real do San com dados demonstrativos, da apresentação pública para a a16z Academy. Estes números não são resultados medidos do piloto."
+      },
       "stack": [
-        { "title": "Python + LLM APIs", "text": "Preparação de materiais pedagógicos com apoio de IA." },
-        { "title": "PostgreSQL + API REST", "text": "Persistência de dados e integração dos recursos da plataforma." },
-        { "title": "Controle de acesso por papel", "text": "Permissões distintas para professores, coordenadores e diretores." }
+        {
+          "title": "TypeScript + Vue + Node",
+          "text": "Aplicação, API e fluxos escolares."
+        },
+        {
+          "title": "Dados + currículo + planejamento",
+          "text": "Conectar avaliações e contexto curricular à preparação e ao acompanhamento das aulas."
+        },
+        {
+          "title": "Papéis escolares + decisão humana",
+          "text": "Responsabilidades distintas para professor, coordenador e direção; a IA apoia a decisão do educador."
+        }
       ],
       "timeline": [
-        { "date": "Origem", "title": "Da pesquisa ao produto", "text": "A metodologia e o protótipo para professores deram origem ao Sistema San." },
-        { "date": "Abr 2026", "title": "Fundação e desenvolvimento", "text": "Início da construção como fundador e lead developer." },
-        { "date": "Hoje", "title": "Piloto na rede pública", "text": "Piloto na rede municipal do Rio, reunindo feedback operacional antes da expansão." },
-        { "date": "2027 · objetivo", "title": "Chegar a mais escolas", "text": "Ampliar o piloto. Próximo passo, não resultado já alcançado." }
+        {
+          "date": "Abr 2025",
+          "title": "Da pesquisa ao produto",
+          "text": "A metodologia e o protótipo para professores deram origem ao Sistema San."
+        },
+        {
+          "date": "Abr 2026",
+          "title": "Fundação e desenvolvimento",
+          "text": "Início da construção como fundador e lead developer."
+        },
+        {
+          "date": "Hoje",
+          "title": "Piloto na rede pública",
+          "text": "Piloto na rede municipal do Rio, reunindo feedback operacional antes da expansão."
+        },
+        {
+          "date": "2027 · objetivo",
+          "title": "Chegar a mais escolas",
+          "text": "Ampliar o piloto. Próximo passo, não resultado já alcançado."
+        }
+      ],
+      "star": [
+        "Escolas tinham dados diagnósticos sem um fluxo prático de ensino.",
+        "Ajudar professores a transformar lacunas nas aulas da semana.",
+        "Pesquisei o problema, entrevistei educadores e construí o San System.",
+        "Piloto na rede pública; expansão e medição de impacto são próximos passos."
       ]
     },
     {
       "slug": "soel",
       "name": "SOEL",
-      "badge": "ONG em operação · ERP construído",
-      "role": "Fundador, CEO e CTO",
+      "badge": "Em desenvolvimento · nova plataforma",
+      "role": "Fundador · liderança e tecnologia",
       "period": "Jan 2025 — hoje",
-      "status": "ONG em operação · ERP construído",
-      "built": "O sistema operacional de uma ONG de educação: ERP de voluntários e processos, ferramentas internas, fluxos documentados e materiais de ensino.",
+      "status": "Em desenvolvimento · organização ativa; nova plataforma em preparação",
+      "built": "A estrutura de operação da SOEL: onboarding, campanhas, modelos de tarefas, cerca de 50 processos documentados e materiais de ensino. A nova plataforma TypeScript está em preparação.",
       "evidence": "Material didático: Cometa Olímpico, livro de astronomia que criamos. As capturas antigas do ERP não estão mais disponíveis.",
-      "links": { "demo": "" },
-      "summary": "ONG de educação que ajuda estudantes da rede pública a chegar às olimpíadas nacionais. Lidero a equipe, ensino e construí o ERP que sustenta a organização.",
-      "subtitle": "Sociedade Olímpica de Estudos e Liderança. Construir acesso à educação — e a organização que o torna possível.",
-      "steps": ["Pessoas", "Processos documentados", "ERP próprio", "Aulas e olimpíadas"],
-      "metrics": [
-        { "value": "35", "label": "voluntários em 9 times" },
-        { "value": "15K+", "label": "alunos ensinados online" },
-        { "value": "4", "label": "parcerias formais assinadas" }
+      "links": {
+        "demo": ""
+      },
+      "summary": "Construí a estrutura de gestão voluntária de uma iniciativa educacional: pessoas, processos, parcerias e materiais de ensino. A próxima plataforma está em desenvolvimento.",
+      "subtitle": "Sociedade Olímpica de Estudos e Liderança. Construir a estrutura que ajuda voluntários a ensinar.",
+      "steps": [
+        "Pessoas",
+        "Processos documentados",
+        "Materiais de ensino",
+        "Próxima plataforma · em preparo"
       ],
-      "tags": ["Node.js", "React", "FastAPI", "OKRs"],
+      "metrics": [
+        {
+          "value": "35",
+          "label": "voluntários em 9 times"
+        },
+        {
+          "value": "4 mil",
+          "label": "estudantes ensinados, não alcance em redes"
+        },
+        {
+          "value": "4",
+          "label": "parcerias formais assinadas"
+        }
+      ],
+      "tags": [
+        "Gestão de voluntários",
+        "50 processos documentados",
+        "TypeScript · plataforma em preparo"
+      ],
       "problemTitle": "Acesso não se sustenta\nsó com uma boa aula.",
       "problem": "A SOEL apoia estudantes da escola pública no caminho até as olimpíadas. Sustentar uma organização voluntária de ensino também exige lideranças, responsabilidades claras, documentação e rotinas.",
-      "caveat": "Alunos ensinados e pessoas alcançadas são medidas diferentes. Os 15K+ alunos e a equipe de 35 pessoas seguem o overview fornecido; não são somados ao alcance em redes sociais.",
-      "contributionTitle": "A organização e seu sistema operacional.",
+      "caveat": "Os 4 mil correspondem a estudantes ensinados, não alcance. A organização está ativa; a próxima plataforma está em preparação e não tem demo pública. Quatro parcerias, nove times e cerca de 50 processos são o escopo atual informado.",
+      "contributionTitle": "Construir a estrutura de operação da equipe.",
       "contributions": [
-        { "title": "Liderança e processos", "text": "Organizei lideranças, documentos e rotinas em 9 times, com mais de 30 processos documentados." },
-        { "title": "ERP construído do zero", "text": "Desenvolvi gestão de voluntários e processos, OKRs, calendário de marketing, cursos internos e o site da organização." },
-        { "title": "Ensino e materiais próprios", "text": "Ensinei e ajudei a criar materiais de preparação: 40+ horas de aulas, 16 aulas de Canguru/OBA, 4+ simulados e o Cometa Olímpico, livro de astronomia que criamos." }
+        {
+          "title": "Onboarding e responsabilidades",
+          "text": "Desenhei onboarding, responsabilidades semanais, delegação por resultado e revisão cruzada para voluntários contribuírem mesmo com tempo limitado."
+        },
+        {
+          "title": "Campanhas e documentação",
+          "text": "Criei modelos de planilha de tarefas e um formato comum de processos; organizei campanhas e cerca de 50 processos documentados em nove times."
+        },
+        {
+          "title": "Ensino e próxima plataforma",
+          "text": "Ajudei a ensinar 4 mil estudantes, estabelecer quatro parcerias e criar o Cometa Olímpico. A próxima plataforma TypeScript está em preparo, não é apresentada como concluída."
+        }
       ],
-      "media": { "src": "", "alt": "Cometa Olímpico", "caption": "Livro de astronomia que criamos como material de ensino. O arquivo do livro não está publicado aqui; as capturas antigas do sistema da SOEL não estão mais disponíveis." },
+      "media": {
+        "src": "",
+        "alt": "Cometa Olímpico",
+        "caption": "Livro de astronomia que criamos como material de ensino. O arquivo do livro não está publicado aqui; as capturas antigas do sistema da SOEL não estão mais disponíveis."
+      },
       "stack": [
-        { "title": "Node.js + React", "text": "ERP e experiência web da organização." },
-        { "title": "Python + FastAPI", "text": "Serviços de apoio aos fluxos internos." },
-        { "title": "Processos + OKRs", "text": "Gestão de voluntários, cursos internos e acompanhamento da operação." }
+        {
+          "title": "TypeScript",
+          "text": "Direção tecnológica da próxima plataforma, atualmente em preparação."
+        },
+        {
+          "title": "Templates + padrões de processo",
+          "text": "Planilhas de tarefas, guias de onboarding, etapas de revisão e documentação compartilhada."
+        },
+        {
+          "title": "Gestão de voluntários",
+          "text": "Nove times, responsabilidades semanais e campanhas orientadas a resultados."
+        }
       ],
       "timeline": [
-        { "date": "Fim de 2023", "title": "Primeiros desenhos", "text": "Concepção de uma organização voltada à educação e às olimpíadas." },
-        { "date": "Jan 2025", "title": "Fundação formal", "text": "Fundação da Sociedade Olímpica de Estudos e Liderança." },
-        { "date": "2025", "title": "Construir a estrutura", "text": "Organização das lideranças, processos, documentação e ERP." },
-        { "date": "Hoje", "title": "Operar e ensinar", "text": "Gestão da ONG, ensino e desenvolvimento de materiais com a equipe." }
+        {
+          "date": "Fim de 2023",
+          "title": "Primeiros desenhos",
+          "text": "Concepção de uma organização voltada à educação e às olimpíadas."
+        },
+        {
+          "date": "Jan 2025",
+          "title": "Fundação formal",
+          "text": "Fundação da Sociedade Olímpica de Estudos e Liderança."
+        },
+        {
+          "date": "2025",
+          "title": "Construir a estrutura",
+          "text": "Desenvolvimento de rotinas de liderança, documentação padronizada e ferramentas internas."
+        },
+        {
+          "date": "Hoje",
+          "title": "Operar e ensinar",
+          "text": "Operar a iniciativa e preparar a próxima plataforma TypeScript."
+        }
+      ],
+      "star": [
+        "O ensino voluntário precisava de mais estrutura que tarefas isoladas.",
+        "Tornar onboarding, campanhas e entregas semanais repetíveis.",
+        "Padronizei cerca de 50 processos em nove times e criei materiais de ensino.",
+        "4 mil ensinados e quatro parcerias; próxima plataforma em preparo."
       ]
     },
     {
@@ -226,38 +508,102 @@
       "role": "Estagiário de Estratégia e Inovação",
       "period": "Ago 2026 — hoje",
       "status": "Em desenvolvimento · fluxo de patrocínio construído; EVER em andamento",
-      "built": "Um fluxo com agentes de IA para pesquisa e propostas de patrocínio; agora lidero a especificação e o desenvolvimento do EVER.",
-      "evidence": "Materiais internos do produto e de clientes permanecem privados; o case descreve minha atuação sem publicá-los.",
-      "links": { "demo": "" },
-      "summary": "Construí uma equipe de agentes de IA para um pipeline de patrocínio de ativações em cruzeiros. Agora lidero o desenvolvimento do EVER, plataforma de execução de varejo com app Android offline-first.",
+      "built": "Um fluxo de patrocínio de seis etapas, quatro ferramentas e nove skills reutilizáveis: 56 marcas pesquisadas, 261 ideias, 12 decks e apoio a três parcerias fechadas. O EVER segue em desenvolvimento.",
+      "evidence": "Descrição pública do fluxo no link abaixo; materiais internos de clientes e do produto permanecem privados.",
+      "links": {
+        "demo": "https://app.notion.com/p/a16z-Cruise-Proposal-System-at-Tsu-Growth-40ea8e325cad814aaed0d91505c3b279"
+      },
+      "summary": "Transformei um processo manual de patrocínio em um fluxo de IA com revisão humana e levei a mesma disciplina de produto à operação de campo do EVER.",
       "subtitle": "Duas frentes, um papel: transformar pesquisa e estratégia em sistemas executáveis.",
-      "steps": ["Pesquisa de campo", "Estratégia", "Especificação", "Construção de produto"],
-      "metrics": [
-        { "value": "24+", "label": "marcas pesquisadas para patrocínio" },
-        { "value": "102", "label": "regras de negócio especificadas para o EVER" },
-        { "value": "~R$30M", "label": "estimativa de pipeline potencial, não receita fechada" }
+      "steps": [
+        "Pesquisa de campo",
+        "Estratégia",
+        "Especificação",
+        "Construção de produto"
       ],
-      "tags": ["Agentes de IA", "Android", "Multi-tenant", "Row-level security"],
+      "metrics": [
+        {
+          "value": "12",
+          "label": "decks de proposta; fluxo apoiou três parcerias fechadas"
+        },
+        {
+          "value": "14 mil",
+          "label": "colaboradores no escopo previsto do EVER, não usuários ativos"
+        },
+        {
+          "value": "~R$30M",
+          "label": "estimativa de pipeline potencial, não receita fechada (~US$5 mi)"
+        }
+      ],
+      "tags": [
+        "Operação comercial com IA",
+        "Propostas com revisão humana",
+        "Produto offline-first"
+      ],
       "problemTitle": "Da oportunidade comercial\nà execução em campo.",
       "problem": "Na Tsugrowth, atuo em duas frentes distintas. A primeira é um pipeline de patrocínio para ativações de marcas em cruzeiros. A segunda é o EVER: uma plataforma de execução de varejo com app Android offline-first e portal web.",
       "caveat": "Os ~R$30M são uma estimativa de valor potencial do pipeline de patrocínio, nunca receita fechada ou receita do EVER. O piloto de 20 usuários estava previsto para novembro de 2026, não foi informado como concluído.",
       "contributionTitle": "Estratégia vira especificação. Especificação orienta produto.",
       "contributions": [
-        { "title": "Pipeline de patrocínio", "text": "Construí um fluxo com agentes de IA para pesquisa de marcas, propostas e mockups de ativações. A matriz de oportunidades cruza 125 marcas e 19 zonas." },
-        { "title": "Especificação do EVER", "text": "Traduzi pesquisa de campo em 102 regras de negócio e 7 máquinas de estado, com base em 56 artigos de ajuda." },
-        { "title": "Operação e arquitetura", "text": "Lidero o desenvolvimento com Android offline-first, portal web e motor de regras em tempo real. O desenho prevê multi-tenancy e row-level security." }
+        {
+          "title": "Pesquisa → ativação → deck",
+          "text": "Desenhei seis etapas, quatro ferramentas e nove skills. A pesquisa alimenta um documento intermediário, restrições do navio e exclusividade filtram ideias, e a revisão humana vem antes do deck final."
+        },
+        {
+          "title": "Execução comercial",
+          "text": "Pesquisei 56 marcas, estruturei 261 ideias e produzi 12 decks apoiando três parcerias fechadas. A CEO decide preço e negociação; o gerente nacional valida propostas. Entrega pós-venda e renovação não são resultados comprovados."
+        },
+        {
+          "title": "EVER · operação em campo",
+          "text": "Lidero o produto Android offline-first e portal web: transformar rotinas de campo em coleta de dados utilizável, trabalho por papéis e regras operacionais. O escopo prevê 14 mil colaboradores, não uma implantação concluída."
+        }
       ],
-      "media": { "src": "", "alt": "Trabalho em empresa · materiais privados", "caption": "O EVER está em desenvolvimento. Interfaces internas e materiais de clientes não são publicados aqui." },
+      "media": {
+        "src": "",
+        "alt": "Trabalho em empresa · materiais privados",
+        "caption": "O EVER está em desenvolvimento. Interfaces internas e materiais de clientes não são publicados aqui."
+      },
       "stack": [
-        { "title": "Pipeline de agentes de IA", "text": "Automação de pesquisa e propostas de patrocínio." },
-        { "title": "Android offline-first + web", "text": "Execução de varejo em campo e gestão, com motor de regras em tempo real no escopo." },
-        { "title": "Multi-tenant + row-level security", "text": "Isolamento por organização e controle de acesso na arquitetura do produto." }
+        {
+          "title": "Pipeline de agentes de IA",
+          "text": "Automação de pesquisa e propostas de patrocínio."
+        },
+        {
+          "title": "Android offline-first + web",
+          "text": "Execução de varejo em campo e gestão, com motor de regras em tempo real no escopo."
+        },
+        {
+          "title": "Multi-tenant + row-level security",
+          "text": "Isolamento por organização e controle de acesso na arquitetura do produto."
+        }
       ],
       "timeline": [
-        { "date": "Ago 2026", "title": "Início na Tsugrowth", "text": "Entrada como estagiário de Estratégia e Inovação." },
-        { "date": "Durante o estágio", "title": "Pipeline e pesquisa de campo", "text": "Construção do fluxo de agentes de IA e pesquisa para especificação do produto." },
-        { "date": "Hoje", "title": "Construção do EVER", "text": "Liderança de produto a partir das regras e máquinas de estado documentadas." },
-        { "date": "Nov 2026 · previsto", "title": "Piloto com 20 usuários", "text": "Piloto planejado; não são afirmados conclusão ou resultados." }
+        {
+          "date": "Ago 2026",
+          "title": "Início na Tsugrowth",
+          "text": "Entrada como estagiário de Estratégia e Inovação."
+        },
+        {
+          "date": "Durante o estágio",
+          "title": "Pipeline e pesquisa de campo",
+          "text": "Construção do fluxo de agentes de IA e pesquisa para especificação do produto."
+        },
+        {
+          "date": "Hoje",
+          "title": "Construção do EVER",
+          "text": "Liderança de produto a partir das regras e máquinas de estado documentadas."
+        },
+        {
+          "date": "Nov 2026 · previsto",
+          "title": "Piloto com 20 usuários",
+          "text": "Piloto planejado; não são afirmados conclusão ou resultados."
+        }
+      ],
+      "star": [
+        "Decks manuais dificultavam escalar propostas consistentes.",
+        "Criar um fluxo comercial repetível e atento às restrições.",
+        "Construí ferramentas e skills com revisão humana e liderei o produto EVER.",
+        "12 decks e apoio a três parcerias; EVER em desenvolvimento."
       ]
     },
     {
@@ -265,77 +611,234 @@
       "name": "Pesquisa em IA na Educação",
       "badge": "Pesquisa de apoio · protótipo",
       "role": "Pesquisador e autor",
-      "period": "Pesquisa anterior ao Sistema San",
+      "period": "Abr 2025 — origem da pesquisa",
       "status": "Pesquisa e protótipo concluídos · base do Sistema San",
-      "built": "Um método em Python para analisar o desempenho escolar por turma e região, além de um protótipo para professores da rede pública.",
-      "evidence": "Metodologia e protótipo descritos abaixo; o pôster original não está publicado aqui.",
-      "links": { "demo": "" },
-      "summary": "Metodologia em Python para analisar desempenho por turma e região, acompanhada de um protótipo para professores da rede pública. Este trabalho deu origem ao Sistema San.",
+      "built": "Revisão bibliográfica, entrevistas com profissionais escolares, metodologia para diagnosticar lacunas de aprendizagem e protótipo para professores que deram origem ao San System.",
+      "evidence": "Documento original da pesquisa no link abaixo. Submissão à FEBRACE e ao Prêmio Jovem Cientista; reconhecimento na ABRIC é separado.",
+      "links": {
+        "demo": "https://docs.google.com/document/d/1US0CUUABJybrBuTdktma0X5bFz81u7NNRLZ3p7aEKKA/edit"
+      },
+      "summary": "Revisão bibliográfica, entrevistas com profissionais escolares, metodologia para diagnosticar lacunas de aprendizagem e protótipo para professores que deram origem ao San System.",
       "subtitle": "Investigar o desempenho escolar. Traduzir a análise em uma ferramenta para professores.",
-      "steps": ["Dados por turma e região", "Metodologia Python", "Protótipo para docentes", "Sistema San"],
-      "metrics": [
-        { "value": "1º", "label": "Simpósio ABRIC: apresentação do trabalho" },
-        { "value": "Python", "label": "metodologia de análise por turma e região" },
-        { "value": "→ San", "label": "pesquisa transferida para um produto" }
+      "steps": [
+        "Revisão bibliográfica",
+        "Entrevistas com educadores",
+        "Protótipo para professores",
+        "San System"
       ],
-      "tags": ["Python", "Pandas", "Pesquisa aplicada", "Protótipo"],
+      "metrics": [
+        {
+          "value": "20+",
+          "label": "artigos revisados"
+        },
+        {
+          "value": "8",
+          "label": "profissionais da educação entrevistados"
+        },
+        {
+          "value": "→ San",
+          "label": "pesquisa transformada em produto"
+        }
+      ],
+      "tags": [
+        "Revisão bibliográfica",
+        "Entrevistas com educadores",
+        "Pesquisa → San System"
+      ],
       "problemTitle": "A análise precisa chegar\na quem ensina.",
-      "problem": "Desenvolvi uma metodologia em Python para analisar desempenho por turma e região, acompanhada de um protótipo para professores da rede pública. O trabalho aproxima os dados da prática pedagógica e originou o Sistema San.",
-      "caveat": "Não são afirmados tamanho de amostra validado, impacto causal de aprendizagem ou comparação de desempenho. As datas da pesquisa divergem entre os documentos e não foram escolhidas por suposição.",
+      "problem": "Revisão bibliográfica, entrevistas com profissionais escolares, metodologia para diagnosticar lacunas de aprendizagem e protótipo para professores que deram origem ao San System.",
+      "caveat": "Submissões a prêmios não são vitórias. A pesquisa é a base do San System, não uma afirmação separada de impacto de aprendizagem medido.",
       "contributionTitle": "Da metodologia ao primeiro protótipo.",
       "contributions": [
-        { "title": "Metodologia de análise", "text": "Desenvolvi uma metodologia em Python para estudar desempenho escolar por turma e região." },
-        { "title": "Protótipo para professores", "text": "Construí um protótipo para docentes da rede pública. Exemplos públicos dependem de dados anonimizados e materiais originais da pesquisa." },
-        { "title": "Apresentação e transferência", "text": "Apresentei o trabalho no 1º Simpósio ABRIC, com reconhecimento de Melhor Projeto em Sociolinguística. A pesquisa e o protótipo deram origem ao Sistema San." }
+        {
+          "title": "Investigar",
+          "text": "Revisei 20+ artigos e entrevistei oito profissionais da educação para investigar por que dados diagnósticos raramente viram ensino personalizado."
+        },
+        {
+          "title": "Prototipar",
+          "text": "Desenvolvi a metodologia e o protótipo para professores; a pesquisa definiu o problema e os requisitos que deram origem ao San System."
+        },
+        {
+          "title": "Apresentar e submeter",
+          "text": "Apresentei o trabalho na ABRIC, recebendo Melhor Projeto em Sociolinguística; submeti-o à FEBRACE e ao Prêmio Jovem Cientista. Submissão não é premiação."
+        }
       ],
-      "media": { "src": "", "alt": "Arquivo da pesquisa", "caption": "O pôster e o protótipo não estão disponíveis publicamente aqui. O trabalho deu origem ao Sistema San." },
+      "media": {
+        "src": "",
+        "alt": "Arquivo da pesquisa",
+        "caption": "O pôster e o protótipo não estão disponíveis publicamente aqui. O trabalho deu origem ao Sistema San."
+      },
       "stack": [
-        { "title": "Python", "text": "Metodologia de análise e desenvolvimento do protótipo." },
-        { "title": "Pandas", "text": "Preparação e organização dos dados." },
-        { "title": "Pesquisa aplicada → produto", "text": "A metodologia e o protótipo evoluíram para o Sistema San." }
+        {
+          "title": "Revisão bibliográfica",
+          "text": "Personalização, dados de avaliação e IA na educação."
+        },
+        {
+          "title": "Entrevistas de campo",
+          "text": "Profissionais escolares definiram o problema, em vez de suposições tecnológicas."
+        },
+        {
+          "title": "Metodologia → produto",
+          "text": "Requisitos e protótipo orientaram o San System em TypeScript."
+        }
       ],
       "timeline": [
-        { "date": "Pesquisa", "title": "Construir a metodologia", "text": "Análise de desempenho escolar por turma e região." },
-        { "date": "Protótipo", "title": "Levar a análise aos professores", "text": "Desenvolvimento de um protótipo para docentes da rede pública." },
-        { "date": "ABRIC", "title": "Apresentar o trabalho", "text": "Apresentação no 1º Simpósio ABRIC." },
-        { "date": "Próximo capítulo", "title": "Transferir para o Sistema San", "text": "Transformar a direção de pesquisa em um produto de planejamento pedagógico." }
-      ]
+        {
+          "date": "Abr 2025",
+          "title": "Construir a metodologia",
+          "text": "Início da revisão bibliográfica e investigação do ensino personalizado."
+        },
+        {
+          "date": "Protótipo",
+          "title": "Levar a análise aos professores",
+          "text": "Desenvolvimento de um protótipo para docentes da rede pública."
+        },
+        {
+          "date": "ABRIC",
+          "title": "Apresentar o trabalho",
+          "text": "Apresentação no 1º Simpósio ABRIC."
+        },
+        {
+          "date": "Próximo capítulo",
+          "title": "Transferir para o Sistema San",
+          "text": "Transformar a direção de pesquisa em um produto de planejamento pedagógico."
+        }
+      ],
+      "star": []
     }
   ],
   "olympiads": {
     "eyebrow": "03 — Olimpíadas",
     "items": [
-      { "date": "2027 · objetivo", "name": "IEO", "description": "Candidato à Olimpíada Internacional de Economia" },
-      { "date": "2026", "name": "OBECON", "description": "Finalista nacional, Top 45" },
-      { "date": "2026", "name": "Mendeleev", "description": "Equipe brasileira, Química Internacional" },
-      { "date": "2025", "name": "Canguru", "description": "Ouro, Matemática Internacional" },
-      { "date": "2021–25", "name": "OBA", "description": "4× ouro, Astronomia" }
+      {
+        "date": "2027 · objetivo",
+        "name": "IEO",
+        "description": "Candidato à Olimpíada Internacional de Economia"
+      },
+      {
+        "date": "2026",
+        "name": "OBECON",
+        "description": "Medalhista de prata · Top 20 Brasil"
+      },
+      {
+        "date": "2026",
+        "name": "Mendeleev",
+        "description": "Equipe brasileira · Top 9 na seletiva nacional"
+      },
+      {
+        "date": "Fase nacional",
+        "name": "Inteligência Artificial",
+        "description": "Top 5% Brasil; preparação para o próximo ciclo, com a IOAI como objetivo"
+      },
+      {
+        "date": "2025",
+        "name": "Canguru",
+        "description": "Ouro · Matemática Internacional"
+      },
+      {
+        "date": "2021–25",
+        "name": "OBA",
+        "description": "4× ouro · Astronomia"
+      }
     ]
   },
   "recognition": {
     "eyebrow": "04 — Reconhecimento",
     "title": "Programas e pessoas que apoiaram o trabalho.",
     "items": [
-      { "label": "Prep Program", "name": "Fundação Estudar", "description": "Selecionado para uma turma nacional de cerca de 70 estudantes. Colunista do blog Estudar Fora e embaixador institucional." },
-      { "label": "Bolsa de estudos", "name": "Pensi Colégio e Curso", "description": "Bolsa integral de mérito durante o ensino médio, com preparação IME/ITA e tempo dedicado a olimpíadas, pesquisa e projetos." },
-      { "label": "Fellowships", "name": "Summit · LaunchX · TKS", "description": "Summit STEM Fellow e ofertas de bolsas de 70%+ para LaunchX e The Knowledge Society. A oferta não implica participação no programa." },
-      { "label": "Imprensa", "name": "O Globo", "description": "Destaque em um jornal nacional pela classificação para a Olimpíada Internacional de Química Mendeleev." }
+      {
+        "label": "Prep Program",
+        "name": "Fundação Estudar",
+        "description": "Bolsista, colunista do Estudar Fora e embaixador do Prep Creators. Apresentação de pesquisa, cobertura de evento e fundraising em dupla."
+      },
+      {
+        "label": "Bolsa de estudos",
+        "name": "Pensi Colégio e Curso",
+        "description": "Bolsa integral de mérito durante o ensino médio, com preparação IME/ITA e tempo dedicado a olimpíadas, pesquisa e projetos."
+      },
+      {
+        "label": "Fellowships",
+        "name": "Summit · LaunchX · TKS",
+        "description": "Summit STEM Fellow. Oferta de bolsa acima de 90% para LaunchX e oferta de bolsa da The Knowledge Society; ofertas não implicam participação."
+      },
+      {
+        "label": "Treinamento em química",
+        "name": "Universidade de São Paulo",
+        "description": "65 horas de treinamento de química em nível universitário na preparação para a olimpíada internacional."
+      },
+      {
+        "label": "Cases de negócios",
+        "name": "BTG Pactual · Bain & Company",
+        "description": "Treinamento de cases na experiência da olimpíada de economia; não é vínculo profissional nem endosso."
+      }
     ]
   },
   "story": {
     "eyebrow": "Minha história / Uma trajetória em construção",
     "title": "Antes de construir produtos,\nprecisei construir\nminha própria base.",
     "description": "Uma trajetória de aprendizado, escolhas e sistemas — rumo à educação pública e às oportunidades que deveriam alcançar mais estudantes.",
-    "steps": ["Curiosidade", "Autonomia", "Olimpíadas", "Organizações", "O próximo passo"],
-    "portrait": { "src": "/images/fausto-historia.webp", "alt": "Fausto sorrindo ao ar livre, de casaco escuro, mochila vermelha e crachá de evento", "caption": "Um registro do caminho — para além dos projetos." },
+    "steps": [
+      "Curiosidade",
+      "Autonomia",
+      "Olimpíadas",
+      "Organizações",
+      "O próximo passo"
+    ],
+    "portrait": {
+      "src": "/images/fausto-historia.webp",
+      "alt": "Fausto sorrindo ao ar livre, de casaco escuro, mochila vermelha e crachá de evento",
+      "caption": "Um registro do caminho — para além dos projetos."
+    },
     "chapters": [
-      { "date": "Na adolescência", "label": "Construção · família", "title": "Antes dos sistemas, vieram as paredes.", "text": "Trabalhei com construção para ajudar meus pais, tanto em trabalhos externos quanto na nossa casa. Dividimos nossa casa para alugar mais de três vezes. Em quase todas essas mudanças, construí meu próprio quarto.", "note": "É daí que vem o modelo de construção deste site. Não é só uma metáfora visual." },
-      { "date": "Construindo uma base", "label": "Autonomia · oportunidade", "title": "Os materiais mudaram. O propósito continuou.", "text": "Por muito tempo, vivi sem tanta estrutura para correr atrás de alguns sonhos. Talvez seja por isso que eu goste de criar estrutura para mim e para os outros. Meus pais construíram com tijolo, massa e, às vezes, drywall. Na programação, na educação e na liderança, encontrei outra forma de construir.", "note": "" },
-      { "date": "Fim de 2023", "label": "Perguntas · organizações", "title": "Perguntar a quem já estava construindo.", "text": "Conversas com fundadores no Rio Innovation Week ajudaram a dar forma aos primeiros desenhos da SOEL: uma organização voltada à educação e às olimpíadas.", "note": "Concepção no fim de 2023; fundação formal em janeiro de 2025." },
-      { "date": "2024", "label": "Ensino médio · olimpíadas", "title": "Transformar curiosidade em prática.", "text": "As olimpíadas se tornaram uma forma de estudar a fundo e encontrar novos caminhos. Matemática, astronomia e química fazem parte dessa base; economia é o foco de hoje.", "note": "" },
-      { "date": "2025", "label": "Liderança · prioridades", "title": "Construir algo que dure além de uma pessoa.", "text": "Na SOEL, organizei lideranças, documentação e processos enquanto ensinava e construía o ERP da organização. Também entrei no Prep Program da Fundação Estudar.", "note": "" },
-      { "date": "2026", "label": "Pesquisa · produto · estratégia", "title": "Da pesquisa à escola. Da escola a novos sistemas.", "text": "A pesquisa em educação deu origem ao Sistema San. Tornei-me finalista nacional Top 45 da OBECON e entrei na Tsugrowth para atuar em estratégia e produto. Educação pública, IA e construção de sistemas úteis agora conectam o trabalho.", "note": "A equipe brasileira na Mendeleev faz parte da trajetória, não do foco profissional atual." },
-      { "date": "2027", "label": "Horizonte · objetivos", "title": "O próximo trecho ainda está em construção.", "text": "Buscar a IEO 2027 e ampliar o piloto do Sistema San são objetivos. Estudar Business e Computer Science é a próxima direção que quero explorar.", "note": "Objetivos não são apresentados como conquistas concluídas." }
+      {
+        "date": "Na adolescência",
+        "label": "Construção · família",
+        "title": "Antes dos sistemas, vieram as paredes.",
+        "text": "Desde adolescente, trabalhei em construção para ajudar meus pais: carregando piso, virando massa e construindo espaços, em trabalhos externos e na nossa casa. Dividimos nossa casa para alugar mais de três vezes. Em quase todas essas mudanças, construí meu próprio quarto.",
+        "note": "É daí que vem o modelo de construção deste site. Não é só uma metáfora visual."
+      },
+      {
+        "date": "Construindo uma base",
+        "label": "Autonomia · oportunidade",
+        "title": "Os materiais mudaram. O propósito continuou.",
+        "text": "Por muito tempo, vivi sem tanta estrutura para correr atrás de alguns sonhos. Talvez seja por isso que eu goste de criar estrutura para mim e para os outros. Meus pais construíram com tijolo, massa e, às vezes, drywall. Na programação, na educação e na liderança, encontrei outra forma de construir.",
+        "note": ""
+      },
+      {
+        "date": "Fim de 2023",
+        "label": "Perguntas · organizações",
+        "title": "Perguntar a quem já estava construindo.",
+        "text": "Conversas com fundadores no Rio Innovation Week ajudaram a dar forma aos primeiros desenhos da SOEL: uma organização voltada à educação e às olimpíadas.",
+        "note": "Concepção no fim de 2023; fundação formal em janeiro de 2025."
+      },
+      {
+        "date": "2024",
+        "label": "Ensino médio · olimpíadas",
+        "title": "Transformar curiosidade em prática.",
+        "text": "As olimpíadas se tornaram uma forma de estudar a fundo e encontrar novos caminhos. Matemática, astronomia e química fazem parte dessa base; economia é o foco de hoje.",
+        "note": ""
+      },
+      {
+        "date": "2025",
+        "label": "Liderança · prioridades",
+        "title": "Construir algo que dure além de uma pessoa.",
+        "text": "Na SOEL, organizei onboarding, lideranças, campanhas e cerca de 50 processos documentados enquanto ensinava e construía ferramentas internas. Também entrei no Prep Program da Fundação Estudar.",
+        "note": ""
+      },
+      {
+        "date": "2026",
+        "label": "Pesquisa · produto · estratégia",
+        "title": "Da pesquisa à escola. Da escola a novos sistemas.",
+        "text": "A pesquisa em educação virou o San System. Conquistei prata e Top 20 nacional na OBECON e entrei na Tsugrowth para atuar em estratégia e produto. Educação pública, IA e sistemas úteis conectam o trabalho.",
+        "note": "A equipe brasileira na Mendeleev faz parte da trajetória, não do foco profissional atual."
+      },
+      {
+        "date": "2027",
+        "label": "Horizonte · objetivos",
+        "title": "O próximo trecho ainda está em construção.",
+        "text": "Buscar a IEO 2027 e ampliar o piloto do Sistema San são objetivos. Estudar Business e Computer Science é a próxima direção que quero explorar.",
+        "note": "Objetivos não são apresentados como conquistas concluídas."
+      }
     ]
   },
   "contact": {
@@ -353,15 +856,33 @@
   "resume": {
     "eyebrow": "Currículo / Visão geral",
     "title": "Fausto Santos",
-    "description": "Fundador e builder · Educação pública, IA e economia · Rio de Janeiro, Brasil",
-    "print": "Imprimir / Salvar em PDF",
-    "note": "Perfil conciso gerado a partir deste site. O currículo final de candidatura pode ser adicionado separadamente.",
+    "description": "Builder · Educação, IA, fluxos de negócio e gestão voluntária · Rio de Janeiro, Brasil",
+    "print": "Imprimir este perfil",
+    "note": "Perfil do site. Um currículo editável separado está em revisão; este botão imprime esta página, não um PDF de candidatura aprovado.",
     "skillsTitle": "Ferramentas e idiomas",
-    "skills": "Python, TypeScript, JavaScript, SQL, React, Node.js, FastAPI, PostgreSQL, APIs REST, Pandas. Português (nativo), inglês (avançado), francês (em aprendizado)."
+    "skills": "TypeScript, JavaScript, Vue, React, Node.js, SQL, APIs REST, fluxos assistidos por IA, descoberta de produto, gestão de voluntários e documentação de processos. Português (nativo), inglês (avançado), francês (em aprendizado)."
   },
   "notFound": {
     "title": "Esta página ainda não foi construída.",
     "description": "Vamos voltar ao trabalho.",
     "back": "Voltar ao início"
+  },
+  "explorations": {
+    "eyebrow": "Na bancada",
+    "title": "Ideias iniciais. Sem disfarçar o estágio.",
+    "items": [
+      {
+        "name": "Smart Court",
+        "role": "Cofundador · produto e tecnologia",
+        "status": "Em desenvolvimento · pesquisa, design e primeiros testes",
+        "text": "Cocrio um produto de inteligência para arenas de pickleball. Já existem pesquisa, arquitetura, fluxos priorizados e cerca de 40 telas desenhadas; a visão computacional está em desenvolvimento. A demo prevista para 18 de dezembro de 2026 é meta, não produto lançado."
+      },
+      {
+        "name": "Automação do negócio familiar",
+        "role": "Desenho de fluxo e desenvolvimento",
+        "status": "Em desenvolvimento · fluxo em construção",
+        "text": "Transformo a busca manual de produtos e o cálculo de preços em um fluxo automatizado para o negócio do meu pai. Não são afirmados economia, receita ou implantação concluída."
+      }
+    ]
   }
 }

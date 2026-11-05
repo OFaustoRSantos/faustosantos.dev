@@ -506,7 +506,83 @@ html[data-motion-paused] [data-reveal] { transition: none; }
   .button:hover, .project-card:hover, .build-brick:hover, .experience-item:hover { transform: none; }
   .brand:hover .brand-mark, .field-photo figure, .field-photo:hover figure, .field-photo:focus-within figure { transform: none; }
 }
+.nav-links { font-size: 17px; font-weight: 500; gap: 20px; }
+.navigation { gap: 25px; }
+.nav-actions .button { font-size: 14px; }
+.experience-section { padding-bottom: 95px; }
+.experience-section .section-intro { max-width: 720px; margin-bottom: 30px; }
+.experience-section .section-intro > p:not(.eyebrow) { max-width: 650px; }
+.experience-section .section-intro::after { display: none; }
+.rail-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 20px; }
+.rail-toolbar > p { font: 12px/1.6 Consolas, monospace; }
+.rail-controls { display: flex; gap: 10px; }
+.rail-controls[hidden] { display: none; }
+.rail-controls button { display: grid; place-items: center; width: 48px; height: 48px; color: var(--ink); background: #e8e4d7; border: 1px solid #b6b99f; font-size: 23px; }
+.rail-controls button:disabled { opacity: .35; cursor: default; }
+.rail-controls button:not(:disabled):hover { background: #d9decb; }
+.experience-track { display: flex; gap: 24px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scrollbar-color: #9c674c #e0ddce; padding: 3px 3px 24px; scroll-padding-inline: 3px; }
+.experience-track:focus-visible { outline: 2px solid var(--blue); outline-offset: 6px; }
+.experience-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.experience-card { flex: 0 0 calc(50% - 12px); min-width: 0; padding: 35px; border: 1px solid #bfc2ad; border-top: 4px solid #88916e; background: #faf8f1; scroll-snap-align: start; scroll-margin: 15px; }
+.experience-card h3 { margin: 18px 0 10px; font-size: 28px; }
+.experience-card h3 a:hover { color: var(--blue); }
+.experience-card .experience-date { white-space: normal; }
+.experience-card .role { font-size: 15px; margin-bottom: 20px; }
+.experience-bullets { padding-left: 19px; color: var(--muted); font-size: 16px; line-height: 1.7; }
+.experience-bullets li + li { margin-top: 18px; }
+.experience-bullets li::marker { color: var(--blue); }
+.research-foundation { background: #ebeede; border-top-color: #a8442b; }
+.research-bridge { display: block; padding: 17px 0 0; margin-top: 22px; border-top: 1px dashed #b6b99f; font-size: 14px; color: var(--blue); }
+.research-bridge > .micro { display: block; margin-bottom: 7px; }
+.project-star { display: grid; gap: 14px; margin: 0 0 30px; }
+.project-star dt { font: 11px/1.5 Consolas, monospace; text-transform: uppercase; color: var(--blue); margin-bottom: 4px; }
+.project-star dd { font-size: 14px; color: var(--muted); line-height: 1.6; }
+.project-card .card-summary { min-height: 0; font-size: 16px; line-height: 1.7; }
+.project-card .metrics dd { font-size: 12px; }
+.project-card .badge { max-width: 100%; }
+.project-index .project-grid { margin-top: 35px; }
+.explorations-section { background: #eae7db; border-top: 1px solid var(--line); }
+.exploration-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 35px; }
+.exploration-card { padding: 30px; background: var(--paper); border: 1px dashed #9a9e85; }
+.exploration-card h3 { margin-top: 24px; }
+.exploration-card .badge { display: inline-block; max-width: 100%; line-height: 1.7; white-space: normal; }
+.exploration-card .role { margin: 12px 0 18px; font-size: 14px; }
+.exploration-card > p:last-child { font-size: 16px; line-height: 1.75; }
+.opening-bottom { flex-wrap: wrap; }
+@media (max-width: 1300px) {
+  .menu-toggle { display: grid; place-items: center; width: 48px; height: 48px; border: 1px solid var(--line); border-radius: 3px; background: transparent; color: var(--ink); font-size: 23px; }
+  .navigation { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--paper); border-bottom: 1px solid var(--line); padding: 20px 36px 30px; box-shadow: 0 15px 20px #00000022; }
+  .navigation.is-open { display: block; }
+  .nav-links { display: grid; grid-template-columns: 1fr 1fr; gap: 0 25px; margin-bottom: 20px; font-size: 19px; }
+  .nav-links a { padding-block: 16px; border-bottom: 1px solid var(--line); }
+  .nav-actions { flex-wrap: wrap; gap: 12px; }
+}
+@media (max-width: 760px) {
+  body { font-size: 16px; }
+  .nav-links { font-size: 20px; }
+  .navigation { padding-inline: 24px; }
+  .experience-card { flex-basis: 90%; padding: 24px; }
+  .experience-card h3 { font-size: 25px; }
+  .experience-card .role { font-size: 14px; }
+  .experience-bullets { font-size: 16px; line-height: 1.65; }
+  .experience-grid, .exploration-grid { grid-template-columns: 1fr; }
+  .rail-toolbar > p { max-width: 185px; }
+  .rail-controls { gap: 7px; }
+  .rail-controls button { width: 44px; height: 44px; }
+  .hero-description, .origin-copy > p, .invitation-copy > p:not(.eyebrow) { font-size: 16px; }
+  .stats-strip dd, .olympiad p:not(.micro), .recognition-card p:not(.eyebrow) { font-size: 14px; }
+  .exploration-card { padding: 25px; }
+}
 @media print {
+  .rail-toolbar { display: none; }
+  .experience-track, .experience-grid { display: block; overflow: visible; }
+  .experience-card { break-inside: avoid; padding: 12px 0; margin-bottom: 15px; border: 0; background: white; }
+  .experience-card h3 { font-size: 13pt; margin-top: 8px; }
+  .experience-bullets { font-size: 9pt; }
+  .experience-bullets li + li { margin-top: 7px; }
+  .experience-card .role { font-size: 10pt; margin-bottom: 10px; }
+  .experience-section .section-intro { margin-bottom: 15px; }
+  .experience-section { padding-bottom: 18px; }
   .construction-origin { display: block; }
   .brick-divider:not(.brick-divider-story), .divider-survey, .divider-wall, .divider-foundation, .section-intro::after { display: none !important; }
   .brick-divider-story { background: white; padding-block: 25px; }

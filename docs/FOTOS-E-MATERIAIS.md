@@ -14,6 +14,8 @@ Fausto delegou a seleção editorial das fotos enviadas. Foram escolhidas:
 
 Fotos pessoais não foram apresentadas como aula, equipe SOEL ou execução de um projeto sem esse contexto. Os recortes selecionados preservam a pessoa e a atividade. WebP entre 40 e 125 KB, metadados EXIF removidos e textos alternativos traduzidos. Os originais permanecem inalterados e fora do commit.
 
+O segundo quadro foi reenquadrado para a direita no original (recorte `left: 410, top: 20, width: 660, height: 825`, saída 600×750), mantendo o rosto e as mãos dentro da moldura vertical. As outras três fotos foram preservadas.
+
 A captura do San é uma interface real **com dados demonstrativos**, conforme identificado na imagem e na página pública `https://www.sistemasan.com.br/a16z-academy`. Foi convertida sem perdas, sem cortes, com acesso à imagem completa.
 
 As capturas antigas da SOEL não estão disponíveis. O case usa uma nota textual sobre o **Cometa Olímpico**, livro de astronomia criado em equipe; não há capa ou arquivo inventado. Não é necessário reenviar capturas inexistentes. Materiais de empresa continuam privados, e não há links ou convites para repositórios no site.
