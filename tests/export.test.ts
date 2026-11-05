@@ -16,6 +16,8 @@ test("production export contains every localized page, metadata and working inte
       assert.match(html, new RegExp(`<html lang="${locale === "pt" ? "pt-BR" : "en"}"`));
       assert.equal((html.match(/<h1(?:\s|>)/g) ?? []).length, 1, `${url}: single h1`);
       assert.ok(html.includes(`rel="canonical" href="${siteUrl}${url}"`), `${url}: canonical`);
+      assert.equal(new URL(siteUrl).hostname, "faustosantos.dev");
+      assert.doesNotMatch(html, /faustosantos\.vercel\.app/, `${url}: use canonical domain only`);
       assert.ok(html.includes('hrefLang="en"'), `${url}: English alternate`);
       assert.ok(html.includes('hrefLang="pt-BR"'), `${url}: Portuguese alternate`);
       assert.ok(html.includes('id="main"'), `${url}: skip-link target`);
@@ -89,5 +91,33 @@ test("the home connects the construction story to projects and includes the mate
     assert.match(html, /id="construction-origin-title"/);
     assert.ok(html.indexOf('id="construction-origin-title"') < html.indexOf('id="work"'));
     assert.doesNotMatch(html, /class="brick-divider-story"[^>]*aria-hidden/);
+  }
+});
+
+test("the English root and Portuguese /pt export the three featured projects", { skip: !exported }, () => {
+  const english = htmlFor(href("en"));
+  const portuguese = htmlFor(href("pt"));
+  assert.match(english, /<html lang="en"/);
+  assert.match(portuguese, /<html lang="pt-BR"/);
+  assert.equal((english.match(/class="project-card"/g) ?? []).length, 3);
+  assert.equal((portuguese.match(/class="project-card"/g) ?? []).length, 3);
+  assert.ok(english.includes("Supporting research"));
+  assert.ok(portuguese.includes("Pesquisa de apoio"));
+});
+
+test("every case opens with a build summary, role, status, evidence and links", { skip: !exported }, () => {
+  for (const locale of ["en", "pt"] as const) {
+    for (const project of ["soel", "sistema-san", "tsugrowth", "research"]) {
+      const html = htmlFor(href(locale, `projects/${project}`));
+      const overview = html.indexOf('class="case-overview"');
+      const problem = html.indexOf('class="section problem-section"');
+      assert.ok(overview >= 0 && overview < problem, `${locale}/${project}: facts are at the top`);
+      for (const field of ["case-built", "project-facts", "case-proof", "case-links"]) {
+        assert.ok(html.includes(`class="${field}`), `${locale}/${project}: ${field}`);
+      }
+      assert.match(html, /class="project-media(?: media-pending)?"/);
+      if (project === "sistema-san" || project === "tsugrowth") assert.match(html, /class="case-status is-progress"/);
+      else assert.doesNotMatch(html, /class="case-status is-progress"/);
+    }
   }
 });

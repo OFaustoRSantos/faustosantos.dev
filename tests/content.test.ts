@@ -53,6 +53,13 @@ test("project identities and metrics remain consistent across languages", () => 
       assert.match(project.slug, /^[a-z0-9-]+$/);
       assert.equal(project.metrics.length, 3);
       assert.equal(project.contributions.length, 3);
+      assert.ok(project.built.trim());
+      assert.ok(project.status.trim());
+      assert.ok(project.evidence.trim());
+      assert.ok(project.links);
+      for (const link of Object.values(project.links)) {
+        assert.ok(!link || link.startsWith("https://"), `${locale}/${project.slug}: public links must use HTTPS`);
+      }
       assert.ok(project.media.alt.trim());
       assert.ok(project.caveat.trim());
       if (project.media.src) {
@@ -109,5 +116,19 @@ test("construction copy, story photos and opening sequence are complete in both 
         assert.ok(existsSync(join(process.cwd(), "public", photo.src)));
       }
     }
+  }
+});
+
+test("the selected portfolio prioritizes three builds and flags unfinished products", () => {
+  for (const locale of ["en", "pt"] as const) {
+    const content = getContent(locale);
+    assert.equal(content.work.caseLabel.length > 0, true);
+    assert.equal(content.work.built.length > 0, true);
+    assert.equal(content.work.evidence.length > 0, true);
+    assert.equal(content.work.links.length > 0, true);
+    assert.deepEqual(content.projects.filter((project) => project.slug !== "research").map((project) => project.slug).sort(), ["sistema-san", "soel", "tsugrowth"].sort());
+    assert.ok(content.projects.find((project) => project.slug === "sistema-san")!.status.toLowerCase().includes(locale === "en" ? "work in progress" : "em desenvolvimento"));
+    assert.ok(content.projects.find((project) => project.slug === "tsugrowth")!.status.toLowerCase().includes(locale === "en" ? "work in progress" : "em desenvolvimento"));
+    assert.match(content.projects.find((project) => project.slug === "tsugrowth")!.caveat, /R\$30M|R\$ 30M/);
   }
 });

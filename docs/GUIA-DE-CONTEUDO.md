@@ -19,9 +19,9 @@ Esses documentos alimentam o site diretamente. Não é preciso alterar component
 | `storyInvite` | Convite para a história, frases da faixa contínua e três fotos editoriais da home |
 | `hero` | Headline, introdução, botões e cinco marcos da trajetória |
 | `stats` | Quatro destaques da home |
-| `experience` | Introdução e cinco experiências, compartilhadas com trabalho e currículo |
-| `work` | Introduções e rótulos dos estudos de caso |
-| `projects` | Quatro projetos completos: resumo, métricas, problema, contribuição, mídia, stack e evolução |
+| `experience` | Introdução e cinco experiências em formato de ação + resultado, compartilhadas com trabalho e currículo |
+| `work` | Introduções, seleção dos três projetos principais e rótulos dos estudos de caso |
+| `projects` | Quatro cases: entrega (`built`), papel, status, evidência, links, resumo, métricas, problema, contribuição, mídia, stack e evolução |
 | `olympiads` | Cinco olimpíadas e distinção entre meta e conquista |
 | `recognition` | Bolsas, programas e imprensa |
 | `story` | Introdução, retrato opcional e capítulos da história |
@@ -50,7 +50,7 @@ Exemplo:
 }
 ```
 
-Listas podem crescer, mas devem manter a paridade entre idiomas. A composição atual foi desenhada para cinco marcos do hero, quatro projetos e três métricas por projeto. Para mudar essas quantidades, revisar também os testes e o layout.
+Listas podem crescer, mas devem manter a paridade entre idiomas. O portfólio em destaque apresenta três projetos — SOEL, Sistema San e Tsugrowth/EVER — e mantém pesquisa em IA como material de apoio ao Sistema San. A composição atual foi desenhada para cinco marcos do hero e três métricas por projeto. Para mudar essas quantidades, revisar também os testes e o layout.
 
 ## Fotos e capturas
 
@@ -73,6 +73,17 @@ Salvar os arquivos em `public/images/`. Os caminhos usados nos JSONs começam co
 - Usar nomes minúsculos sem espaços/acentos e formatos WebP, AVIF, JPEG ou PNG.
 - Configurar o mesmo arquivo nos dois idiomas, com `alt` e `caption` traduzidos.
 - A área de imagem do case admite uma imagem principal; montagens devem usar somente capturas reais e aprovadas. Não simular resultados.
+- Envie as imagens originais para otimização e revisão antes da publicação. Para a home, prefira três fotos verticais (4:5): retrato em contexto, trabalho com a equipe/aula e você apresentando ou construindo um projeto. Para os cases, prefira capturas reais da interface, documentos de arquitetura ou pôsteres autorizados.
+- Antes do envio, remova ou anonimize nomes, fotos, listas, IDs e qualquer dado de estudantes, professores, escolas ou clientes. Não envie chaves, tokens, credenciais, arquivos `.env` nem material confidencial da Tsugrowth. Capturas do Sistema San e Tsugrowth só entram com autorização explícita.
+- Ao receber os arquivos, confirmar com você o texto alternativo objetivo, a legenda e a autorização. O site não inventará capturas nem resultados.
+
+## Evidência, status e links para candidaturas
+
+- Cada case começa com “What I built / My role / Status / Evidence / Links” (traduzido em `/pt/`), seguido pela descrição e material visual. Os cases do Sistema San e EVER estão explicitamente marcados como em desenvolvimento; piloto não significa resultado de aprendizagem comprovado.
+- Três projetos aparecem como trabalho selecionado. A pesquisa em IA está disponível como case complementar, não como quarto destaque.
+- URL base e canônica são `https://faustosantos.dev`. O domínio `faustosantos.vercel.app`, quando usado como endereço de deploy, não deve ser usado em links editoriais; a raiz `/` é inglês e `/pt/` é português.
+- `links.demo` e `links.github` ficam vazios até Fausto fornecer URLs aprovadas. Nunca publicar credenciais, histórico Git não revisado, dados de estudantes/escolas/clientes ou código/confidenciais de empregadores.
+- Recomendações iniciais: criar repositório-vitrine com dados sintéticos e arquitetura para SOEL e Sistema San; pedir acesso somente leitura a material do EVER, sujeito à autorização da empresa; publicar a pesquisa somente após revisão da fonte dos dados e direitos do pôster. Não tornar um repositório existente público sem varrer segredos no histórico completo.
 
 ## Construção e movimento
 

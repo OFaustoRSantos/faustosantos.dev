@@ -127,6 +127,12 @@ function ProjectCard({ project, index, locale, text }: { project: Project; index
   </Reveal>;
 }
 
+const featuredProjectSlugs = ["soel", "sistema-san", "tsugrowth"];
+
+function featuredProjects(content: Content) {
+  return featuredProjectSlugs.map((slug) => content.projects.find((project) => project.slug === slug)!);
+}
+
 function Work({ content, locale }: { content: Content; locale: Locale }) {
   return <section id="work" className="section work-section">
     <div className="container">
@@ -134,7 +140,8 @@ function Work({ content, locale }: { content: Content; locale: Locale }) {
         <div><Eyebrow>{content.work.eyebrow}</Eyebrow><h2>{content.work.title}</h2></div>
         <a className="text-link" href={href(locale, "work")}>{content.work.all}<span aria-hidden="true">→</span></a>
       </Reveal>
-      <div className="project-grid">{content.projects.map((project, index) => <ProjectCard key={project.slug} project={project} index={index} locale={locale} text={content.work} />)}</div>
+      <div className="project-grid">{featuredProjects(content).map((project, index) => <ProjectCard key={project.slug} project={project} index={index} locale={locale} text={content.work} />)}</div>
+      <a className="supporting-project-link" href={href(locale, "projects/research")}>{content.work.supportingResearch}<span aria-hidden="true"> ↗</span></a>
     </div>
   </section>;
 }
@@ -188,11 +195,12 @@ function WorkPage({ content, locale }: { content: Content; locale: Locale }) {
     <Experience content={content} locale={locale} expanded />
     <section className="section project-index"><div className="container">
       <Reveal><Eyebrow>{content.work.eyebrow}</Eyebrow><h2>{content.work.listTitle}</h2></Reveal>
-      {content.projects.map((project, index) => <Reveal className="project-index-item" key={project.slug} index={index}>
+      {featuredProjects(content).map((project, index) => <Reveal className="project-index-item" key={project.slug} index={index}>
         <span className="project-number">{String(index + 1).padStart(2, "0")}</span>
         <div><p className="micro">{project.role}</p><h3><a href={href(locale, `projects/${project.slug}`)}>{project.name}</a></h3><p className="role">{project.period}</p></div>
         <div><p>{project.summary}</p><a className="text-link" href={href(locale, `projects/${project.slug}`)}>{content.work.case}<span aria-hidden="true">→</span></a></div>
       </Reveal>)}
+      <a className="supporting-project-link" href={href(locale, "projects/research")}>{content.work.supportingResearch}<span aria-hidden="true"> ↗</span></a>
     </div></section>
     <Contact content={content} />
   </ConstructionSections>;
@@ -216,14 +224,12 @@ function StoryPage({ content }: { content: Content }) {
 }
 
 function ProjectMedia({ project, text }: { project: Project; text: Content["work"] }) {
-  return <section className="project-media-section"><div className="container"><Reveal>
-    <figure className={project.media.src ? "project-media" : "project-media media-pending"}>
+  return <figure className={project.media.src ? "project-media" : "project-media media-pending"}>
       {project.media.src
         ? <Image src={project.media.src} alt={project.media.alt} width={1600} height={1000} sizes="(max-width: 760px) 90vw, 1200px" />
         : <div className="media-placeholder"><span className="viewfinder" aria-hidden="true">⌜⌝<br />⌞⌟</span><Eyebrow>{text.mediaLabel}</Eyebrow><h3>{text.mediaPending}</h3><p>{text.mediaNote}</p></div>}
       <figcaption>{project.media.caption}</figcaption>
-    </figure>
-  </Reveal></div></section>;
+  </figure>;
 }
 
 function ProjectPage({ project, content, locale }: { project: Project; content: Content; locale: Locale }) {
@@ -233,9 +239,24 @@ function ProjectPage({ project, content, locale }: { project: Project; content: 
   return <ConstructionSections>
     <section className="page-hero project-hero dark"><div className="container">
       <div className="page-construction-mark" aria-hidden="true"><BrandMark /></div>
-      <div className="case-top"><a href={href(locale, "work")} className="back-link">← {work.back}</a><span className="micro">CASE {String(index + 1).padStart(2, "0")} / 04</span></div>
-      <h1>{project.name}</h1><p className="page-description">{project.subtitle}</p>
-      <dl className="project-facts">{[{ label: work.role, value: project.role }, { label: work.period, value: project.period }, { label: work.status, value: project.status }].map((fact) => <div key={fact.label}><dt className="micro">{fact.label}</dt><dd>{fact.value}</dd></div>)}</dl>
+      <div className="case-top"><a href={href(locale, "work")} className="back-link">← {work.back}</a><span className="micro">{work.caseLabel} {String(index + 1).padStart(2, "0")}</span></div>
+      <div className="case-overview">
+        <div className="case-build">
+          <h1>{project.name}</h1><p className="page-description">{project.subtitle}</p>
+          <div className="case-built"><Eyebrow>{work.built}</Eyebrow><p>{project.built}</p></div>
+        </div>
+        <div className="case-proof">
+          <dl className="project-facts">
+            {[{ label: work.role, value: project.role, status: false }, { label: work.status, value: project.status, status: true }, { label: work.evidence, value: project.evidence, status: false }].map((fact) => <div key={fact.label}><dt className="micro">{fact.label}</dt><dd>{fact.status ? <span className={`case-status${project.status.toLowerCase().includes("work in progress") || project.status.toLowerCase().includes("em desenvolvimento") ? " is-progress" : ""}`}>{fact.value}</span> : fact.value}</dd></div>)}
+            <div><dt className="micro">{work.links}</dt><dd className="case-links">
+              {project.links.demo && <a href={project.links.demo} target="_blank" rel="noopener noreferrer">{work.demo}<span aria-hidden="true"> ↗</span></a>}
+              {project.links.github && <a href={project.links.github} target="_blank" rel="noopener noreferrer">{work.github}<span aria-hidden="true"> ↗</span></a>}
+              {!project.links.demo && !project.links.github && <span>{work.linksPending}</span>}
+            </dd></div>
+          </dl>
+          <ProjectMedia project={project} text={work} />
+        </div>
+      </div>
       <ol className="steps">{project.steps.map((step, i) => <li key={step}><span className="micro">{String(i + 1).padStart(2, "0")}</span>{step}</li>)}</ol>
     </div></section>
     <section className="section problem-section"><div className="container split-layout"><Reveal><Eyebrow>{work.problem}</Eyebrow><h2 className="preserve-lines">{project.problemTitle}</h2></Reveal><Reveal><p className="lead-text">{project.problem}</p><p className="context-note">{project.caveat}</p></Reveal></div></section>
@@ -243,7 +264,6 @@ function ProjectPage({ project, content, locale }: { project: Project; content: 
       <Reveal><Eyebrow>{work.contribution}</Eyebrow><h2>{project.contributionTitle}</h2></Reveal>
       <div className="contribution-list">{project.contributions.map((item, i) => <Reveal className="contribution-item" key={item.title} index={i}><span className="micro blue">{String(i + 1).padStart(2, "0")}</span><h3>{item.title}</h3><p>{item.text}</p></Reveal>)}</div>
     </div></section>
-    <ProjectMedia project={project} text={work} />
     <section className="section project-numbers dark"><div className="container"><Reveal><Eyebrow>{work.numbers}</Eyebrow><Metrics items={project.metrics} /><p className="numbers-note">{project.caveat}</p></Reveal></div></section>
     <section className="section stack-section"><div className="container split-layout"><Reveal><Eyebrow>{work.stack}</Eyebrow><h2>{work.stackTitle}</h2></Reveal><div>{project.stack.map((item, i) => <Reveal className="stack-item" key={item.title} index={i}><h3>{item.title}</h3><p>{item.text}</p></Reveal>)}</div></div></section>
     <section className="section evolution-section"><div className="container"><Reveal><Eyebrow>{work.evolution}</Eyebrow><h2>{work.evolutionTitle}</h2></Reveal>
