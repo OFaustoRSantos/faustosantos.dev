@@ -72,6 +72,7 @@ Salvar os arquivos em `public/images/`. Os caminhos usados nos JSONs começam co
 ```
 
 - Cases: `projects[n].media`.
+- O case Tsugrowth usa somente o nome da empresa e duas frentes em `projects[n].workstreams`: operação comercial de cruzeiros (patrocínios e ferramenta interna de mensagens) e produto para varejo (EVER). Cada frente tem `title`, `status`, `description` e `contributions`; números comerciais não são resultados do EVER. Os demais cases mantêm `contributions` e uma lista `workstreams` vazia.
 - Retrato: `story.portrait`.
 - Fotos da home: `storyInvite.photos[0..2]`. São três quadros de caderno de campo: pessoa, propósito e processo. Usar imagens verticais 4:5, pois a moldura recorta nessa proporção.
 - `src` vazio mantém a área pendente dos cases e não renderiza um retrato fictício.

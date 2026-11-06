@@ -41,6 +41,26 @@ test("unknown and malformed routes do not resolve to a success page", () => {
   }
 });
 
+test("Tsugrowth separates cruise operations from EVER product development", () => {
+  for (const locale of ["en", "pt"] as const) {
+    const project = getContent(locale).projects.find(project => project.slug === "tsugrowth")!;
+    assert.equal(project.name, "Tsugrowth");
+    assert.equal(project.contributions.length, 0);
+    assert.equal(project.workstreams.length, 2);
+    const [cruise, retail] = project.workstreams;
+    assert.equal(cruise.contributions.length, 4);
+    assert.equal(retail.contributions.length, 2);
+    assert.match(cruise.description, /56.*261.*12/);
+    assert.match(JSON.stringify(cruise.contributions), /ManyChat/);
+    assert.doesNotMatch(JSON.stringify(cruise.contributions), /EVER/);
+    assert.match(retail.title, /EVER/);
+    assert.match(retail.status, /Work in Progress|Em desenvolvimento/);
+    assert.match(retail.description, /14,000|14 mil/);
+    assert.match(retail.description, /27.*2026/);
+    assert.doesNotMatch(JSON.stringify(retail), /R\$30M|ManyChat|261/);
+  }
+});
+
 test("project identities and metrics remain consistent across languages", () => {
   assert.deepEqual(pt.projects.map((project) => project.slug), en.projects.map((project) => project.slug));
   assert.deepEqual(pt.stats.map((stat) => stat.value), ["US$5 mi", "14 mil", "4 mil", "Top 20"]);
@@ -57,7 +77,7 @@ test("project identities and metrics remain consistent across languages", () => 
     for (const project of content.projects) {
       assert.match(project.slug, /^[a-z0-9-]+$/);
       assert.equal(project.metrics.length, 3);
-      assert.equal(project.contributions.length, { "sistema-san": 5, soel: 5, tsugrowth: 6, research: 4 }[project.slug]);
+      assert.equal(project.contributions.length + project.workstreams.reduce((total, front) => total + front.contributions.length, 0), { "sistema-san": 5, soel: 5, tsugrowth: 6, research: 4 }[project.slug]);
       assert.ok(project.built.trim());
       assert.equal(project.executive.length, 3);
       assert.ok(project.status.trim());
@@ -183,7 +203,7 @@ test("selected photography and public San evidence replace placeholders without 
     assert.match(JSON.stringify(content.projects[1].executive), /241/);
     assert.match(JSON.stringify(content.projects[1].contributions), /MCP.*Granola/);
     assert.match(JSON.stringify(content.projects[2].executive), /27/);
-    assert.match(JSON.stringify(content.projects[2].contributions), /ManyChat/);
+    assert.match(JSON.stringify(content.projects[2].workstreams[0].contributions), /ManyChat/);
     assert.ok(existsSync(join(process.cwd(), "public", content.story.school.src)));
     assert.equal(content.story.overview.paragraphs.length, 3);
   }

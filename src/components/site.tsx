@@ -281,6 +281,10 @@ function ProjectPage({ project, content, locale }: { project: Project; content: 
     <section className="section problem-section"><div className="container split-layout"><Reveal><Eyebrow>{work.problem}</Eyebrow><h2 className="preserve-lines">{project.problemTitle}</h2></Reveal><Reveal><p className="lead-text">{project.problem}</p><p className="context-note">{project.caveat}</p></Reveal></div></section>
     <section className="section contribution-section"><div className="container">
       <Reveal><Eyebrow>{work.contribution}</Eyebrow><h2>{project.contributionTitle}</h2></Reveal>
+      {project.workstreams.map((front, frontIndex) => <section className="case-workstream" key={front.title} aria-labelledby={`workstream-${frontIndex}`}>
+        <Reveal className="workstream-intro"><h3 id={`workstream-${frontIndex}`}>{front.title}</h3><p className="workstream-status">{front.status}</p><p>{front.description}</p></Reveal>
+        <div className="contribution-list">{front.contributions.map((item, i) => <Reveal className="contribution-item" key={item.title} index={i}><span className="micro blue">{String(i + 1).padStart(2, "0")}</span><h4>{item.title}</h4><p>{item.text}</p></Reveal>)}</div>
+      </section>)}
       <div className="contribution-list">{project.contributions.map((item, i) => <Reveal className="contribution-item" key={item.title} index={i}><span className="micro blue">{String(i + 1).padStart(2, "0")}</span><h3>{item.title}</h3><p>{item.text}</p></Reveal>)}</div>
     </div></section>
     <section className="section project-numbers dark"><div className="container"><Reveal><Eyebrow>{work.numbers}</Eyebrow><Metrics items={project.metrics} /><p className="numbers-note">{project.caveat}</p></Reveal></div></section>

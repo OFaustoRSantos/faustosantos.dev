@@ -173,9 +173,9 @@
         "date": "Ago 2026 — hoje",
         "slug": "tsugrowth",
         "bullets": [
-          "Transformei um processo manual de patrocínio em um fluxo de IA com seis etapas, quatro ferramentas interativas, nove skills reutilizáveis e uma via rápida de propostas, com aprovação humana antes do envio.",
+          "Frente de cruzeiros: Transformei um processo manual de patrocínio em um fluxo de IA com seis etapas, quatro ferramentas interativas, nove skills reutilizáveis e uma via rápida de propostas, com aprovação humana antes do envio.",
           "Pesquisei 56 marcas, estruturei 261 ideias de ativação e produzi 12 decks; o trabalho apoiou três parcerias fechadas. A CEO responde por preço e negociação; o gerente nacional valida as propostas.",
-          "Lidero o produto EVER: traduzo pesquisa de campo em um fluxo Android offline-first, portal web e regras operacionais para execução de varejo. Escopo previsto: 14 mil colaboradores; implantação e adoção não são resultados concluídos."
+          "Frente de varejo: Lidero o produto EVER: traduzo pesquisa de campo em um fluxo Android offline-first, portal web e regras operacionais para execução de varejo. Escopo previsto: 14 mil colaboradores; implantação e adoção não são resultados concluídos."
         ],
         "related": {
           "name": "",
@@ -404,7 +404,8 @@
         "Professores já tinham resultados de avaliação e indicadores da rede, mas transformar esses dados no que ensinar em seguida era um trabalho fragmentado. Minha pesquisa começou em abril de 2025 com revisão e entrevistas; o San System transforma esse método em um fluxo escolar prático.",
         "O professor consulta necessidades da turma e dos estudantes, seleciona tempos da grade, define objetivos e prepara um plano semanal para revisão. Coordenação e direção têm visões próprias para acompanhar, aprovar e organizar. O sistema combina processamento determinístico de avaliações com contexto curricular e materiais estruturados.",
         "Construí a plataforma TypeScript/Vue/Node e a pipeline que organiza PDFs didáticos municipais em JSON pedagógico validado. A apresentação pública mostra telas reais com dados demonstrativos. O piloto com 15+ professores é escopo informado, não ganho de aprendizagem medido; o ciclo completo de personalização segue em desenvolvimento e validação."
-      ]
+      ],
+      "workstreams": []
     },
     {
       "slug": "soel",
@@ -528,19 +529,20 @@
         "A SOEL conecta estudantes a olimpíadas, pesquisa, estágios e summer programs. Quatro comunidades reúnem 241 estudantes, com clubes e quatro programas de mentoria. O trabalho mais amplo de ensino soma 4 mil estudantes ensinados — medida diferente de membros das comunidades ou alcance em redes.",
         "Meu trabalho inclui recrutar e integrar voluntários, formar líderes, desenhar campanhas, padronizar documentação e construir o site e o ERP em Node.js/TypeScript. Alguns cargos usam o ERP com frequência; outros, pontualmente. Preparo a próxima plataforma enquanto desenvolvo a própria organização.",
         "Uma lição central: software sozinho não resolve engajamento voluntário. Passei a trabalhar com resultados claros, responsabilidades semanais e desenvolvimento de lideranças, incluindo treinamento em IA para reduzir trabalho repetitivo."
-      ]
+      ],
+      "workstreams": []
     },
     {
       "slug": "tsugrowth",
-      "name": "Tsugrowth / EVER",
-      "badge": "Em desenvolvimento · EVER em construção",
+      "name": "Tsugrowth",
+      "badge": "Fluxo comercial em uso · produtos em desenvolvimento",
       "role": "Estagiário de Estratégia e Inovação",
       "period": "Ago 2026 — hoje",
       "status": "Em desenvolvimento · fluxo de patrocínio em uso; EVER em desenvolvimento; ferramenta de mensagens em construção",
-      "built": "Na Tsugrowth, transformo problemas de negócio pouco definidos em pesquisa, regras de operação e ferramentas. Construí um fluxo de IA com revisão humana para propostas de patrocínio em cruzeiros, lidero o produto EVER e desenvolvo uma ferramenta interna de mensagens e automação para influenciadores e agentes sociais dos navios.",
+      "built": "Meu trabalho na Tsugrowth tem duas frentes distintas. Na operação comercial de cruzeiros, desenhei e opero o fluxo de patrocínio com IA e desenvolvo uma ferramenta interna de mensagens. No desenvolvimento de produto para varejo, lidero a descoberta, especificação e construção do EVER.",
       "links": [],
-      "summary": "Transformei um processo manual de patrocínio em um fluxo de IA com revisão humana e levei a mesma disciplina de produto à operação de campo do EVER.",
-      "subtitle": "Da pesquisa comercial às propostas, à operação de campo e às ferramentas internas.",
+      "summary": "Duas frentes na Tsugrowth: operação de patrocínio em cruzeiros apoiada por IA e o produto EVER para execução no varejo. Entregas comerciais e marcos de desenvolvimento são apresentados separadamente.",
+      "subtitle": "Duas frentes distintas: operação comercial de cruzeiros e desenvolvimento de produto para varejo.",
       "steps": [
         "Pesquisa de campo",
         "Estratégia",
@@ -567,35 +569,10 @@
         "Produto offline-first"
       ],
       "problemTitle": "Da oportunidade comercial\nà execução em campo.",
-      "problem": "Na Tsugrowth, atuo em duas frentes distintas. A primeira é um pipeline de patrocínio para ativações de marcas em cruzeiros. A segunda é o EVER: uma plataforma de execução de varejo com app Android offline-first e portal web.",
+      "problem": "A frente de cruzeiros precisava de um caminho repetível da pesquisa de marcas à proposta de patrocínio viável. A frente de varejo precisava de um produto que conectasse visitas às lojas, dados de campo e decisões de supervisores. Ambas fazem parte do meu trabalho na Tsugrowth, mas resolvem problemas diferentes: EVER não é a plataforma de patrocínio.",
       "caveat": "Os ~R$30M são uma estimativa de valor potencial do pipeline de patrocínio, nunca receita fechada ou receita do EVER. O piloto de 20 usuários estava previsto para novembro de 2026, não foi informado como concluído.",
-      "contributionTitle": "Três frentes. Minha responsabilidade em cada uma.",
-      "contributions": [
-        {
-          "title": "Pesquisar e desenhar o fluxo de patrocínio",
-          "text": "Substituí pesquisa dispersa, planilhas e decks manuais por um caminho repetível da marca candidata à proposta. Estruturei briefing, aderência de público e ideias de ativação; incorporei restrições do navio e exclusividade de categoria, mantendo decisão humana antes da apresentação final."
-        },
-        {
-          "title": "Construir ferramentas, revisão e conhecimento reutilizável",
-          "text": "Construí quatro ferramentas interativas de IA e nove skills em um fluxo de seis etapas, incluindo uma via rápida. Criei um documento intermediário para pesquisa, ideias, comentários e restrições sobreviverem entre etapas em vez de ficarem em conversas pessoais."
-        },
-        {
-          "title": "Operar o fluxo comercial",
-          "text": "Pesquiso marcas, seleciono e refino ativações e produzo decks no dia a dia. O fluxo apoiou 56 marcas, 261 ideias, 12 decks e três parcerias. Não atribuo a mim as decisões de fechamento nem trato pipeline como receita; ativação pós-venda e renovação são trabalhos separados."
-        },
-        {
-          "title": "EVER · entender o campo antes do código",
-          "text": "Mapeio como promotores, supervisores e equipes centrais trabalham nas lojas. Defino visitas, agendas, pesquisas, fotos, permissões e exceções como fluxos, regras documentadas e máquinas de estado, não apenas uma coleção de telas."
-        },
-        {
-          "title": "EVER · Android, portal e gestão por exceção",
-          "text": "Lidero o desenvolvimento de um app Android com operação offline para promotores e supervisores, junto a um portal por cargo. O protótipo prevê cadastros/importações, agenda, check-in/out por proximidade, pesquisas/fotos e regras SE/ENTÃO que criam ocorrências com prazo e escalonamento. Sincronização offline e validação em campo são marcos de desenvolvimento, não resultados comprovados em produção."
-        },
-        {
-          "title": "Mensagens e operação social nos cruzeiros",
-          "text": "Desenvolvo uma plataforma interna de mensagens e automação, semelhante em propósito ao ManyChat, para influenciadores e agentes sociais dos cruzeiros. É uma frente solicitada separada, não um lançamento público nem a afirmação de que os recursos do ManyChat já estão implementados."
-        }
-      ],
+      "contributionTitle": "Duas frentes. Entregas e estágios diferentes.",
+      "contributions": [],
       "media": {
         "src": "",
         "alt": "",
@@ -644,9 +621,49 @@
         "12 decks e apoio a três parcerias; EVER em desenvolvimento."
       ],
       "executive": [
-        "O trabalho de patrocínio começa antes do deck: pesquisar uma marca, entender seu público, desenvolver uma ativação viável no navio, verificar restrições e exclusividade de categoria e preparar a proposta para aprovação humana. Desenhei um fluxo de seis etapas, quatro ferramentas, nove skills e uma Express Lane para propostas rápidas.",
+        "Frente 01 — Operação comercial de cruzeiros. O trabalho de patrocínio começa antes do deck: pesquisar uma marca, entender seu público, desenvolver uma ativação viável no navio, verificar restrições e exclusividade de categoria e preparar a proposta para aprovação humana. Desenhei um fluxo de seis etapas, quatro ferramentas, nove skills e uma Express Lane para propostas rápidas.",
         "O fluxo apoiou 56 marcas pesquisadas, 261 ideias estruturadas, 12 decks e três parcerias fechadas. Cerca de US$5 mi (~R$30M) são estimativa de pipeline de propostas, não receita. Desenho e opero o sistema; a CEO responde por preço e negociação, e o gerente nacional valida as propostas.",
-        "O EVER é outro produto, em desenvolvimento: app Android e portal web para execução no varejo. Lidero descoberta, escopo e tradução das rotinas de campo em software. O escopo prevê 14 mil colaboradores; um piloto com até 20 usuários está planejado para 27 de novembro de 2026, não é uma implantação concluída."
+        "Frente 02 — Desenvolvimento de produto para varejo. O EVER é outro produto, em desenvolvimento: app Android e portal web para execução no varejo. Lidero descoberta, escopo e tradução das rotinas de campo em software. O escopo prevê 14 mil colaboradores; um piloto com até 20 usuários está planejado para 27 de novembro de 2026, não é uma implantação concluída."
+      ],
+      "workstreams": [
+        {
+          "title": "Frente 01 · Operação comercial de cruzeiros",
+          "status": "Fluxo de patrocínio em uso · ferramenta de mensagens em desenvolvimento",
+          "description": "Pesquisa de marcas, estratégia de ativações e produção de propostas com ferramentas de IA e aprovação humana. Entregas comerciais: 56 marcas pesquisadas, 261 ideias, 12 decks e apoio a três parcerias fechadas. O pipeline estimado de ~R$30M não é receita; preço e negociação cabem à CEO.",
+          "contributions": [
+            {
+              "title": "Pesquisar e desenhar o fluxo de patrocínio",
+              "text": "Substituí pesquisa dispersa, planilhas e decks manuais por um caminho repetível da marca candidata à proposta. Estruturei briefing, aderência de público e ideias de ativação; incorporei restrições do navio e exclusividade de categoria, mantendo decisão humana antes da apresentação final."
+            },
+            {
+              "title": "Construir ferramentas, revisão e conhecimento reutilizável",
+              "text": "Construí quatro ferramentas interativas de IA e nove skills em um fluxo de seis etapas, incluindo uma via rápida. Criei um documento intermediário para pesquisa, ideias, comentários e restrições sobreviverem entre etapas em vez de ficarem em conversas pessoais."
+            },
+            {
+              "title": "Operar o fluxo comercial",
+              "text": "Pesquiso marcas, seleciono e refino ativações e produzo decks no dia a dia. O fluxo apoiou 56 marcas, 261 ideias, 12 decks e três parcerias. Não atribuo a mim as decisões de fechamento nem trato pipeline como receita; ativação pós-venda e renovação são trabalhos separados."
+            },
+            {
+              "title": "Mensagens e operação social nos cruzeiros",
+              "text": "Dentro da operação de cruzeiros, desenvolvo uma ferramenta interna solicitada de mensagens e automação, semelhante em propósito ao ManyChat, para influenciadores e agentes sociais. É uma ferramenta diferente do fluxo de patrocínio, ainda em desenvolvimento; não é um lançamento público nem um conjunto completo de recursos do ManyChat."
+            }
+          ]
+        },
+        {
+          "title": "Frente 02 · Desenvolvimento de produto para varejo — EVER",
+          "status": "Em desenvolvimento · piloto previsto, não concluído",
+          "description": "Outro problema de negócio: traduzir rotinas nas lojas em um app Android de campo e um portal web por cargo. Lidero descoberta, escopo, regras documentadas e desenvolvimento. Escopo previsto: 14 mil colaboradores; piloto com até 20 usuários planejado para 27 de novembro de 2026. São metas de produto, não resultados comerciais nem adoção ativa.",
+          "contributions": [
+            {
+              "title": "EVER · entender o campo antes do código",
+              "text": "Mapeio como promotores, supervisores e equipes centrais trabalham nas lojas. Defino visitas, agendas, pesquisas, fotos, permissões e exceções como fluxos, regras documentadas e máquinas de estado, não apenas uma coleção de telas."
+            },
+            {
+              "title": "EVER · Android, portal e gestão por exceção",
+              "text": "Lidero o desenvolvimento de um app Android com operação offline para promotores e supervisores, junto a um portal por cargo. O protótipo prevê cadastros/importações, agenda, check-in/out por proximidade, pesquisas/fotos e regras SE/ENTÃO que criam ocorrências com prazo e escalonamento. Sincronização offline e validação em campo são marcos de desenvolvimento, não resultados comprovados em produção."
+            }
+          ]
+        }
       ]
     },
     {
@@ -758,7 +775,8 @@
         "O ponto de partida era pedagógico, não um algoritmo: existem dados de avaliação, mas o professor ainda precisa decidir o que retomar, quais habilidades priorizar e como ensinar uma turma com necessidades diferentes. Investiguei como a IA poderia apoiar esse raciocínio sem substituir o professor.",
         "Revisei 20+ artigos, entrevistei oito profissionais e concebi um método que conecta diagnóstico, currículo e contexto de ensino. O protótipo tornou o método concreto para professores; o San System virou o produto para desenvolvê-lo em um fluxo escolar.",
         "Apresentei a pesquisa na ABRIC, recebendo Melhor Projeto em Sociolinguística, e a submeti à FEBRACE e ao Prêmio Jovem Cientista. Essas submissões são diferentes de premiações. A pesquisa não estabelece ganho causal de aprendizagem nem implantação nacional concluída."
-      ]
+      ],
+      "workstreams": []
     }
   ],
   "olympiads": {

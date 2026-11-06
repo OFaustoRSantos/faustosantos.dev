@@ -173,9 +173,9 @@
         "date": "Aug 2026 — now",
         "slug": "tsugrowth",
         "bullets": [
-          "Rebuilt a manual sponsorship process as a six-stage AI workflow: four interactive tools, nine reusable skills and a fast-track proposal path, with human approval before anything reaches a brand.",
+          "Cruise front: Rebuilt a manual sponsorship process as a six-stage AI workflow: four interactive tools, nine reusable skills and a fast-track proposal path, with human approval before anything reaches a brand.",
           "Researched 56 brands, structured 261 activation ideas and produced 12 proposal decks; the work supported three closed partnerships. The CEO owns pricing and negotiation; the national manager validates proposals.",
-          "Lead EVER’s product work: translate field research into an offline-first Android workflow, a web portal and operational rules for retail execution. Intended scope: 14,000 employees; rollout and adoption are not completed results."
+          "Retail front: Lead EVER’s product work: translate field research into an offline-first Android workflow, a web portal and operational rules for retail execution. Intended scope: 14,000 employees; rollout and adoption are not completed results."
         ],
         "related": {
           "name": "",
@@ -404,7 +404,8 @@
         "Teachers already had assessment results and network-level indicators, but translating them into what to teach next was fragmented. My research began in April 2025 with literature review and educator interviews; San System turns that method into a practical school workflow.",
         "A teacher can inspect class and student needs, select timetable slots, define pedagogical objectives and prepare a weekly plan for review. Coordinators and principals get their own views for follow-up, approvals and organization. The system combines deterministic assessment-data processing with structured curriculum and teaching-material context.",
         "I built the TypeScript/Vue/Node platform and the pipeline that organizes municipal teaching PDFs into validated pedagogical JSON. The public walkthrough shows actual application screens with demonstration data. The 15+ teacher pilot is reported scope, not measured learning improvement; the full personalization loop is still being developed and validated."
-      ]
+      ],
+      "workstreams": []
     },
     {
       "slug": "soel",
@@ -528,19 +529,20 @@
         "SOEL connects students to olympiads, research, internships and summer programs. Its four communities bring together 241 students, alongside clubs and four mentorship programs. The broader teaching work has reached 4,000 students taught — a different measure from community membership or social-media reach.",
         "My work includes recruiting and onboarding volunteers, training leaders, designing campaigns, standardizing documentation and building the organization’s website and Node.js/TypeScript ERP. Some roles use the ERP regularly; others use it occasionally. I am preparing the next platform while improving the organization itself.",
         "A central lesson: software alone does not solve volunteer engagement. I shifted toward clear outcomes, weekly responsibilities and leadership development, then introduced AI training to help teams spend less time on repetitive work."
-      ]
+      ],
+      "workstreams": []
     },
     {
       "slug": "tsugrowth",
-      "name": "Tsugrowth / EVER",
-      "badge": "Work in Progress · EVER in development",
+      "name": "Tsugrowth",
+      "badge": "Commercial workflow in use · products in development",
       "role": "Business Strategy & Innovation Intern",
       "period": "Aug 2026 — now",
       "status": "Work in Progress · sponsorship workflow in use; EVER in development; cruise messaging tool in development",
-      "built": "At Tsugrowth, I turn loosely defined business problems into research, operating rules and working tools. I built a human-reviewed AI workflow for cruise sponsorship proposals, lead EVER’s retail-execution product, and am developing an internal messaging/automation tool for cruise influencers and social agents.",
+      "built": "My work at Tsugrowth has two distinct fronts. In cruise commercial operations, I designed and operate the AI-supported sponsorship workflow and am developing an internal messaging tool. In retail product development, I lead EVER’s discovery, specification and software development.",
       "links": [],
-      "summary": "Turned a manual sponsorship process into a human-reviewed AI workflow, then applied the same product discipline to EVER’s retail field operations.",
-      "subtitle": "From commercial research to proposals, field operations and internal tools.",
+      "summary": "Two fronts at Tsugrowth: AI-supported cruise sponsorship operations, and EVER’s retail-execution product. Delivered commercial work and product-development milestones are reported separately.",
+      "subtitle": "Two distinct fronts: cruise commercial operations and retail product development.",
       "steps": [
         "Field research",
         "Strategy",
@@ -567,35 +569,10 @@
         "Offline-first product"
       ],
       "problemTitle": "From commercial opportunity\nto execution in the field.",
-      "problem": "At Tsugrowth, I work on two separate fronts. The first is a sponsorship pipeline for brand activations on cruises. The second is EVER: a retail-execution platform designed around an offline-first Android app and a web portal.",
+      "problem": "The cruise front needed a repeatable path from brand research to a viable sponsorship proposal. The retail front needed a product that connects store visits, field data and supervisor decisions. Both sit within my Tsugrowth work, but solve different problems: EVER is not the sponsorship platform.",
       "caveat": "The ~R$30M figure is an estimate of potential sponsorship pipeline value, never closed revenue or EVER revenue. The EVER pilot with 20 users was planned for November 2026, not reported as completed.",
-      "contributionTitle": "Three workstreams. My responsibilities in each.",
-      "contributions": [
-        {
-          "title": "Research and design the sponsorship workflow",
-          "text": "Replaced scattered research, spreadsheets and hand-built decks with a repeatable path from candidate brand to proposal. Structured the brief, audience fit and activation ideas; encoded ship constraints and category exclusivity; kept human judgment before the final presentation."
-        },
-        {
-          "title": "Build tools, review gates & reusable knowledge",
-          "text": "Built four interactive AI tools and nine reusable skills around a six-stage workflow, including a fast track. Created an intermediate document so research, ideas, comments and constraints survive between steps instead of living in personal chats."
-        },
-        {
-          "title": "Operate the commercial workflow",
-          "text": "Research brands, select and refine activations, and produce decks day to day. The workflow supported 56 brands, 261 ideas, 12 decks and three partnerships. I do not claim to own closing decisions or that the estimated pipeline has become revenue; post-sale activation and renewal are separate work."
-        },
-        {
-          "title": "EVER · understand the field before coding",
-          "text": "Map how promoters, supervisors and central teams work in stores. Define visits, schedules, questionnaires, photo capture, permissions and exceptions as product flows, documented rules and state machines rather than a collection of screens."
-        },
-        {
-          "title": "EVER · Android, portal & exception management",
-          "text": "Lead development toward an offline-capable Android app for promoters and supervisors, plus a role-based web portal. The prototype scope covers registrations/imports, schedules, proximity-aware check-in/out, questionnaires/photos and if/then rules that create an issue with a deadline and escalate it. Offline synchronization and field validation are development milestones, not proven production results."
-        },
-        {
-          "title": "Cruise messaging & social operations",
-          "text": "Developing an internal messaging/automation platform, similar in purpose to ManyChat, for influencers and social agents working on cruises. This is a separate requested workstream, not a public launch or a claim that ManyChat features are already implemented."
-        }
-      ],
+      "contributionTitle": "Two fronts. Different deliverables and stages.",
+      "contributions": [],
       "media": {
         "src": "",
         "alt": "",
@@ -644,9 +621,49 @@
         "12 decks and support for three partnerships; EVER is still being built."
       ],
       "executive": [
-        "The sponsorship work starts before a deck: research a brand, understand its audience, develop an activation that can work on a ship, check operational restrictions and category exclusivity, and prepare a proposal for human approval. I designed a six-stage workflow with four tools, nine reusable skills and an Express Lane for faster proposals.",
+        "Front 01 — Cruise commercial operations. The sponsorship work starts before a deck: research a brand, understand its audience, develop an activation that can work on a ship, check operational restrictions and category exclusivity, and prepare a proposal for human approval. I designed a six-stage workflow with four tools, nine reusable skills and an Express Lane for faster proposals.",
         "The workflow has supported 56 researched brands, 261 structured ideas, 12 decks and three closed partnerships. The roughly US$5M (~R$30M) figure is estimated proposal pipeline, not revenue. I design and operate the system; the CEO owns pricing and negotiation, and the national manager validates what is proposed.",
-        "EVER is a separate product in development: an Android app and web portal for retail field execution. I lead discovery, product scope and the translation of field routines into software. The intended scope is 14,000 employees; an up-to-20-user pilot is planned for November 27, 2026, not a completed rollout."
+        "Front 02 — Retail product development. EVER is a separate product in development: an Android app and web portal for retail field execution. I lead discovery, product scope and the translation of field routines into software. The intended scope is 14,000 employees; an up-to-20-user pilot is planned for November 27, 2026, not a completed rollout."
+      ],
+      "workstreams": [
+        {
+          "title": "Front 01 · Cruise commercial operations",
+          "status": "Sponsorship workflow in use · messaging tool in development",
+          "description": "Brand research, activation strategy and proposal production, with AI tools and human approval. Commercial outputs: 56 researched brands, 261 ideas, 12 decks and support for three closed partnerships. The estimated ~R$30M pipeline is not revenue; pricing and negotiation belong to the CEO.",
+          "contributions": [
+            {
+              "title": "Research and design the sponsorship workflow",
+              "text": "Replaced scattered research, spreadsheets and hand-built decks with a repeatable path from candidate brand to proposal. Structured the brief, audience fit and activation ideas; encoded ship constraints and category exclusivity; kept human judgment before the final presentation."
+            },
+            {
+              "title": "Build tools, review gates & reusable knowledge",
+              "text": "Built four interactive AI tools and nine reusable skills around a six-stage workflow, including a fast track. Created an intermediate document so research, ideas, comments and constraints survive between steps instead of living in personal chats."
+            },
+            {
+              "title": "Operate the commercial workflow",
+              "text": "Research brands, select and refine activations, and produce decks day to day. The workflow supported 56 brands, 261 ideas, 12 decks and three partnerships. I do not claim to own closing decisions or that the estimated pipeline has become revenue; post-sale activation and renewal are separate work."
+            },
+            {
+              "title": "Cruise messaging & social operations",
+              "text": "Within cruise operations, I am developing a requested internal messaging/automation tool, similar in purpose to ManyChat, for influencers and social agents. It is a separate tool from the sponsorship workflow, still in development; no public launch or complete ManyChat feature set is claimed."
+            }
+          ]
+        },
+        {
+          "title": "Front 02 · Retail product development — EVER",
+          "status": "Work in Progress · pilot planned, not completed",
+          "description": "A different business problem: translate store routines into an Android field app and a role-based web portal. I lead discovery, scope, documented rules and development. Intended scope: 14,000 employees; a pilot with up to 20 users is planned for November 27, 2026. These are product targets, not commercial results or active adoption.",
+          "contributions": [
+            {
+              "title": "EVER · understand the field before coding",
+              "text": "Map how promoters, supervisors and central teams work in stores. Define visits, schedules, questionnaires, photo capture, permissions and exceptions as product flows, documented rules and state machines rather than a collection of screens."
+            },
+            {
+              "title": "EVER · Android, portal & exception management",
+              "text": "Lead development toward an offline-capable Android app for promoters and supervisors, plus a role-based web portal. The prototype scope covers registrations/imports, schedules, proximity-aware check-in/out, questionnaires/photos and if/then rules that create an issue with a deadline and escalate it. Offline synchronization and field validation are development milestones, not proven production results."
+            }
+          ]
+        }
       ]
     },
     {
@@ -758,7 +775,8 @@
         "The starting point was a pedagogical problem, not an algorithm: assessment data exists, yet teachers still need to decide what to revisit, which skills to prioritize and how to teach a class with different needs. I investigated how AI could support that reasoning without replacing the teacher.",
         "I reviewed 20+ papers, interviewed eight education professionals and designed a method that connects diagnosis, curriculum and instructional context. The prototype made that method tangible for teachers; San System became the product through which I could develop it into a school workflow.",
         "I presented the research at ABRIC, receiving Best Project in Sociolinguistics, and submitted it to FEBRACE and Prêmio Jovem Cientista. These submissions are distinct from awards. The research does not establish a causal learning gain or a completed nationwide deployment."
-      ]
+      ],
+      "workstreams": []
     }
   ],
   "olympiads": {

@@ -573,6 +573,13 @@ html[data-motion-paused] [data-reveal] { transition: none; }
 .story-school img { width: 225px; height: 225px; object-fit: cover; border: 8px solid #fcfaf5; box-shadow: 4px 4px 0 #dedacb; }
 .story-school figcaption { max-width: 260px; font-size: 13px; color: var(--muted); line-height: 1.7; }
 .header-inner { gap: 18px; }
+.case-workstream { margin-top: 45px; border-top: 4px solid #88916e; }
+.case-workstream + .case-workstream { margin-top: 70px; border-top-color: var(--blue); }
+.workstream-intro { max-width: 850px; padding: 28px 0; }
+.workstream-intro h3 { font-size: 28px; margin-bottom: 14px; }
+.workstream-intro > p { font-size: 16px; line-height: 1.8; }
+.workstream-intro > .workstream-status { color: var(--blue); font-weight: 600; margin-bottom: 14px; }
+.case-workstream .contribution-item h4 { font-size: 19px; letter-spacing: -.4px; }
 @media (max-width: 1050px) {
   .case-overview { grid-template-columns: 1fr; }
   .case-proof { max-width: 650px; }

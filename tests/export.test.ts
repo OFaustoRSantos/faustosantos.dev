@@ -157,6 +157,19 @@ test("every case opens with an executive summary, role and status, without empty
   }
 });
 
+test("Tsugrowth renders two separately labeled fronts under the company name", { skip: !exported }, () => {
+  for (const locale of ["en", "pt"] as const) {
+    const html = htmlFor(href(locale, "projects/tsugrowth"));
+    assert.match(html, /<h1>Tsugrowth<\/h1>/);
+    assert.doesNotMatch(html, /Tsugrowth \/ EVER|Three workstreams|Três frentes/);
+    assert.equal((html.match(/class="case-workstream"/g) ?? []).length, 2);
+    assert.match(html, /aria-labelledby="workstream-0"/);
+    assert.match(html, /aria-labelledby="workstream-1"/);
+    assert.equal((html.match(/class="workstream-status"/g) ?? []).length, 2);
+    assert.equal((html.match(/class="contribution-item"/g) ?? []).length, 6);
+  }
+});
+
 test("story opens with a compact portrait and summary; navigation places the story next to work", { skip: !exported }, () => {
   for (const locale of ["en", "pt"] as const) {
     const story = htmlFor(href(locale, "story"));
