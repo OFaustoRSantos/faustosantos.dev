@@ -584,7 +584,7 @@ html[data-motion-paused] [data-reveal] { transition: none; }
   .case-proof .project-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .story-overview { grid-template-columns: 220px minmax(0, 1fr); gap: 35px; }
 }
-@media (max-width: 1300px) {
+@media (max-width: 1150px) {
   .menu-toggle { display: grid; place-items: center; width: 48px; height: 48px; border: 1px solid var(--line); border-radius: 3px; background: transparent; color: var(--ink); font-size: 23px; }
   .navigation { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--paper); border-bottom: 1px solid var(--line); padding: 20px 36px 30px; box-shadow: 0 15px 20px #00000022; }
   .navigation.is-open { display: block; }

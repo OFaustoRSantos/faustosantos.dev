@@ -55,6 +55,8 @@ Listas podem crescer, mas devem manter a paridade entre idiomas. Os três destaq
 
 Na home e em trabalho, experiências usam rolagem horizontal nativa, sem autoplay. Setas, toque, scrollbar e teclado permitem navegar. Cada cartão tem três bullets; pesquisa e San são cartões adjacentes e vinculados. Sem JavaScript, o conteúdo segue no HTML e pode ser rolado. O currículo usa grade, e a impressão expande todos os cartões.
 
+O cabeçalho mantém os cinco links visíveis acima de 1150 px. Até essa largura, usa o menu compacto; sem JavaScript, os links continuam abertos. O breakpoint considera os rótulos nos dois idiomas e o controle de som, sem reduzir o tamanho do texto.
+
 ## Fotos e capturas
 
 Salvar os arquivos em `public/images/`. Os caminhos usados nos JSONs começam com `/images/`, sem `public`.

@@ -7,6 +7,15 @@ import { href, siteUrl, staticRoutes } from "../src/lib/content";
 const exported = existsSync(join(process.cwd(), "out", "index.html"));
 const htmlFor = (path: string) => readFileSync(join(process.cwd(), "out", path, "index.html"), "utf8");
 
+test("compact navigation starts at 1150px and preserves the matching no-JavaScript fallback", { skip: !exported }, () => {
+  const css = readFileSync(join(process.cwd(), "src", "app", "construction.css"), "utf8");
+  assert.match(css, /@media \(max-width: 1150px\) \{\s+\.menu-toggle/);
+  assert.doesNotMatch(css, /@media \(max-width: 1300px\)/);
+  for (const locale of ["en", "pt"] as const) {
+    assert.match(htmlFor(href(locale)), /<noscript><style>@media\(max-width:1150px\)/);
+  }
+});
+
 test("production export contains every localized page, metadata and working internal anchors", { skip: !exported }, () => {
   for (const { segments } of staticRoutes()) {
     const path = segments.join("/");

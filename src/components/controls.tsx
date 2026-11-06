@@ -41,7 +41,7 @@ export function Header({ locale, path, text, sound }: { locale: Locale; path: st
 
   return (
     <header className="site-header" id="top">
-      <noscript><style>{"@media(max-width:1300px){.header-inner{flex-wrap:wrap;padding-top:20px}.menu-toggle{display:none}.navigation{display:block;position:static;padding:15px 0 25px;border:0;box-shadow:none;flex-basis:100%}}"}</style></noscript>
+      <noscript><style>{"@media(max-width:1150px){.header-inner{flex-wrap:wrap;padding-top:20px}.menu-toggle{display:none}.navigation{display:block;position:static;padding:15px 0 25px;border:0;box-shadow:none;flex-basis:100%}}"}</style></noscript>
       <a className="skip-link" href="#main">{text.skip}</a>
       <div className="container header-inner">
         <a className="brand" href={home} aria-label={locale === "en" ? "Fausto Santos — Home" : "Fausto Santos — Início"}>
