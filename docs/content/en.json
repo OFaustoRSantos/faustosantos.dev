@@ -75,13 +75,7 @@
         "path": "projects/tsugrowth"
       }
     ],
-    "projectOpening": "Opening the workbench",
-    "sound": {
-      "enable": "Construction sounds: off",
-      "disable": "Construction sounds: on",
-      "error": "Sound is unavailable in this browser.",
-      "description": "Optional, quiet brick sounds. Off by default; no music or continuous audio."
-    }
+    "projectOpening": "Opening the workbench"
   },
   "storyInvite": {
     "eyebrow": "There’s a person behind the projects",

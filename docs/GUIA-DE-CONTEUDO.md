@@ -55,7 +55,7 @@ Listas podem crescer, mas devem manter a paridade entre idiomas. Os três destaq
 
 Na home e em trabalho, experiências usam rolagem horizontal nativa, sem autoplay. Setas, toque, scrollbar e teclado permitem navegar. Cada cartão tem três bullets; pesquisa e San são cartões adjacentes e vinculados. Sem JavaScript, o conteúdo segue no HTML e pode ser rolado. O currículo usa grade, e a impressão expande todos os cartões.
 
-O cabeçalho mantém os cinco links visíveis acima de 1150 px. Até essa largura, usa o menu compacto; sem JavaScript, os links continuam abertos. O breakpoint considera os rótulos nos dois idiomas e o controle de som, sem reduzir o tamanho do texto.
+O cabeçalho mantém os cinco links visíveis acima de 1150 px. Até essa largura, usa o menu compacto; sem JavaScript, os links continuam abertos. O breakpoint considera os rótulos nos dois idiomas, sem reduzir o tamanho do texto.
 
 ## Fotos e capturas
 
@@ -103,7 +103,7 @@ Salvar os arquivos em `public/images/`. Os caminhos usados nos JSONs começam co
 - O hero começa sua montagem depois da abertura. Seus três blocos são links reais para os cases.
 - A faixa convida para a história e pausa ao passar o mouse ou focar o link. O botão “Pausar movimento” pausa as animações; “Retomar movimento” as continua.
 - `prefers-reduced-motion` torna a leitura estática, sem loader nem faixa contínua, com todo o conteúdo disponível. Sem JavaScript, o HTML continua legível e a abertura permanece oculta.
-- Sons de construção são **opcionais e desligados por padrão em cada página**. O botão pequeno no cabeçalho, com rótulo acessível e tooltip, permite ativar/desativar sem cobrir a leitura. Não há áudio no carregamento, hover, música ou arquivos externos: um toque sintetizado de 140 ms com envelope curto e amplitude baixa acompanha ações de blocos/setas e a divisória ao entrar na tela. Há intervalo mínimo de 700 ms entre toques. Ao silenciar, trocar de página ou ocultar a aba, o contexto de áudio é fechado. Falhas são informadas no controle e registradas no console. Movimento reduzido não ativa som; é necessária escolha independente.
+- O site não usa áudio nem controle de som. As animações de construção permanecem visuais.
 - A barra fina no topo acompanha a leitura. A linha da história mantém seu progresso local.
 - A impressão remove abertura, faixa, decoração e controles, preservando o currículo e o texto da origem pessoal na home.
 - O layout base está em [../src/app/globals.css](../src/app/globals.css) e a direção visual de construção em [../src/app/construction.css](../src/app/construction.css).

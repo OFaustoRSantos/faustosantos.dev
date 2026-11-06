@@ -307,7 +307,7 @@ function ResumePage({ content, locale }: { content: Content; locale: Locale }) {
 export function Site({ locale, route }: { locale: Locale; route: Route }) {
   const content = getContent(locale);
   return <>
-    <Header locale={locale} path={routePath(route)} text={content.nav} sound={content.construction.sound} />
+    <Header locale={locale} path={routePath(route)} text={content.nav} />
     <div className="reading-course" aria-hidden="true" />
     <main id="main" tabIndex={-1}>
       {route.page === "home" && <><Opening text={content.construction.intro} /><Hero text={content.hero} construction={content.construction} locale={locale} /><section className="stats-strip"><div className="container"><Metrics items={content.stats} /></div></section><StoryInvitation content={content} locale={locale} /><Experience content={content} locale={locale} expanded /><ConstructionOrigin text={content.construction.origin} /><Work content={content} locale={locale} /><Explorations content={content} /><Olympiads content={content} /><Recognition content={content} /><Contact content={content} /></>}

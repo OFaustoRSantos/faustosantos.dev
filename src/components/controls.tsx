@@ -4,9 +4,8 @@ import { useEffect, useId, useRef, useState, type ReactNode } from "react";
 import type { Content, Locale } from "../lib/content";
 import { href } from "../lib/content";
 import { BrandMark } from "./brand-mark";
-import { ConstructionSound } from "./construction-sound";
 
-export function Header({ locale, path, text, sound }: { locale: Locale; path: string; text: Content["nav"]; sound: Content["construction"]["sound"] }) {
+export function Header({ locale, path, text }: { locale: Locale; path: string; text: Content["nav"] }) {
   const [open, setOpen] = useState(false);
   const toggle = useRef<HTMLButtonElement>(null);
   const navigation = useRef<HTMLElement>(null);
@@ -47,7 +46,6 @@ export function Header({ locale, path, text, sound }: { locale: Locale; path: st
         <a className="brand" href={home} aria-label={locale === "en" ? "Fausto Santos — Home" : "Fausto Santos — Início"}>
           <BrandMark /><span>Fausto Santos<span className="brand-subtitle">{text.subtitle} ↗</span></span>
         </a>
-        <ConstructionSound text={sound} />
         <button ref={toggle} className="menu-toggle" type="button" aria-expanded={open} aria-controls="primary-navigation" aria-label={open ? text.close : text.open} onClick={() => setOpen(!open)}>
           <span aria-hidden="true">{open ? "×" : "☰"}</span>
         </button>

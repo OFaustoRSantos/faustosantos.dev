@@ -75,13 +75,7 @@
         "path": "projects/tsugrowth"
       }
     ],
-    "projectOpening": "Abrindo a bancada",
-    "sound": {
-      "enable": "Sons de construção: desligados",
-      "disable": "Sons de construção: ligados",
-      "error": "O som não está disponível neste navegador.",
-      "description": "Toques discretos de tijolo, opcionais. Desligados por padrão, sem música ou áudio contínuo."
-    }
+    "projectOpening": "Abrindo a bancada"
   },
   "storyInvite": {
     "eyebrow": "Existe uma pessoa por trás dos projetos",

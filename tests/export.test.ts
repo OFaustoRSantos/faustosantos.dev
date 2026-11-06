@@ -31,6 +31,7 @@ test("production export contains every localized page, metadata and working inte
       assert.ok(html.includes('hrefLang="pt-BR"'), `${url}: Portuguese alternate`);
       assert.ok(html.includes('id="main"'), `${url}: skip-link target`);
       assert.ok(!html.includes("data-pending"), `${url}: content is not hidden in initial HTML`);
+      assert.doesNotMatch(html, /sound-control|sound-toggle|<audio/, `${url}: no construction audio controls`);
       for (const match of html.matchAll(/<a\b[^>]*href="([^"]+)"/g)) {
         const target = match[1];
         if (!target.startsWith("/") && !target.startsWith("#")) continue;
@@ -167,9 +168,7 @@ test("story opens with a compact portrait and summary; navigation places the sto
     const links = [...navigation.matchAll(/href="([^"]+)"/g)].map(match => match[1]);
     assert.deepEqual(links.slice(0, 2), [href(locale, "work"), href(locale, "story")]);
     assert.equal(new Set(links.slice(2)).size, 3, "Experience, Olympiads and Recognition retain distinct anchor targets");
-    assert.match(story, /class="sound-control" hidden=""/);
-    assert.match(story, /class="sound-toggle" aria-pressed="false"/);
-    assert.doesNotMatch(story, /<audio|autoplay/);
+    assert.doesNotMatch(story, /sound-control|sound-toggle|<audio|autoplay/);
   }
 });
 
